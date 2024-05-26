@@ -9,6 +9,12 @@ import Footer from "@/components/shared/layout/AppFooter.vue";
 <template>
   <Banner v-if="topBanner.enable" v-bind="topBanner" />
   <Header />
-  <RouterView />
+  <RouterView v-slot="{ Component }">
+    <template v-if="Component">
+      <Suspense>
+        <component :is="Component" />
+      </Suspense>
+    </template>
+  </RouterView>
   <Footer />
 </template>
