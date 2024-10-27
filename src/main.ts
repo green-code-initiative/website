@@ -1,3 +1,4 @@
+import "altcha";
 import "@fontsource-variable/mulish/wght.css";
 import "./assets/main.css";
 

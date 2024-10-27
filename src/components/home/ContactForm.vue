@@ -1,18 +1,23 @@
 <template>
-  <div class="container" id="contact">
-    <h2 class="heading-2">On discute ?</h2>
-
+  <AppSection title="On discute ?" id="contact" background-color="grey">
     <form @submit.prevent="submitForm" aria-label="Formulaire de contact">
       <div class="form-field" role="radiogroup" aria-labelledby="i-am">
         <span class="text-label" id="i-am">Je suis :</span>
         <div class="radio-field">
-          <input type="radio" id="individual" v-model="type" value="individu" />
+          <input
+            type="radio"
+            id="individual"
+            name="type"
+            v-model="type"
+            value="individu"
+          />
           <label for="individual">Un individu</label>
         </div>
         <div class="radio-field">
           <input
             type="radio"
             id="organization"
+            name="type"
             v-model="type"
             value="organisation"
           />
@@ -22,6 +27,7 @@
 
       <Selectfield
         id="subject"
+        name="subject"
         v-model="subject"
         label="Je souhaite :"
         :items="options"
@@ -29,14 +35,14 @@
 
       <Textfield
         id="entity-name"
-        v-model="name"
+        name="name"
         label="Nom de l’entreprise / Personne"
       />
 
       <Fieldset>
         <Textfield
           id="email"
-          v-model="email"
+          name="email"
           type="email"
           label="E-mail * :"
           required
@@ -44,7 +50,7 @@
         />
         <Textfield
           id="phone"
-          v-model="phone"
+          name="phone"
           type="tel"
           label="Téléphone :"
           autocomplete="tel"
@@ -53,17 +59,9 @@
 
       <Textfield
         id="message"
-        v-model="message"
+        name="message"
         label="Des éléments supplémentaires ?"
       />
-
-      <div class="hcaptcha">
-        <vue-hcaptcha
-          @verify="getCaptcha"
-          sitekey="359a430d-a0bf-4548-a583-959e93110b6d"
-          aria-label="Rendez vous sur https://www.hcaptcha.com/accessibility pour obtenir un passe-droit accessible"
-        ></vue-hcaptcha>
-      </div>
 
       <div class="form-submit">
         <div class="error-message" v-if="error" aria-live="assertive">
@@ -85,137 +83,44 @@
           aria-label="Envoyer le formulaire de contact"
         />
       </div>
+
+      <altcha-widget
+        :challengeurl="captchaChallengeUrl"
+        name="captcha"
+        spamfilter
+        floating
+      />
     </form>
-  </div>
+  </AppSection>
 </template>
 
 <script lang="ts" setup>
-import { ref, watch } from "vue";
-import VueHcaptcha from "@hcaptcha/vue3-hcaptcha";
-import { post } from "@/util/fetch";
 import AppButton from "@/components/shared/AppButton.vue";
-import Textfield from "@/components/shared/form/AppTextfield.vue";
 import Fieldset from "@/components/shared/form/AppFieldset.vue";
 import Selectfield from "@/components/shared/form/AppSelectfield.vue";
+import Textfield from "@/components/shared/form/AppTextfield.vue";
+import { captchaChallengeUrl, post } from "@/util/fetch";
+import { extractFormData, validatePhone } from "@/util/form";
+import { ref, watch } from "vue";
+import AppSection from "../shared/AppSection.vue";
 
-let captcha = ref("");
 const error = ref("");
-const name = ref("");
-const email = ref("");
-const phone = ref("");
-const message = ref("");
 const success = ref("");
 
-/**
- * Validates an email address to ensure it is not empty and follows a valid email format.
- *
- * @returns {boolean} True if the email is valid, false otherwise.
- */
-const validateEmail = () => {
-  /**
-   * Regular expression to validate an email address:
-   * - It allows alphanumeric characters, dots, hyphens, percent signs, and plus or minus signs.
-   * - It requires an "@" symbol after the username.
-   * - It allows a domain consisting of alphanumeric characters, hyphens, and dots.
-   * - The domain must end with a dot followed by at least two alphabetic characters.
-   */
-  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  if (!email.value) {
-    error.value = "L'e-mail est requis.";
-  } else if (!emailPattern.test(email.value)) {
-    error.value = "L'e-mail n'est pas valide.";
-  } else {
-    error.value = "";
-    return true;
-  }
-};
+const submitForm = async (event: Event) => {
+  const form = event.target as HTMLFormElement;
+  const formData = extractFormData(form);
 
-/**
- * Validates a phone number to ensure it is not empty and follows a valid phone number format.
- *
- * @returns {boolean} True if the phone number is valid, false otherwise.
- */
-const validatePhone = () => {
-  /**
-   * Regular expression to validate a phone number:
-   * - It can optionally start with a plus sign (+).
-   * - It can then contain one or more digits (0-9), commas, periods, or whitespace.
-   * - The string must end after the allowed characters.
-   */
-  const phonePattern = /^\+?[\d,. ]+$/;
-
-  if (!phone.value) {
-    error.value = "";
-    return true;
-  } else if (!phonePattern.test(phone.value)) {
-    error.value =
-      "Le téléphone doit contenir uniquement des chiffres, +, ,, . ou des espaces.";
-    return false;
-  } else {
-    error.value = "";
-    return true;
-  }
-};
-
-/**
- * Validates whether a CAPTCHA field is empty.
- *
- * @returns {boolean} True if the CAPTCHA field is not empty, false otherwise.
- */
-const validateCaptcha = () => {
-  if (!captcha.value) {
-    error.value = "Le captcha est requis.";
-  } else {
-    error.value = "";
-    return true;
-  }
-};
-
-/**
- * Validates a complete form by executing a set of validation functions.
- *
- * @returns {boolean} True if all fields are valid, false otherwise.
- */
-const validateForm = () => {
-  const validationFunctions = [
-    validateEmail, // Function to validate email
-    validatePhone, // Function to validate phone number
-    validateCaptcha, // Function to validate CAPTCHA
-  ];
-
-  // Check if all validation functions return true.
-  const isValid = validationFunctions.every((validationFunction) =>
-    validationFunction()
-  );
-
-  // Return true if all form fields are valid, otherwise return false.
-  return isValid;
-};
-
-const submitForm = async () => {
-  if (validateForm()) {
-    const formData = {
-      type: type.value,
-      subject: subject.value,
-      name: name.value,
-      email: email.value,
-      phone: phone.value,
-      message: message.value,
-      captcha: captcha.value,
-    };
-
+  if (validatePhone(formData.phone as string, error)) {
     try {
       await post("contact", formData);
       success.value = "Votre demande a bien été enregistrée";
+      form.reset();
     } catch {
       error.value = "Erreur d'envoi, veuillez réessayer plus tard.";
     }
   }
 };
-
-function getCaptcha(response: any) {
-  captcha.value = response;
-}
 
 const type = ref("individu");
 const subject = ref(
@@ -249,19 +154,11 @@ watch(type, (newValue) => {
 </script>
 
 <style scoped lang="scss">
-.container {
-  padding: 3rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  background-color: #f3f3f3;
-}
-
 form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin: 0 2rem;
 }
 
 .text-label {

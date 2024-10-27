@@ -26,10 +26,9 @@ const router = createRouter({
     },
     {
       path: "/collectif",
-      name: "collectif",
       component: TeamView,
       children: [
-        { path: "", redirect: "/collectif/membres" },
+        { path: "", name: "collectif", redirect: "/collectif/membres" },
         { path: "membres", name: "collectif-membres", component: TeamMembers },
         {
           path: "organisations",

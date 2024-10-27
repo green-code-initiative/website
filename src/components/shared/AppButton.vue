@@ -10,7 +10,7 @@ withDefaults(
     type?: "button" | "submit";
     link?: RouterLinkProps["to"];
   }>(),
-  { type: "button" },
+  { type: "button", link: undefined }
 );
 </script>
 

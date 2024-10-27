@@ -5,11 +5,11 @@ withDefaults(
   defineProps<{
     id: string;
     label: string;
-    modelValue: string;
+    modelValue?: string;
     type?: string;
     centered?: boolean;
   }>(),
-  { type: "text", centered: false },
+  { type: "text", modelValue: "", centered: false }
 );
 </script>
 

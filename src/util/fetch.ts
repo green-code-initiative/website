@@ -1,5 +1,9 @@
+const baseApiUrl = import.meta.env.VITE_API_URL ?? "/api";
+
+export const captchaChallengeUrl = `${baseApiUrl}/captcha_challenge`;
+
 export const post = async (resource: string, body: any) => {
-  return fetch(`https://api.ecocode.io/${resource}`, {
+  return fetch(`${baseApiUrl}/${resource}`, {
     method: "POST",
     body: new URLSearchParams(body),
     headers: {

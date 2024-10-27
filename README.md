@@ -10,6 +10,8 @@ with [Vue.js](https://vuejs.org).
 
 ## 🚀 Project Setup
 
+Copy `.env.example` to `.env`
+
 ```sh
 npm install
 ```
