@@ -6,7 +6,7 @@
     <ul>
       <li>
         Salariées et salariés en poste avec un temps dédié par leur organisation
-        sur ecoCode
+        sur Creedengo
       </li>
       <li>
         Indépendantes et indépendants pour une contribution bénévole à l'Open

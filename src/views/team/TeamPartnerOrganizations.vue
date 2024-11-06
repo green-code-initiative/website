@@ -4,7 +4,7 @@ import AppSection from "@/components/shared/AppSection.vue";
 </script>
 
 <template>
-  <AppSection title="De nombreuses organisations s'impliquent sur ecoCode">
+  <AppSection title="De nombreuses organisations s'impliquent sur Creedengo">
     <PartnerOrganizationList :featured="false" />
   </AppSection>
 </template>

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import WhiteLogo from "@/assets/img/logo_white.svg";
 import PartnerOrganizationList from "@/components/collective/PartnerOrganizationList.vue";
 import AppButton from "@/components/shared/AppButton.vue";
 import AppHero from "@/components/global/Hero.vue";
@@ -13,13 +14,7 @@ import AppSection from "@/components/shared/AppSection.vue";
     title="Réduisons l'impact environnemental et social des solutions numériques"
     sub-title="Outil Open Source basé sur un référentiel de règles d'éco-conception logicielle"
   >
-    <img
-      class="hero"
-      src="@/assets/img/logo-large.webp"
-      width="358"
-      height="204"
-      alt="ecoCode large logo"
-    />
+    <WhiteLogo width="358" class="hero" />
   </AppHero>
 
   <div class="block-button-section-1 green">
@@ -36,14 +31,14 @@ import AppSection from "@/components/shared/AppSection.vue";
   </div>
 
   <AppSection
-    title="ecoCode est une initiative qui prend racine dans la force du collectif"
+    title="Creedengo est une initiative qui prend racine dans la force du collectif"
     sub-title="Le numérique nous passionne et nous considérons qu’il est impératif de le rendre plus durable."
   >
     <div class="after-block-section-2">
       <div class="container-after">
         <p>
-          ecoCode rassemble différents types d'acteurs qui œuvrent ensemble pour
-          rendre le numérique plus responsable : laboratoires de recherche,
+          Creedengo rassemble différents types d'acteurs qui œuvrent ensemble
+          pour rendre le numérique plus responsable : laboratoires de recherche,
           entreprises, personnes en poste sur leur temps de travail, personnes
           indépendantes sur leur temps libre...
         </p>
@@ -76,7 +71,7 @@ import AppSection from "@/components/shared/AppSection.vue";
   <RuleProcess />
 
   <AppSection
-    title="ecoCode est rendu possible grâce aux nombreux acteurs impliqués"
+    title="Creedengo est rendu possible grâce aux nombreux acteurs impliqués"
     sub-title="Quelques structures partenaires :"
   >
     <PartnerOrganizationList :featured="true" />

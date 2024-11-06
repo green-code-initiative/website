@@ -12,7 +12,7 @@ import AppSection from "@/components/shared/AppSection.vue";
   <AppHero
     variant="secondary"
     title="Tu te soucies de réduire l'impact environnemental et social des solutions numériques ?"
-    sub-title="Rejoins ecoCode et contribue à faire du numérique un domaine plus durable."
+    sub-title="Rejoins Creedengo et contribue à faire du numérique un domaine plus durable."
   >
     <template #actions>
       <AppButton
@@ -23,11 +23,12 @@ import AppSection from "@/components/shared/AppSection.vue";
     </template>
   </AppHero>
 
-  <AppSection title="ecoCode est un projet qui tire sa force du collectif">
+  <AppSection title="Creedengo est un projet qui tire sa force du collectif">
     <ContributorProfiles />
 
     <h3 class="heading-3" style="max-width: none">
-      Les technologies couvertes par ecoCode (en attendant d’aller plus loin !)
+      Les technologies couvertes par Creedengo (en attendant d’aller plus loin
+      !)
     </h3>
     <Technologies />
   </AppSection>

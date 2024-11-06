@@ -5,7 +5,7 @@ import AppButton from "@/components/shared/AppButton.vue";
 
 <template>
   <div class="GraphRule">
-    <h2 class="heading-2">Le processus de création d'une règle ecoCode</h2>
+    <h2 class="heading-2">Le processus de création d'une règle Creedengo</h2>
     <div class="container-rule">
       <div class="top-graph">
         <ProcessRule
@@ -43,7 +43,7 @@ import AppButton from "@/components/shared/AppButton.vue";
           title-position="left"
           position="left"
           title="intégration"
-          text="La règle est publiée dans le référentiel Open Source d’ecoCode"
+          text="La règle est publiée dans le référentiel Open Source d’Creedengo"
         />
         <ProcessRule
           id="rule-6"

@@ -1,6 +1,6 @@
 <template>
   <AppSection
-    title="Rejoins ecoCode !"
+    title="Rejoins Creedengo !"
     sub-title="Rejoins-nous et contribue à faire du numérique un domaine plus durable."
     background-color="grey"
   >

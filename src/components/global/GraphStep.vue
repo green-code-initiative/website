@@ -4,7 +4,7 @@ import ProcessRule from "@/components/global/ProcessRule.vue";
 
 <template>
   <div class="GraphRule">
-    <h2 class="heading-2">Les étapes pour contribuer à ecoCode</h2>
+    <h2 class="heading-2">Les étapes pour contribuer à Creedengo</h2>
     <div class="container-rule">
       <div class="top-graph">
         <ProcessRule
@@ -46,7 +46,7 @@ import ProcessRule from "@/components/global/ProcessRule.vue";
           :opacity="0.8"
           title-position="left"
           position="left"
-          text="Je propose une PR pour validation et intégration à la solution ecoCode"
+          text="Je propose une PR pour validation et intégration à la solution Creedengo"
         />
         <ProcessRule
           id="rule-6"

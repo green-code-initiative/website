@@ -1,12 +1,5 @@
 [
   {
-    "img": "snapp.webp",
-    "name": "Snapp'",
-    "width": 160,
-    "height": 72,
-    "featured": 2
-  },
-  {
     "img": "region-nouvelle-aquitaine.webp",
     "name": "Région Nouvelle Aquitaine",
     "width": 160,
@@ -86,7 +79,8 @@
     "img": "capgemini.svg",
     "name": "Capgemini",
     "width": 171,
-    "height": 38
+    "height": 38,
+    "featured": 2
   },
   {
     "img": "orange-business.webp",

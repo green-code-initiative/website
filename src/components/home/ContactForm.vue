@@ -124,29 +124,29 @@ const submitForm = async (event: Event) => {
 
 const type = ref("individu");
 const subject = ref(
-  "Je souhaite contribuer à la création de règles sur ecoCode"
+  "Je souhaite contribuer à la création de règles sur Creedengo"
 );
 const options = ref([
-  "Je souhaite contribuer à la création de règles sur ecoCode",
-  "Je souhaite m’impliquer sur d’autres aspects d’ecoCode",
-  "Je souhaite des informations sur ecoCode",
+  "Je souhaite contribuer à la création de règles sur Creedengo",
+  "Je souhaite m’impliquer sur d’autres aspects de Creedengo",
+  "Je souhaite des informations sur Creedengo",
 ]);
 
 watch(type, (newValue) => {
   if (newValue === "individu") {
     options.value = [
-      "Je souhaite contribuer à la création de règles sur ecoCode",
-      "Je souhaite m’impliquer sur d’autres aspects d’ecoCode",
-      "Je souhaite des informations sur ecoCode",
+      "Je souhaite contribuer à la création de règles sur Creedengo",
+      "Je souhaite m’impliquer sur d’autres aspects de Creedengo",
+      "Je souhaite des informations sur Creedengo",
     ];
     subject.value =
-      "Je souhaite contribuer à la création de règles sur ecoCode";
+      "Je souhaite contribuer à la création de règles sur Creedengo";
   } else if (newValue === "organisation") {
     options.value = [
       "Je souhaite développer des règles pour mon organisation",
-      "Je souhaite contribuer à ecoCode (mise à contribution de collaborateurs)",
-      "Je souhaite soutenir ecoCode financièrement",
-      "Je souhaite des informations sur ecoCode",
+      "Je souhaite contribuer à Creedengo (mise à contribution de collaborateurs)",
+      "Je souhaite soutenir Creedengo financièrement",
+      "Je souhaite des informations sur Creedengo",
     ];
     subject.value = "Je souhaite développer des règles pour mon organisation";
   }

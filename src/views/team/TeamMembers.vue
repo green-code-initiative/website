@@ -6,7 +6,7 @@ import AppSection from "@/components/shared/AppSection.vue";
 </script>
 
 <template>
-  <AppSection title="Core team" sub-title="L'équipe qui pilote ecoCode">
+  <AppSection title="Core team" sub-title="L'équipe qui pilote Creedengo">
     <MemberList :members="coreMembers" />
   </AppSection>
 

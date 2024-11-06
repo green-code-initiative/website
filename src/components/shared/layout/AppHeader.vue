@@ -41,7 +41,12 @@ const socialItems = [
     <div class="left">
       <router-link to="/" class="go-to-home">
         <div class="logo-container">
-          <Logo width="148" height="24" alt="ecoCode logo" @click="closeMenu" />
+          <Logo
+            width="148"
+            height="24"
+            alt="Creedengo logo"
+            @click="closeMenu"
+          />
           <span class="association">par Green Code Initiative</span>
         </div>
       </router-link>
