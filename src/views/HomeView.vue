@@ -14,7 +14,10 @@ import AppSection from "@/components/shared/AppSection.vue";
     title="Réduisons l'impact environnemental et social des solutions numériques"
     sub-title="Outil Open Source basé sur un référentiel de règles d'éco-conception logicielle"
   >
-    <WhiteLogo width="358" class="hero" />
+    <div class="logo-container">
+      <WhiteLogo width="358" class="hero" />
+      <p class="old-name">Anciennement <strong>ecoCode</strong></p>
+    </div>
   </AppHero>
 
   <div class="block-button-section-1 green">
@@ -135,6 +138,21 @@ import AppSection from "@/components/shared/AppSection.vue";
 .container-after:nth-child(2) > p {
   text-align: left;
   padding: 0 0 0 97px;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  .old-name {
+    padding: 0.25rem 1rem;
+    border-radius: var(--radius);
+    font-size: 1.5rem;
+    color: var(--color-white);
+    background-color: rgba(0, 0, 0, 0.3);
+  }
 }
 
 @media screen and (max-width: 768px) {
