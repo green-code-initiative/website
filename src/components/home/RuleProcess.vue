@@ -43,7 +43,7 @@ import AppButton from "@/components/shared/AppButton.vue";
           title-position="left"
           position="left"
           title="intégration"
-          text="La règle est publiée dans le référentiel Open Source d’Creedengo"
+          text="La règle est publiée dans notre référentiel Open Source"
         />
         <ProcessRule
           id="rule-6"
