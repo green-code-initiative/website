@@ -48,7 +48,7 @@ jobs:
           name: website
 
       - name: Upload to SFTP
-        uses: wangyucode/sftp-upload-action@v2.0.2
+        uses: wangyucode/sftp-upload-action@v2.0.3
         with:
           host: ${{ secrets.UPLOAD_SFTP_HOST }}
           username: ${{ secrets.UPLOAD_SFTP_USERNAME }}
@@ -56,3 +56,5 @@ jobs:
           compress: true
           localDir: ${{ github.workspace }}
           remoteDir: ${{ secrets.UPLOAD_SFTP_DIRECTORY }}
+          exclude: "api/,**/*.htaccess"
+          removeExtraFilesOnServer: true
