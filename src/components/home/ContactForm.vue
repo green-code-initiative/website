@@ -124,7 +124,7 @@ const submitForm = async (event: Event) => {
 
 const type = ref("individu");
 const subject = ref(
-  "Je souhaite contribuer à la création de règles sur Creedengo"
+  "Je souhaite contribuer à la création de règles sur Creedengo",
 );
 const options = ref([
   "Je souhaite contribuer à la création de règles sur Creedengo",

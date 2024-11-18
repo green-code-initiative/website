@@ -9,7 +9,7 @@ withDefaults(
     type?: string;
     centered?: boolean;
   }>(),
-  { type: "text", modelValue: "", centered: false }
+  { type: "text", modelValue: "", centered: false },
 );
 </script>
 

@@ -1,15 +1,15 @@
 import type { Ref } from "vue";
 
 export const extractFormData = (
-  form: HTMLFormElement
+  form: HTMLFormElement,
 ): Record<string, FormDataEntryValue> =>
   Object.fromEntries(
-    Array.from(new FormData(form)).filter(([, value]) => value !== "")
+    Array.from(new FormData(form)).filter(([, value]) => value !== ""),
   );
 
 export const validatePhone = (
   value: string,
-  errorRef: Ref<string, string>
+  errorRef: Ref<string, string>,
 ): boolean => {
   /**
    * Regular expression to validate a phone number:
