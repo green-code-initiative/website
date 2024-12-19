@@ -93,5 +93,11 @@
     "name": "Accenture",
     "width": 160,
     "height": 42
+  },
+  {
+    "img": "c2s.png",
+    "name": "C2S Bouygues",
+    "width": 160,
+    "height": 53
   }
 ]
