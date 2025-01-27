@@ -12,20 +12,20 @@
     "logo": "php.webp"
   },
   {
-    "name": "JavaScript",
-    "logo": "javascript.webp"
+    "name": "JavaScript & TypeScript",
+    "logo": "javascript_typescript.webp"
   },
   {
-    "name": "TypeScript",
-    "logo": "typescript.webp"
-  },
-  {
-    "name": "XML",
-    "logo": "xml.webp"
+    "name": "C#",
+    "logo": "csharp.webp"
   },
   {
     "name": "Android",
     "logo": "android.webp"
+  },
+  {
+    "name": "Android Kotlin",
+    "logo": "android_kotlin.webp"
   },
   {
     "name": "iOS",
