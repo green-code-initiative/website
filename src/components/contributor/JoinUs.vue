@@ -18,7 +18,7 @@ import AppSection from "../shared/AppSection.vue";
           alt="GitHub logo"
         />
       </a>
-      <a href="https://green-code-initiative.slack.com/" target="_blank">
+      <a href="https://join.slack.com/t/green-code-initiative/shared_invite/zt-1soofawn4-Jos03e03VEQPWrw6yhgz7g" target="_blank">
         <img
           width="122"
           height="32"
