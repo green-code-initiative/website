@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { event as eventBanner } from "@/assets/data/banners.json";
 import WhiteLogo from "@/assets/img/logo_white.svg";
 import PartnerOrganizationList from "@/components/collective/PartnerOrganizationList.vue";
 import AppButton from "@/components/shared/AppButton.vue";
+import AppEventBanner from "@/components/shared/AppEventBanner.vue";
 import AppHero from "@/components/global/Hero.vue";
 import ContactForm from "@/components/home/ContactForm.vue";
 import RuleProcess from "@/components/home/RuleProcess.vue";
@@ -16,7 +18,7 @@ import AppSection from "@/components/shared/AppSection.vue";
   >
     <div class="logo-container">
       <WhiteLogo width="358" class="hero" />
-      <p class="old-name">Anciennement <strong>ecoCode</strong></p>
+      <p class="old-name">ex. <strong>ecoCode</strong></p>
     </div>
   </AppHero>
 
@@ -32,6 +34,12 @@ import AppSection from "@/components/shared/AppSection.vue";
       text="Je souhaite une intégration sur-mesure"
     />
   </div>
+
+  <AppEventBanner
+    v-if="eventBanner.enable"
+    class="event-banner-container"
+    v-bind="eventBanner"
+  />
 
   <AppSection
     title="Creedengo est une initiative qui prend racine dans la force du collectif"
@@ -142,17 +150,23 @@ import AppSection from "@/components/shared/AppSection.vue";
 
 .logo-container {
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 
   .old-name {
-    padding: 0.25rem 1rem;
+    padding: 0.25rem 0.5rem;
     border-radius: var(--radius);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--color-white);
     background-color: rgba(0, 0, 0, 0.3);
   }
+}
+
+.event-banner-container {
+  justify-self: center;
+  margin: 2rem;
 }
 
 @media screen and (max-width: 768px) {

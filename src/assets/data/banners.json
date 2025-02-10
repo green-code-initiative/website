@@ -1,0 +1,15 @@
+{
+  "top": {
+    "enable": false,
+    "content": "ecoCode change de nom et devient <strong>Creendengo</strong> ! L'outil ne change pas, seul le nom évolue."
+  },
+  "event": {
+    "enable": true,
+    "title": "Green Code Initiative I/O 2025",
+    "content": "L’événement annuel à ne pas manquer pour tout savoir sur le collectif : l’équipe, les réalisations, les projets, les nouveautés.. Rendez-vous le <strong>28/02/25 de 12h à 13h en ligne</strong> !",
+    "action": {
+      "label": "Je m'inscris",
+      "link": "https://www.helloasso.com/associations/green-code-initiative/evenements/inscription-a-la-gci-i-o"
+    }
+  }
+}
