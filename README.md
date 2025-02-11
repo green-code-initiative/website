@@ -27,3 +27,7 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## 📄 Documentation
+
+For more detailed information, please refer to the documentation in the `doc` folder. This includes guides on updating team members, organizations, and more.
