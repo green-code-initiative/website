@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { event as eventBanner } from "@/assets/data/banners.json";
-import WhiteLogo from "@/assets/img/logo_white.svg";
+import Creedengo from "@/assets/img/Creedengo.svg";
 import PartnerOrganizationList from "@/components/collective/PartnerOrganizationList.vue";
 import AppButton from "@/components/shared/AppButton.vue";
 import AppEventBanner from "@/components/shared/AppEventBanner.vue";
@@ -17,7 +17,7 @@ import AppSection from "@/components/shared/AppSection.vue";
     sub-title="Outil Open Source basé sur un référentiel de règles d'éco-conception logicielle"
   >
     <div class="logo-container">
-      <WhiteLogo width="358" class="hero" />
+      <Creedengo width="358" class="hero" />
       <p class="old-name">ex. <strong>ecoCode</strong></p>
     </div>
   </AppHero>

@@ -42,12 +42,11 @@ const socialItems = [
       <router-link to="/" class="go-to-home">
         <div class="logo-container">
           <Logo
-            width="148"
-            height="24"
-            alt="Creedengo logo"
+            width="150"
+            height="32"
+            alt="Green Code Initiative logo"
             @click="closeMenu"
           />
-          <span class="association">par Green Code Initiative</span>
         </div>
       </router-link>
       <nav :class="{ open: isMenuOpen }">
