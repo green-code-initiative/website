@@ -42,11 +42,11 @@
 /* OLD and Deprecated values */
 :root {
   /* Colors */
-  --color-primary: #4a53a1;
+  --color-primary: hsl(var(--secondary-600));
   --color-on-primary: #ffffff;
   --color-primary-lighter: hsl(220, 43%, 65%);
   --color-primary-focus-ring: hwb(220 21% 47% / 0.2);
-  --color-secondary: #5cac69;
+  --color-secondary: hsl(var(--primary-600));
   --color-on-secondary: #ffffff;
   --color-tertiary: #e03258;
   --color-on-tertiary: #ffffff;
