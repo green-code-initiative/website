@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import MegaphoneIcon from "@/assets/icons/megaphone.svg";
+import AppButton from "./AppButton.vue";
 
 defineProps({
   title: { type: String, default: null },
@@ -15,7 +16,12 @@ defineProps({
       <h2>{{ title }}</h2>
     </div>
     <p v-html="content"></p>
-    <a type="button" :href="action.link" target="_blank">{{ action.label }}</a>
+    <AppButton
+      type="external_link"
+      variant="black"
+      :text="action.label"
+      :link="action.link"
+    />
   </div>
 </template>
 
@@ -59,17 +65,8 @@ defineProps({
     text-align: left;
   }
 
-  a[type="button"] {
+  a {
     align-self: flex-end;
-    color: white;
-    background: #171717;
-    border-radius: 100px;
-    padding: 0.5rem 1rem;
-    font-weight: 700;
-
-    &:hover {
-      background: #1a1a1a;
-    }
   }
 }
 

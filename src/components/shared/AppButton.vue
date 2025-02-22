@@ -1,30 +1,32 @@
 <script setup lang="ts">
-import ChevronLeft from "@/assets/icons/chevron_left.svg";
-import ChevronRight from "@/assets/icons/chevron_right.svg";
 import type { RouterLinkProps } from "vue-router";
 
 withDefaults(
   defineProps<{
     text: string;
-    variant: "primary" | "secondary";
-    type?: "button" | "submit";
+    variant: "primary" | "secondary" | "neutral" | "black";
+    type?: "external_link" | "button" | "submit";
     link?: RouterLinkProps["to"];
   }>(),
-  { type: "button", link: undefined },
+  { type: "button", link: undefined }
 );
 </script>
 
 <template>
-  <router-link v-if="link" :class="variant" :to="link">
-    <ChevronLeft />
-    {{ text }}
-    <ChevronRight />
-  </router-link>
-  <button v-else :class="variant" :type="type">
-    <ChevronLeft />
-    {{ text }}
-    <ChevronRight />
-  </button>
+  <router-link
+    v-if="link && type !== 'external_link'"
+    :class="variant"
+    :to="link"
+    >{{ text }}</router-link
+  >
+  <a
+    v-else-if="type === 'external_link'"
+    :class="variant"
+    :href="link.toString()"
+    target="_blank"
+    >{{ text }}</a
+  >
+  <button v-else :class="variant" :type="type">{{ text }}</button>
 </template>
 
 <style lang="scss" scoped>
@@ -33,25 +35,48 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 1rem;
-  border-radius: var(--radius);
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
   text-align: center;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 1rem;
   font-weight: bold;
   border: none;
   cursor: pointer;
 
   &.primary {
-    background-color: var(--color-primary);
-    color: var(--color-on-primary);
-    border: 2px solid var(--color-on-primary);
+    background-color: hsl(var(--primary-700));
+    color: white;
+
+    &:hover {
+      background-color: hsl(var(--primary-800));
+    }
   }
 
   &.secondary {
-    background-color: white;
-    border: 2px solid var(--color-secondary);
-    color: var(--color-primary);
+    background-color: hsl(var(--secondary-700));
+    color: white;
+
+    &:hover {
+      background-color: hsl(var(--secondary-800));
+    }
+  }
+
+  &.neutral {
+    background-color: hsl(var(--neutral-200));
+    color: hsl(var(--text-neutral));
+
+    &:hover {
+      background-color: hsl(var(--neutral-300));
+    }
+  }
+
+  &.black {
+    background-color: hsl(var(--neutral-900));
+    color: white;
+
+    &:hover {
+      background-color: hsl(var(--neutral-800));
+    }
   }
 }
 </style>

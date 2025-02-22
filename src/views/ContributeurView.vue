@@ -16,8 +16,8 @@ import AppSection from "@/components/shared/AppSection.vue";
   >
     <template #actions>
       <AppButton
-        variant="secondary"
-        link="#newsletter"
+        variant="black"
+        link="#joinus"
         text="Je rejoins la communauté"
       />
     </template>
