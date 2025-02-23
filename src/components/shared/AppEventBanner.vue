@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import MegaphoneIcon from "@/assets/icons/megaphone.svg";
+import AppButton from "./AppButton.vue";
 
 defineProps({
   title: { type: String, default: null },
@@ -15,14 +16,18 @@ defineProps({
       <h2>{{ title }}</h2>
     </div>
     <p v-html="content"></p>
-    <a type="button" :href="action.link" target="_blank">{{ action.label }}</a>
+    <AppButton
+      type="external_link"
+      variant="black"
+      :text="action.label"
+      :link="action.link"
+    />
   </div>
 </template>
 
 <style lang="scss" scoped>
 .banner-container {
-  --color-1: 91, 83, 201;
-  --color-2: 74, 83, 161;
+  --main-color: var(--secondary-700);
 
   display: flex;
   flex-direction: column;
@@ -32,10 +37,11 @@ defineProps({
   max-width: 720px;
   border-radius: 0.5rem;
   background: linear-gradient(
-    30deg,
-    rgb(var(--color-1)) 0%,
-    rgb(var(--color-2)) 100%
+    198.54deg,
+    hsl(var(--secondary-700)) -13.88%,
+    hsl(var(--secondary-400)) 87.44%
   );
+
   color: white;
   animation: pulse 2s infinite;
 
@@ -59,32 +65,23 @@ defineProps({
     text-align: left;
   }
 
-  a[type="button"] {
+  a {
     align-self: flex-end;
-    color: white;
-    background: #171717;
-    border-radius: 100px;
-    padding: 0.5rem 1rem;
-    font-weight: 700;
-
-    &:hover {
-      background: #1a1a1a;
-    }
   }
 }
 
 @keyframes pulse {
   0% {
-    -moz-box-shadow: 0 0 0 0 rgba(var(--color-1), 0.4);
-    box-shadow: 0 0 0 0 rgba(var(--color-1), 0.4);
+    -moz-box-shadow: 0 0 0 0 hsla(var(--main-color) / 50%);
+    box-shadow: 0 0 0 0 hsl(var(--main-color) / 50%);
   }
   70% {
-    -moz-box-shadow: 0 0 0 10px rgba(var(--color-1), 0);
-    box-shadow: 0 0 0 10px rgba(var(--color-1), 0);
+    -moz-box-shadow: 0 0 0 10px hsla(var(--main-color) / 0%);
+    box-shadow: 0 0 0 10px hsla(var(--main-color) / 0%);
   }
   100% {
-    -moz-box-shadow: 0 0 0 0 rgba(var(--color-1), 0);
-    box-shadow: 0 0 0 0 rgba(var(--color-1), 0);
+    -moz-box-shadow: 0 0 0 0 hsla(var(--main-color) / 0%);
+    box-shadow: 0 0 0 0 hsla(var(--main-color) / 0%);
   }
 }
 </style>

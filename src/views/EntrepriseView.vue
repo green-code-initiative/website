@@ -14,12 +14,12 @@ import AppSection from "@/components/shared/AppSection.vue";
   >
     <template #actions>
       <AppButton
-        variant="secondary"
+        variant="primary"
         :link="{ path: '/', hash: '#contact' }"
         text="Demande de contact"
       />
       <AppButton
-        variant="secondary"
+        variant="black"
         link="#client-case"
         text="Recevez le cas client Société Générale"
       />

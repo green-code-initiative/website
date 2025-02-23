@@ -1,39 +1,17 @@
 <script setup lang="ts">
 import { event as eventBanner } from "@/assets/data/banners.json";
-import WhiteLogo from "@/assets/img/logo_white.svg";
+import Creedengo from "@/assets/img/creedengo.svg";
 import PartnerOrganizationList from "@/components/collective/PartnerOrganizationList.vue";
+import ContactForm from "@/components/home/ContactForm.vue";
+import HomeHero from "@/components/home/HomeHero.vue";
+import RuleProcess from "@/components/home/RuleProcess.vue";
 import AppButton from "@/components/shared/AppButton.vue";
 import AppEventBanner from "@/components/shared/AppEventBanner.vue";
-import AppHero from "@/components/global/Hero.vue";
-import ContactForm from "@/components/home/ContactForm.vue";
-import RuleProcess from "@/components/home/RuleProcess.vue";
 import AppSection from "@/components/shared/AppSection.vue";
 </script>
 
 <template>
-  <AppHero
-    variant="primary"
-    title="Réduisons l'impact environnemental et social des solutions numériques"
-    sub-title="Outil Open Source basé sur un référentiel de règles d'éco-conception logicielle"
-  >
-    <div class="logo-container">
-      <WhiteLogo width="358" class="hero" />
-      <p class="old-name">ex. <strong>ecoCode</strong></p>
-    </div>
-  </AppHero>
-
-  <div class="block-button-section-1 green">
-    <AppButton
-      variant="secondary"
-      link="/contributeur"
-      text="Je souhaite contribuer au projet"
-    />
-    <AppButton
-      variant="secondary"
-      link="/entreprise"
-      text="Je souhaite une intégration sur-mesure"
-    />
-  </div>
+  <HomeHero />
 
   <AppEventBanner
     v-if="eventBanner.enable"
@@ -41,9 +19,21 @@ import AppSection from "@/components/shared/AppSection.vue";
     v-bind="eventBanner"
   />
 
+  <div class="creedengo-intro">
+    <p class="created">Nous avons créé</p>
+
+    <div class="logo-container">
+      <Creedengo width="358" class="hero" />
+      <p class="old-name">ex. <strong>ecoCode</strong></p>
+    </div>
+
+    <p class="description">
+      Un outil basé sur notre référentiel de règles d'éco-conception logicielle
+    </p>
+  </div>
+
   <AppSection
     title="Creedengo est une initiative qui prend racine dans la force du collectif"
-    sub-title="Le numérique nous passionne et nous considérons qu’il est impératif de le rendre plus durable."
   >
     <div class="after-block-section-2">
       <div class="container-after">
@@ -148,33 +138,53 @@ import AppSection from "@/components/shared/AppSection.vue";
   padding: 0 0 0 97px;
 }
 
-.logo-container {
+.creedengo-intro {
   display: flex;
   position: relative;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 2rem;
+  margin-top: 3rem;
+  text-align: center;
 
-  .old-name {
-    padding: 0.25rem 0.5rem;
-    border-radius: var(--radius);
-    font-size: 1.2rem;
-    color: var(--color-white);
-    background-color: rgba(0, 0, 0, 0.3);
+  .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+
+    .old-name {
+      padding: 0.25rem 0.5rem;
+      border-radius: var(--radius);
+      font-size: 1.2rem;
+      color: hsl(var(--text-neutral));
+      background-color: hsl(var(--neutral-200));
+    }
+  }
+
+  .created {
+    color: hsl(var(--text-neutral));
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .description {
+    color: hsl(var(--text-accent));
+    font-size: 1.5rem;
+    font-weight: bold;
   }
 }
 
 .event-banner-container {
   justify-self: center;
-  margin: 2rem auto;
+  margin: -3rem auto 4rem;
+
+  @media screen and (max-width: 768px) {
+    margin: -3rem 1rem 4rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
-  img.hero {
-    max-width: 60%;
-    height: auto;
-  }
-
   .container-after > p {
     text-align: center;
     padding: 50px 100px 0 100px;
