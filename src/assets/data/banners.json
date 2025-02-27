@@ -5,11 +5,11 @@
   },
   "event": {
     "enable": true,
-    "title": "Green Code Initiative I/O 2025",
-    "content": "L’événement annuel à ne pas manquer pour tout savoir sur le collectif : l’équipe, les réalisations, les projets, les nouveautés.. Rendez-vous le <strong>28/02/25 de 12h à 13h en ligne</strong> !",
+    "title": "Green Code Challenge 2025",
+    "content": "Le hackathon de la GCI revient cette année ! Mettez vos compétences au service d’un numérique plus responsable. Rendez-vous du <strong>20 au 21 mai 2025</strong> !",
     "action": {
-      "label": "Je m'inscris",
-      "link": "https://www.helloasso.com/associations/green-code-initiative/evenements/inscription-a-la-gci-i-o"
+      "label": "Je veux en savoir plus",
+      "link": "/challenge"
     }
   }
 }

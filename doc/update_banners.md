@@ -64,5 +64,6 @@ The `banners.json` file has the following structure:
 4. **Update the Action**:
    - Modify the `"label"` field with the desired button label.
    - Modify the `"link"` field with the desired URL.
+     You can start the URL with "/" to point out to a route of the GCI website.
 
 By following these instructions, you can easily update the banners displayed on the website.

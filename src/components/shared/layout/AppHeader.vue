@@ -5,6 +5,7 @@ import Logo from "@/assets/img/logo.svg";
 import GitHubIcon from "@/assets/icons/github.svg";
 import LinkedinIcon from "@/assets/icons/linkedin.svg";
 import SlackIcon from "@/assets/icons/slack.svg";
+import TrophyIcon from "@/assets/icons/trophy.svg";
 import NavItem from "@/components/shared/layout/header/HeaderNavItem.vue";
 
 const isMenuOpen = ref(false);
@@ -14,6 +15,12 @@ const closeMenu = () => (isMenuOpen.value = false);
 const navItems = [
   { name: "Contributeur", to: "/contributeur" },
   { name: "Entreprises", to: "/entreprise" },
+  {
+    name: "Challenge 2025",
+    to: "/challenge",
+    icon: TrophyIcon,
+    highlight: true,
+  },
   { name: "Notre collectif", to: "/collectif" },
 ];
 
@@ -55,6 +62,8 @@ const socialItems = [
           :key="item.name"
           :name="item.name"
           :to="item.to"
+          :icon="item.icon"
+          :class="{ highlighted: item.highlight }"
           @click="closeMenu"
         />
       </nav>

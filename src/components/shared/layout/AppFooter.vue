@@ -9,6 +9,7 @@
 footer {
   height: 60px;
   background-color: var(--color-surface);
+  box-shadow: var(--shadow-border-small);
   display: flex;
   flex-direction: row;
   align-items: center;

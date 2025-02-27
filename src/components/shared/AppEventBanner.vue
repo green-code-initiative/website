@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import MegaphoneIcon from "@/assets/icons/megaphone.svg";
+import { computed } from "vue";
 import AppButton from "./AppButton.vue";
 
-defineProps({
+const { action } = defineProps({
   title: { type: String, default: null },
   content: { type: String, default: null },
   action: { type: Object, default: null },
 });
+
+const isRoute = computed(() => action.link.startsWith("/"));
 </script>
 
 <template>
@@ -17,7 +20,7 @@ defineProps({
     </div>
     <p v-html="content"></p>
     <AppButton
-      type="external_link"
+      :type="isRoute ? undefined : 'external_link'"
       variant="black"
       :text="action.label"
       :link="action.link"

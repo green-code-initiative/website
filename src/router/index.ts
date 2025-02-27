@@ -1,10 +1,11 @@
-import { createRouter, createWebHashHistory } from "vue-router";
-import HomeView from "@/views/HomeView.vue";
+import ChallengeView from "@/views/ChallengeView.vue";
 import ContributeurView from "@/views/ContributeurView.vue";
 import EntrepriseView from "@/views/EntrepriseView.vue";
+import HomeView from "@/views/HomeView.vue";
 import TeamView from "@/views/TeamView.vue";
 import TeamMembers from "@/views/team/TeamMembers.vue";
 import TeamPartnerOrganizations from "@/views/team/TeamPartnerOrganizations.vue";
+import { createRouter, createWebHashHistory } from "vue-router";
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -36,6 +37,11 @@ const router = createRouter({
           component: TeamPartnerOrganizations,
         },
       ],
+    },
+    {
+      path: "/challenge",
+      name: "challenge",
+      component: ChallengeView,
     },
   ],
 });
