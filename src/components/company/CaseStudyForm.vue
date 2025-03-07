@@ -74,20 +74,18 @@
       />
     </div>
 
-    <altcha-widget
-      :challengeurl="captchaChallengeUrl"
-      name="captcha"
-      spamfilter
-      floating
-    />
+    <client-only>
+      <captcha />
+    </client-only>
   </form>
 </template>
 
 <script setup lang="ts">
 import AppButton from "@/components/shared/AppButton.vue";
+import Captcha from "@/components/shared/form/AppCaptcha.vue";
 import Fieldset from "@/components/shared/form/AppFieldset.vue";
 import Textfield from "@/components/shared/form/AppTextfield.vue";
-import { captchaChallengeUrl, post } from "@/util/fetch";
+import { post } from "@/util/fetch";
 import { extractFormData, validatePhone } from "@/util/form";
 import { ref } from "vue";
 

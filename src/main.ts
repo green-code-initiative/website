@@ -1,13 +1,12 @@
-import "altcha";
 import "@fontsource-variable/mulish/wght.css";
 import "./assets/main.css";
 
-import { createApp } from "vue";
+import { ViteSSG } from "vite-ssg";
 import App from "./App.vue";
-import router from "./router";
+import { navigationHookAfter, routes } from "./router";
 
-const app = createApp(App);
-
-app.use(router);
-
-app.mount("#app");
+export const createApp = ViteSSG(App, { routes }, ({ router }) => {
+  if (!import.meta.env.SSR) {
+    router.afterEach(navigationHookAfter);
+  }
+});

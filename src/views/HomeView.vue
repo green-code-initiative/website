@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useHead } from "@unhead/vue";
 import { event as eventBanner } from "@/assets/data/banners.json";
 import Creedengo from "@/assets/img/creedengo.svg";
 import PartnerOrganizationList from "@/components/collective/PartnerOrganizationList.vue";
@@ -8,6 +9,11 @@ import RuleProcess from "@/components/home/RuleProcess.vue";
 import AppButton from "@/components/shared/AppButton.vue";
 import AppEventBanner from "@/components/shared/AppEventBanner.vue";
 import AppSection from "@/components/shared/AppSection.vue";
+
+useHead({
+  title:
+    "Green Code Initiative : réduisons l'empreinte écologique de nos logiciels",
+});
 </script>
 
 <template>
