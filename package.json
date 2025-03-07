@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "npm run type-check && npm run build-only",
     "preview": "vite preview",
-    "build-only": "vite build",
+    "build-only": "vite-ssg build",
     "lint": "eslint \"src/**/*.{js,ts,vue}\"",
     "format": "prettier --write src/",
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false"
@@ -21,6 +21,7 @@
   "devDependencies": {
     "@tsconfig/node22": "^22.0.0",
     "@types/node": "^22.13.8",
+    "@unhead/vue": "^1.11.20",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/tsconfig": "^0.7.0",
     "eslint": "^9.21.0",
@@ -32,6 +33,7 @@
     "typescript": "~5.7.3",
     "typescript-eslint": "^8.25.0",
     "vite": "^6.2.0",
+    "vite-ssg": "^25.2.0",
     "vite-svg-loader": "^5.1.0",
     "vue-tsc": "^2.2.6"
   }

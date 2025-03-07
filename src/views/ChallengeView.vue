@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import { useHead } from "@unhead/vue";
 import ChallengeGoals from "@/components/challenge/ChallengeGoals.vue";
 import ChallengeHero from "@/components/challenge/ChallengeHero.vue";
 import ChallengeHistory from "@/components/challenge/ChallengeHistory.vue";
 import ChallengeSponsors from "@/components/challenge/ChallengeSponsors.vue";
+
+useHead({ title: "Challenge 2025 - Green Code Initiative" });
 </script>
 
 <template>
