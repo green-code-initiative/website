@@ -15,7 +15,7 @@ import ChallengeSponsors from "@/components/challenge/ChallengeSponsors.vue";
           <h2>Une ambition</h2>
           <p>
             Rejoignez-nous pour un <b>hackathon unique</b> où des passionnés de
-            tous horizons se réuniront pour faire avancer le numérique
+            tout horizon se réuniront pour faire avancer le numérique
             responsable ! Nous avons tous un point commun : la volonté de
             contribuer à un
             <b>avenir numérique plus respectueux de l’environnement</b>.

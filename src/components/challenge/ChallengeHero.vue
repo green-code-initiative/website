@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import CalendarIcon from "@/assets/icons/calendar.svg";
+import ExternalLinkIcon from "@/assets/icons/external_link.svg";
 import HeartHandshakeIcon from "@/assets/icons/heart_handshake.svg";
-import HourglassIcon from "@/assets/icons/hourglass.svg";
 import PinIcon from "@/assets/icons/pin.svg";
 </script>
 
@@ -12,10 +12,12 @@ import PinIcon from "@/assets/icons/pin.svg";
         <h1>
           <span class="green">Green</span> Code Challenge <small>2025</small>
         </h1>
-        <div class="registration">
-          <HourglassIcon width="18" height="18" />
-          <span>RDV le <b>19/03</b> pour s'inscrire</span>
-        </div>
+        <a
+          href="https://www.helloasso.com/associations/green-code-initiative/evenements/inscription-au-green-code-challenge-4e-edition"
+          class="registration"
+          target="_blank"
+          >Je m'inscris <ExternalLinkIcon width="18" height="18"
+        /></a>
       </div>
       <div class="meta-info">
         <a
@@ -88,10 +90,14 @@ import PinIcon from "@/assets/icons/pin.svg";
         gap: 8px;
         white-space: nowrap;
 
-        background: #e5e5e5;
+        background: hsl(var(--primary-300));
+        color: hsl(var(--text-neutral));
+        font-weight: bold;
         border-radius: 100px;
 
-        cursor: not-allowed;
+        &:hover {
+          background: hsl(var(--primary-400));
+        }
       }
 
       @media screen and (max-width: 960px) {
