@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { useHead } from "@unhead/vue";
 import CaseStudyForm from "@/components/company/CaseStudyForm.vue";
 import RuleCreationProcess from "@/components/company/RuleCreationProcess.vue";
-import AppButton from "@/components/shared/AppButton.vue";
 import AppHero from "@/components/global/Hero.vue";
+import AppButton from "@/components/shared/AppButton.vue";
 import AppSection from "@/components/shared/AppSection.vue";
+import { useHead } from "@unhead/vue";
 
 useHead({ title: "Entreprises - Green Code Initiative" });
 </script>

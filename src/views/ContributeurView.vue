@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { useHead } from "@unhead/vue";
 import ContributorProfiles from "@/components/contributor/ContributorProfiles.vue";
 import JoinUs from "@/components/contributor/JoinUs.vue";
 import Technologies from "@/components/contributor/Technologies.vue";
-import AppButton from "@/components/shared/AppButton.vue";
-import AppHero from "@/components/global/Hero.vue";
 import GraphStep from "@/components/global/GraphStep.vue";
+import AppHero from "@/components/global/Hero.vue";
+import AppButton from "@/components/shared/AppButton.vue";
 import AppSection from "@/components/shared/AppSection.vue";
+import { useHead } from "@unhead/vue";
 
 useHead({ title: "Contributeur - Green Code Initiative" });
 </script>
