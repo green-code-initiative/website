@@ -3,6 +3,18 @@ import ChallengeGoals from "@/components/challenge/ChallengeGoals.vue";
 import ChallengeHero from "@/components/challenge/ChallengeHero.vue";
 import ChallengeHistory from "@/components/challenge/ChallengeHistory.vue";
 import ChallengeSponsors from "@/components/challenge/ChallengeSponsors.vue";
+import { useHead } from "@unhead/vue";
+
+useHead({
+  title: "Challenge 2025 - Green Code Initiative",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Notre hackathon avec le Crédit Agricole revient du 20 au 21 mai 2025 ! Mettez vos compétences au service d'un numérique plus responsable.",
+    },
+  ],
+});
 </script>
 
 <template>

@@ -8,6 +8,12 @@ import RuleProcess from "@/components/home/RuleProcess.vue";
 import AppButton from "@/components/shared/AppButton.vue";
 import AppEventBanner from "@/components/shared/AppEventBanner.vue";
 import AppSection from "@/components/shared/AppSection.vue";
+import { useHead } from "@unhead/vue";
+
+useHead({
+  title:
+    "Green Code Initiative : réduisons l'empreinte écologique de nos logiciels",
+});
 </script>
 
 <template>
