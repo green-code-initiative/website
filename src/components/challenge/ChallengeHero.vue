@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import CalendarIcon from "@/assets/icons/calendar.svg";
-import ExternalLinkIcon from "@/assets/icons/external_link.svg";
+import TicketCheckIcon from "@/assets/icons/ticket_check.svg";
 import HeartHandshakeIcon from "@/assets/icons/heart_handshake.svg";
 import PinIcon from "@/assets/icons/pin.svg";
 </script>
@@ -12,12 +12,11 @@ import PinIcon from "@/assets/icons/pin.svg";
         <h1>
           <span class="green">Green</span> Code Challenge <small>2025</small>
         </h1>
-        <a
-          href="https://www.helloasso.com/associations/green-code-initiative/evenements/inscription-au-green-code-challenge-4e-edition"
-          class="registration"
-          target="_blank"
-          >Je m'inscris <ExternalLinkIcon width="18" height="18"
-        /></a>
+        <div class="registration">
+          <TicketCheckIcon width="24" height="24" />
+          Événement complet
+          <div class="thank">Merci !</div>
+        </div>
       </div>
       <div class="meta-info">
         <a
@@ -84,19 +83,31 @@ import PinIcon from "@/assets/icons/pin.svg";
       }
 
       .registration {
+        position: relative;
         display: flex;
         align-items: center;
         padding: 8px 16px;
         gap: 8px;
         white-space: nowrap;
 
-        background: hsl(var(--primary-300));
-        color: hsl(var(--text-neutral));
+        background: black;
+        color: white;
         font-weight: bold;
         border-radius: 100px;
 
-        &:hover {
-          background: hsl(var(--primary-400));
+        .thank {
+          position: absolute;
+          padding: 4px 8px;
+          right: -10px;
+          bottom: -20px;
+
+          background: hsl(var(--primary-300));
+          color: hsl(var(--text-neutral));
+          border-radius: 100px;
+
+          font-weight: 600;
+
+          transform: rotate(-5deg);
         }
       }
 
