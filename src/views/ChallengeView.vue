@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ChallengeContact from "@/components/challenge/ChallengeContact.vue";
 import ChallengeGoals from "@/components/challenge/ChallengeGoals.vue";
 import ChallengeHero from "@/components/challenge/ChallengeHero.vue";
 import ChallengeHistory from "@/components/challenge/ChallengeHistory.vue";
@@ -44,14 +45,8 @@ useHead({
     <section>
       <ChallengeHistory />
     </section>
-    <section>
-      <div class="contact">
-        <h2>Contact</h2>
-        <p>
-          Pour recevoir des informations sur les challenges passées et à
-          venir,<br />vous pouvez contacter le Crédit Agricole.
-        </p>
-      </div>
+    <section class="neutral">
+      <ChallengeContact />
     </section>
   </div>
 </template>
@@ -115,18 +110,6 @@ section {
     .content {
       text-align: center;
     }
-  }
-}
-
-.contact {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  gap: 1rem;
-
-  h2 {
-    font-size: 2rem;
-    font-weight: 800;
   }
 }
 </style>
