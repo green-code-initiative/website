@@ -1,7 +1,8 @@
+import vue from "@vitejs/plugin-vue";
 import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
+import generateSitemap from "vite-ssg-sitemap";
 import svgLoader from "vite-svg-loader";
-import vue from "@vitejs/plugin-vue";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -25,6 +26,11 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
+    },
+  },
+  ssgOptions: {
+    onFinished() {
+      generateSitemap({ hostname: "https://green-code-initiative.org" });
     },
   },
 });
