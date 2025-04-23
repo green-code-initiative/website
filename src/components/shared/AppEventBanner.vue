@@ -64,7 +64,6 @@ const isRoute = computed(() => action.link.startsWith("/"));
   }
 
   * {
-    color: inherit;
     text-align: left;
   }
 

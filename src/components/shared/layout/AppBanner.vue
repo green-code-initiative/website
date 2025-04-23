@@ -22,12 +22,7 @@ defineProps({
   padding: 0.5rem 1rem;
   width: 100%;
   background-color: var(--color-additionnal-1);
-  color: var(--color-on-surface);
   font-size: 1.05rem;
-
-  p {
-    color: inherit;
-  }
 
   svg {
     flex-shrink: 0;

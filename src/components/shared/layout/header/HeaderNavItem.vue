@@ -24,7 +24,6 @@ a {
   font-weight: bold;
   align-items: center;
 
-  color: inherit;
   padding: 0.4rem 0.75rem;
   border-radius: var(--radius);
   transition: background-color 0.08s ease-in-out;

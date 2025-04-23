@@ -40,6 +40,5 @@ defineProps<{
 .name {
   font-size: 0.875rem;
   text-align: center;
-  color: var(--color-on-surface);
 }
 </style>

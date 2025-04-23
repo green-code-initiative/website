@@ -22,7 +22,6 @@ nav {
 
   > a {
     text-align: center;
-    color: inherit;
     font-size: 1.5rem;
     font-weight: 900;
     padding: 0.5rem 1rem;

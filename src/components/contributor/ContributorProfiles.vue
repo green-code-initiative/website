@@ -30,7 +30,6 @@
   .heading {
     font-size: 1.3rem;
     font-weight: 900;
-    color: var(--color-on-surface);
   }
 
   ul {

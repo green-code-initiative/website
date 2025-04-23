@@ -93,7 +93,6 @@ header {
   align-items: center;
   padding: 0 20px;
   background-color: var(--color-surface);
-  color: var(--color-on-surface);
   box-shadow: var(--shadow-border-small);
   z-index: 1;
 
@@ -112,11 +111,6 @@ header {
     display: flex;
     flex-direction: column;
     text-align: center;
-  }
-
-  .association {
-    font-size: 0.75rem;
-    color: var(--color-on-surface-light);
   }
 
   .go-to-home,
