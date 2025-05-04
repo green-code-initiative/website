@@ -1,0 +1,225 @@
+{
+  "eventTypes": [
+    {
+      "id": "teamwork",
+      "name": "Défi en équipe"
+    },
+    {
+      "id": "conference",
+      "name": "Conférence"
+    },
+    {
+      "id": "animation",
+      "name": "Atelier"
+    },
+    {
+      "id": "break",
+      "name": "Pause"
+    }
+  ],
+  "dates": [
+    {
+      "id": "2025-05-20",
+      "title": "Mardi 20 mai",
+      "events": [
+        {
+          "type": "break",
+          "startsAt": "08h30",
+          "title": "Accueil et petit-déjeuner",
+          "duration": "1 heure"
+        },
+        {
+          "type": "conference",
+          "startsAt": "09h30",
+          "title": "Introduction",
+          "duration": "15 minutes",
+          "speakers": [
+            {
+              "avatar": "pierre-olivier_pagnon.webp",
+              "name": "Pierre-Olivier Pagnon",
+              "title": "Directeur Général Adjoint, CA-TS"
+            }
+          ]
+        },
+        {
+          "type": "conference",
+          "startsAt": "09h45",
+          "title": "Présentation des 2 jours",
+          "duration": "45 minutes",
+          "speakers": [
+            {
+              "avatar": "gci.webp",
+              "name": "Green Code Initiative"
+            }
+          ]
+        },
+        {
+          "type": "teamwork",
+          "startsAt": "10h30",
+          "title": "Défi en équipe",
+          "duration": "2 heures",
+          "children": [
+            {
+              "type": "animation",
+              "startsAt": "10h50",
+              "title": "Atelier massage",
+              "duration": "jusqu'à 17h40",
+              "speakers": [
+                {
+                  "avatar": "alter_massage.webp",
+                  "name": "AlterMassage"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "break",
+          "startsAt": "12h30",
+          "title": "Déjeuner",
+          "duration": "1 heure"
+        },
+        {
+          "type": "teamwork",
+          "startsAt": "13h30",
+          "title": "Défi en équipe",
+          "duration": "5 heures 30 minutes",
+          "children": [
+            {
+              "type": "conference",
+              "startsAt": "13h30",
+              "title": "La mesure sur mesure",
+              "duration": "30 minutes",
+              "speakers": [
+                {
+                  "avatar": "guillaume_raffin.webp",
+                  "name": "Guillaume Raffin",
+                  "title": "Alumet"
+                }
+              ]
+            },
+            {
+              "type": "conference",
+              "startsAt": "18h30",
+              "title": "Conférence de la DINUM",
+              "duration": "30 minutes",
+              "speakers": [
+                {
+                  "avatar": "melanie_raphael.webp",
+                  "name": "Mélanie Raphaël",
+                  "title": "Experte Numérique Ecoresponsable"
+                },
+                {
+                  "avatar": "loic_grondin.webp",
+                  "name": "Loïc Grondin",
+                  "title": "Expert en logiciels libres"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "break",
+          "startsAt": "19h00",
+          "title": "Cocktail dinatoire"
+        }
+      ]
+    },
+    {
+      "id": "2025-05-21",
+      "title": "Mercredi 21 mai",
+      "events": [
+        {
+          "type": "break",
+          "startsAt": "09h00",
+          "title": "Accueil et petit-déjeuner",
+          "duration": "30 minutes"
+        },
+        {
+          "type": "teamwork",
+          "startsAt": "09h30",
+          "title": "Défi en équipe",
+          "duration": "2 heures 30 minutes",
+          "children": [
+            {
+              "type": "animation",
+              "startsAt": "09h30",
+              "title": "Atelier massage",
+              "duration": "jusqu'à 16h00",
+              "speakers": [
+                {
+                  "avatar": "alter_massage.webp",
+                  "name": "AlterMassage"
+                }
+              ]
+            },
+            {
+              "type": "conference",
+              "startsAt": "11h00",
+              "title": "Accessibilité numérique",
+              "duration": "30 minutes",
+              "speakers": [
+                {
+                  "avatar": "jeremy_bardeau.webp",
+                  "name": "Jérémy Bardeau",
+                  "title": "Ethic First"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "break",
+          "startsAt": "12h00",
+          "title": "Déjeuner",
+          "duration": "1 heure"
+        },
+        {
+          "type": "teamwork",
+          "startsAt": "13h00",
+          "title": "Défi en équipe et préparation pitch",
+          "duration": "3 heures",
+          "children": [
+            {
+              "type": "animation",
+              "startsAt": "13h00",
+              "title": "Jeux vidéo IA accessible",
+              "duration": "3 heures",
+              "speakers": [
+                {
+                  "avatar": "ludaccess.webp",
+                  "name": "LudAccess"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "teamwork",
+          "startsAt": "16h00",
+          "title": "Pitch des équipes",
+          "duration": "1 heure 15 minutes"
+        },
+        {
+          "type": "conference",
+          "startsAt": "17h15",
+          "title": "La messe",
+          "duration": "30 minutes",
+          "speakers": [
+            {
+              "avatar": "thomas_thibault.webp",
+              "name": "Thomas Thibault",
+              "title": "Designers Éthiques"
+            }
+          ]
+        },
+        {
+          "type": "teamwork",
+          "startsAt": "17h45",
+          "title": "Remise des prix",
+          "duration": "15 minutes"
+        }
+      ]
+    }
+  ]
+}
