@@ -17,7 +17,7 @@ import AppButton from "@/components/shared/AppButton.vue";
     <p class="created">Nous avons créé</p>
 
     <div class="logo-container">
-      <Creedengo width="358" class="hero" />
+      <Creedengo width="358" class="hero" role="img" aria-label="Creedengo" />
       <p class="old-name">ex. <strong>ecoCode</strong></p>
     </div>
 
@@ -281,6 +281,7 @@ import AppButton from "@/components/shared/AppButton.vue";
       .technologies {
         display: flex;
         flex-direction: column;
+        align-self: center;
 
         .line {
           display: flex;
