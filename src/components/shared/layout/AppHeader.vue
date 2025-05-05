@@ -46,7 +46,7 @@ const socialItems = [
 <template>
   <header>
     <div class="left">
-      <router-link to="/" class="go-to-home">
+      <router-link to="/" class="go-to-home" aria-label="Retour à l'accueil">
         <div class="logo-container">
           <Logo
             width="150"

@@ -41,7 +41,7 @@ textarea {
   text-align: center;
   margin: 0 1rem;
   max-width: 1050px;
-  color: var(--color-secondary);
+  color: hsl(var(--primary-700));
 }
 
 @media screen and (max-width: 768px) {
