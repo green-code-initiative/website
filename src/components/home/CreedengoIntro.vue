@@ -230,6 +230,7 @@ import AppButton from "@/components/shared/AppButton.vue";
       }
 
       .network {
+        position: relative;
         align-self: center;
         width: 160px;
         height: 160px;

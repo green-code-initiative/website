@@ -127,19 +127,24 @@ const events = computed(
   .event-badge {
     width: 16px;
     height: 16px;
-    border-radius: 50%;
 
     &.teamwork {
       background-color: hsl(var(--primary-500));
+      border-radius: 50%;
     }
     &.conference {
       background-color: hsl(var(--secondary-500));
     }
     &.animation {
-      background-color: #e94242; // custom color for now
+      width: 0;
+      height: 0;
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+      border-bottom: 16px solid #e94242; // custom color for now
     }
     &.break {
       border: 2px solid hsl(var(--neutral-400));
+      border-radius: 50%;
     }
   }
 }
