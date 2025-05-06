@@ -1,0 +1,62 @@
+[
+  {
+    "img": "wavestone.webp",
+    "name": "Wavestone",
+    "width": 118,
+    "height": 82
+  },
+  {
+    "img": "banque-de-france.svg",
+    "name": "Banque de France",
+    "width": 160,
+    "height": 75.88
+  },
+  {
+    "img": "thales.svg",
+    "name": "Thales",
+    "width": 160,
+    "height": 32
+  },
+  {
+    "img": "sonar.svg",
+    "name": "Sonar",
+    "width": 160,
+    "height": 82
+  },
+  {
+    "img": "tosit.webp",
+    "name": "TOSIT",
+    "width": 160,
+    "height": 63
+  },
+  {
+    "img": "aubay.svg",
+    "name": "Aubay",
+    "width": 90,
+    "height": 90
+  },
+  {
+    "img": "cgi.webp",
+    "name": "CGI",
+    "width": 80,
+    "height": 37
+  },
+  {
+    "img": "exalt.webp",
+    "name": "eXalt Company",
+    "width": 160,
+    "height": 80
+  },
+  {
+    "img": "enedis.svg",
+    "name": "Enedis",
+    "width": 160,
+    "height": 32
+  },
+  {
+    "img": "talan.webp",
+    "name": "Talan",
+    "width": 160,
+    "height": 52
+  }
+]

@@ -2,15 +2,21 @@
 import organizations from "@/assets/data/partner-organizations.json";
 import PartnerOrganization from "@/components/collective/PartnerOrganization.vue";
 
-const props = defineProps<{ featured: boolean }>();
-const filteredOrganizations = props.featured
-  ? organizations
-      .filter((organization) => organization.featured)
-      .sort(
-        (organization1, organization2) =>
-          organization1.featured! - organization2.featured!,
-      )
-  : organizations;
+const props = defineProps<{
+  customList?: typeof organizations;
+  featured?: boolean;
+}>();
+
+const filteredOrganizations =
+  props.customList ??
+  (props.featured
+    ? organizations
+        .filter((organization) => organization.featured)
+        .sort(
+          (organization1, organization2) =>
+            organization1.featured! - organization2.featured!
+        )
+    : organizations);
 </script>
 
 <template>

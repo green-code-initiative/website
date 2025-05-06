@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ChallengeCalendar from "@/components/challenge/ChallengeCalendar.vue";
 import ChallengeContact from "@/components/challenge/ChallengeContact.vue";
 import ChallengeGoals from "@/components/challenge/ChallengeGoals.vue";
 import ChallengeHero from "@/components/challenge/ChallengeHero.vue";
@@ -39,6 +40,9 @@ useHead({
     <section>
       <ChallengeGoals />
     </section>
+    <section id="planning">
+      <ChallengeCalendar />
+    </section>
     <section class="neutral">
       <ChallengeSponsors />
     </section>
@@ -55,8 +59,8 @@ useHead({
 section {
   display: flex;
   flex-direction: column;
-  gap: 64px;
-  padding: 4rem 1rem;
+  gap: 2rem;
+  padding: 2rem 1rem;
 
   & > div {
     width: 1280px;
@@ -67,6 +71,11 @@ section {
   &.neutral {
     background-color: hsl(var(--neutral-50));
     box-shadow: var(--shadow-border-small);
+  }
+
+  @media (min-width: 768px) {
+    gap: 4rem;
+    padding: 4rem 1rem;
   }
 }
 
