@@ -44,6 +44,11 @@ export const routes: RouterOptions["routes"] = [
     name: "challenge",
     component: () => import("./views/ChallengeView.vue"),
   },
+  {
+    path: "/rules",
+    name: "rules",
+    component: () => import("./views/RulesViews.vue"),
+  },
   // redirect all other paths to homepage
   { path: "/:pathMatch(.*)*", name: "not-found", redirect: "/" },
 ];
