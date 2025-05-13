@@ -30,7 +30,10 @@ export default defineConfig({
   },
   ssgOptions: {
     onFinished() {
-      generateSitemap({ hostname: "https://green-code-initiative.org" });
+      generateSitemap({
+        hostname: "https://green-code-initiative.org",
+        exclude: ["/rules"],
+      });
     },
   },
 });

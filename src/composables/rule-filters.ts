@@ -30,7 +30,7 @@ export const useRuleFilters = ({ items, meta }: RuleList) => {
         (!isFilterEnabled(technologies) ||
           item.technologies.some((tech) => technologies[tech])) &&
         (!isFilterEnabled(severities) || severities[item.severity]) &&
-        (!isFilterEnabled(statuses) || statuses[item.status]),
+        (!isFilterEnabled(statuses) || statuses[item.status])
     );
   });
 

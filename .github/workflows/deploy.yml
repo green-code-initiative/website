@@ -6,7 +6,7 @@ on:
 
 env:
   VITE_API_URL: ${{ vars.API_URL }}
-  VITE_RULES_URL: https://utarwyn.github.io/ecoCode/rules.json # only for testing purposes
+  VITE_RULES_URL: ${{ vars.RULES_URL }}
 
 jobs:
   build:

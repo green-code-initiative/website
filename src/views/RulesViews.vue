@@ -1,14 +1,13 @@
 <script lang="ts" setup>
-import RuleCard from "@/components/rules/RuleCard.vue";
-import RulesFilters from "@/components/rules/RulesFilters.vue";
+import RulesList from "@/components/rules/RulesList.vue";
 import AppAlert from "@/components/shared/AppAlert.vue";
-import { useRuleFilters } from "@/composables/rule-filters";
+import { useFetch } from "@/composables/fetch";
+import { useHead } from "@unhead/vue";
 
-const { items, meta } = (await fetch(import.meta.env.VITE_RULES_URL).then(
-  (res) => res.json()
-)) as RuleList;
+const { data } = useFetch<RuleList>(import.meta.env.VITE_RULES_URL);
 
-const { filters, filteredRules } = useRuleFilters({ items, meta });
+// do not expose this page during alpha testing
+useHead({ meta: [{ name: "robots", content: "noindex" }] });
 </script>
 
 <template>
@@ -19,24 +18,11 @@ const { filters, filteredRules } = useRuleFilters({ items, meta });
   </div>
   <div class="container">
     <AppAlert variant="warning">
-      This is an <strong>alpha version</strong> of the rules repository. Some
+      This is an <strong>alpha version</strong> of the rule repository. Some
       features may not work as expected.
     </AppAlert>
-    <div class="content">
-      <RulesFilters :meta="meta" class="filters" v-model="filters" />
-      <div class="rules">
-        <p class="counter">
-          <span v-if="filteredRules.length !== items.length">
-            Showing {{ filteredRules.length }} of {{ items.length }} rules
-          </span>
-          <span v-else>Showing {{ items.length }} rules</span>
-        </p>
-
-        <template v-for="rule in filteredRules" :key="rule.id">
-          <RuleCard :rule="rule" />
-        </template>
-      </div>
-    </div>
+    <RulesList v-if="data" :list="data" />
+    <p class="loading" v-else>Loading...</p>
   </div>
 </template>
 
@@ -62,40 +48,6 @@ const { filters, filteredRules } = useRuleFilters({ items, meta });
   max-width: 1080px;
   gap: 1.5rem;
 
-  .content {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-    .filters {
-      display: none;
-    }
-
-    .rules {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-
-      .counter {
-        color: var(--color-on-surface-bright);
-      }
-    }
-
-    @media (min-width: 920px) {
-      flex-direction: row;
-      align-items: start;
-
-      .filters {
-        display: flex;
-        flex: 1 0 22%;
-      }
-
-      .rules {
-        flex: 1 1 78%;
-      }
-    }
-  }
-
   @media (min-width: 1112px) {
     margin: 0 auto;
   }
@@ -103,5 +55,9 @@ const { filters, filteredRules } = useRuleFilters({ items, meta });
 
 .alert {
   margin: 2rem 0 1rem;
+}
+
+.loading {
+  height: 100vh;
 }
 </style>
