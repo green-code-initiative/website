@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import CalendarIcon from "@/assets/icons/calendar.svg";
-import TicketCheckIcon from "@/assets/icons/ticket_check.svg";
+import BackpackIcon from "@/assets/icons/backpack.svg";
 import HeartHandshakeIcon from "@/assets/icons/heart_handshake.svg";
 import PinIcon from "@/assets/icons/pin.svg";
 </script>
@@ -12,11 +12,12 @@ import PinIcon from "@/assets/icons/pin.svg";
         <h1>
           <span class="green">Green</span> Code Challenge <small>2025</small>
         </h1>
-        <div class="registration">
-          <TicketCheckIcon width="24" height="24" />
-          Événement complet
-          <div class="thank">Merci !</div>
-        </div>
+        <a
+          href="https://github.com/green-code-initiative/creedengo-challenge"
+          class="action"
+          target="_blank"
+          ><BackpackIcon width="24" height="24" /> Accéder au Starter pack</a
+        >
       </div>
       <div class="meta-info">
         <a
@@ -82,7 +83,7 @@ import PinIcon from "@/assets/icons/pin.svg";
         }
       }
 
-      .registration {
+      .action {
         position: relative;
         display: flex;
         align-items: center;
@@ -95,7 +96,7 @@ import PinIcon from "@/assets/icons/pin.svg";
         font-weight: bold;
         border-radius: 100px;
 
-        .thank {
+        .badge {
           position: absolute;
           padding: 4px 8px;
           right: -10px;
@@ -108,6 +109,15 @@ import PinIcon from "@/assets/icons/pin.svg";
           font-weight: 600;
 
           transform: rotate(-5deg);
+        }
+      }
+
+      a.action {
+        background: hsl(var(--primary-300));
+        color: hsl(var(--text-neutral));
+
+        &:hover {
+          background: hsl(var(--primary-400));
         }
       }
 
