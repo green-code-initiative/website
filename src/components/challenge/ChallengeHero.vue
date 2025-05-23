@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import CalendarIcon from "@/assets/icons/calendar.svg";
-import BackpackIcon from "@/assets/icons/backpack.svg";
+import CameraIcon from "@/assets/icons/camera.svg";
 import HeartHandshakeIcon from "@/assets/icons/heart_handshake.svg";
 import PinIcon from "@/assets/icons/pin.svg";
 </script>
@@ -13,10 +13,10 @@ import PinIcon from "@/assets/icons/pin.svg";
           <span class="green">Green</span> Code Challenge <small>2025</small>
         </h1>
         <a
-          href="https://github.com/green-code-initiative/creedengo-challenge"
+          href="https://photos.app.goo.gl/uMnY9iRW2HJ3GZN38"
           class="action"
           target="_blank"
-          ><BackpackIcon width="24" height="24" /> Accéder au Starter pack</a
+          ><CameraIcon width="24" height="24" /> Accéder à la galerie photo</a
         >
       </div>
       <div class="meta-info">

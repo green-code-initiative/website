@@ -4,7 +4,7 @@
     "content": "ecoCode change de nom et devient <strong>Creendengo</strong> ! L'outil ne change pas, seul le nom évolue."
   },
   "event": {
-    "enable": true,
+    "enable": false,
     "title": "Green Code Challenge 2025",
     "content": "Notre hackathon avec le Crédit Agricole revient cette année ! Mettez vos compétences au service d’un numérique plus responsable. Rendez-vous du <strong>20 au 21 mai 2025</strong> !",
     "action": {
