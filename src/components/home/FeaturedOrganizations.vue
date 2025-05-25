@@ -4,8 +4,8 @@ import AppButton from "@/components/shared/AppButton.vue";
 </script>
 
 <template>
-  <div class="featured-organizations">
-    <h2>
+  <section aria-labelledby="featured-organizations-heading">
+    <h2 id="featured-organizations-heading">
       De <strong>nombreux acteurs</strong> s'impliquent dans le collectif, dont
       :
     </h2>
@@ -17,11 +17,11 @@ import AppButton from "@/components/shared/AppButton.vue";
       link="/collectif/organisations"
       text="Je découvre tous les partenaires"
     />
-  </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
-.featured-organizations {
+section {
   display: flex;
   position: relative;
   flex-direction: column;
