@@ -80,7 +80,7 @@ import AppButton from "@/components/shared/AppButton.vue";
   }
 
   @media screen and (max-width: 768px) {
-    padding: 4rem 1rem 6rem;
+    padding: 3rem 1rem;
 
     h1 {
       font-size: 2rem;
@@ -88,6 +88,10 @@ import AppButton from "@/components/shared/AppButton.vue";
 
     h2 {
       font-size: 1.25rem;
+    }
+
+    .buttons {
+      flex-direction: column;
     }
   }
 }
