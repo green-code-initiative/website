@@ -54,18 +54,8 @@
     />
 
     <div class="form-submit">
-      <div class="error-message" v-if="error" aria-live="assertive">
-        {{ error }}
-      </div>
-      <div
-        style="margin-top: 15px"
-        class="success-message"
-        v-if="success"
-        aria-live="assertive"
-      >
-        {{ success }}
-      </div>
-
+      <Alert v-if="error" variant="error">{{ error }}</Alert>
+      <Alert v-if="success" variant="success">{{ success }}</Alert>
       <AppButton
         type="submit"
         variant="primary"
@@ -81,6 +71,7 @@
 </template>
 
 <script setup lang="ts">
+import Alert from "@/components/shared/AppAlert.vue";
 import AppButton from "@/components/shared/AppButton.vue";
 import Captcha from "@/components/shared/form/AppCaptcha.vue";
 import Fieldset from "@/components/shared/form/AppFieldset.vue";

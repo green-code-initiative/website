@@ -52,19 +52,3 @@ textarea {
     font-size: 1.5rem;
   }
 }
-
-.error-message {
-  color: red;
-  font-size: 18px;
-  font-weight: 500;
-  outline: none;
-  transition: opacity 2s ease;
-}
-
-.success-message {
-  color: var(--color-secondary);
-  font-size: 18px;
-  font-weight: 500;
-  outline: none;
-  transition: opacity 2s ease;
-}
