@@ -39,7 +39,7 @@ const filteredOrganizations =
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 2rem 1rem 0;
+  padding: 0 1rem;
   gap: 2.5rem;
   max-width: 1140px;
   width: 100%;

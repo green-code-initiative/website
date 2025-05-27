@@ -1,5 +1,5 @@
 <template>
-  <AppSection title="On discute ?" id="contact" background-color="grey">
+  <AppSection title="On discute ?" id="contact">
     <form @submit.prevent="submitForm" aria-label="Formulaire de contact">
       <div class="form-field" role="radiogroup" aria-labelledby="i-am">
         <span class="text-label" id="i-am">Je suis :</span>
