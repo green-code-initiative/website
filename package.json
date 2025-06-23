@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.2",
-    "@types/node": "^22.15.30",
+    "@types/node": "^24.0.3",
     "@unhead/vue": "^2.0.10",
     "@vitejs/plugin-vue": "^5.2.4",
     "@vue/tsconfig": "^0.7.0",
@@ -28,7 +28,7 @@
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-vue": "^10.2.0",
     "eslint-plugin-vuejs-accessibility": "^2.4.1",
-    "prettier": "^3.5.3",
+    "prettier": "^3.6.0",
     "sass": "~1.89.1",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.33.1",
