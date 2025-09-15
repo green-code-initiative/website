@@ -13,8 +13,8 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false"
   },
   "dependencies": {
-    "@fontsource-variable/mulish": "^5.2.6",
-    "altcha": "^2.2.2",
+    "@fontsource-variable/mulish": "^5.2.7",
+    "altcha": "^2.2.3",
     "vue": "^3.5.21",
     "vue-router": "^4.5.1"
   },
@@ -31,12 +31,12 @@
     "prettier": "^3.6.2",
     "sass": "~1.92.1",
     "typescript": "~5.9.2",
-    "typescript-eslint": "^8.42.0",
+    "typescript-eslint": "^8.43.0",
     "vite": "^7.1.5",
     "vite-ssg": "^28.1.0",
     "vite-ssg-sitemap": "^0.10.0",
     "vite-svg-loader": "^5.1.0",
-    "vue-tsc": "^3.0.6"
+    "vue-tsc": "^3.0.7"
   },
   "overrides": {
     "vue-eslint-parser": "^10.0.0"
