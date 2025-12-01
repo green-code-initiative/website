@@ -57,5 +57,5 @@ jobs:
           compress: true
           localDir: ${{ github.workspace }}
           remoteDir: ${{ secrets.UPLOAD_SFTP_DIRECTORY }}
-          exclude: "/api/,/.htaccess"
+          exclude: "***/api,***/.htaccess"
           removeExtraFilesOnServer: true
