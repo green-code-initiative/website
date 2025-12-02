@@ -60,5 +60,14 @@
       "linkedin": "maximemalgorn",
       "github": "utarwyn"
     }
+  },
+  {
+    "name": "Alexandre Morgaut",
+    "company": "Capgemini",
+    "profile": "alexandre_morgaut.webp",
+    "links": {
+      "linkedin": "alexandre-morgaut",
+      "github": "AMorgaut"
+    }
   }
 ]

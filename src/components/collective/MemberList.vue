@@ -25,7 +25,7 @@ defineProps<{ members: Member[] }>();
   width: 100%;
 
   & > div {
-    width: 165px;
+    width: 170px;
   }
 
   @media (min-width: 796px) {
