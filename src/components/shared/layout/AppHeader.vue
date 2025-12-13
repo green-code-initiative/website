@@ -1,26 +1,30 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import BurgerMenuButton from "@/components/shared/layout/header/BurgerMenuButton.vue";
-import Logo from "@/assets/img/logo.svg";
 import GitHubIcon from "@/assets/icons/github.svg";
 import LinkedinIcon from "@/assets/icons/linkedin.svg";
 import SlackIcon from "@/assets/icons/slack.svg";
-import TrophyIcon from "@/assets/icons/trophy.svg";
+import Logo from "@/assets/img/logo.svg";
+import BurgerMenuButton from "@/components/shared/layout/header/BurgerMenuButton.vue";
 import NavItem from "@/components/shared/layout/header/HeaderNavItem.vue";
+import { ref } from "vue";
 
 const isMenuOpen = ref(false);
 
 const closeMenu = () => (isMenuOpen.value = false);
 
 const navItems = [
-  { name: "Contributeur", to: "/contributeur" },
-  { name: "Entreprises", to: "/entreprise" },
   {
-    name: "Challenge 2025",
-    to: "/challenge",
-    icon: TrophyIcon,
-    highlight: true,
+    name: "Contributeur",
+    to: "/contributeur",
+    icon: undefined,
+    highlight: false,
   },
+  { name: "Entreprises", to: "/entreprise" },
+  // {
+  //   name: "Challenge 2025",
+  //   to: "/challenge",
+  //   icon: TrophyIcon,
+  //   highlight: true,
+  // },
   { name: "Notre collectif", to: "/collectif" },
 ];
 
