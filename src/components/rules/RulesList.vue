@@ -4,9 +4,14 @@ import RulesFilters from "@/components/rules/RulesFilters.vue";
 import { useRuleFilters } from "@/composables/rule-filters";
 
 const props = defineProps<{ list: RuleList }>();
-const { items, meta } = props.list;
+const { items, meta, build } = props.list;
 
 const { filters, filteredRules } = useRuleFilters(props.list);
+
+const buildDatetime = new Intl.DateTimeFormat("default", {
+  dateStyle: "short",
+  timeStyle: "short",
+}).format(new Date(build.datetime));
 </script>
 
 <template>
@@ -23,6 +28,13 @@ const { filters, filteredRules } = useRuleFilters(props.list);
       <template v-for="rule in filteredRules" :key="rule.id">
         <RuleCard :rule="rule" />
       </template>
+
+      <p class="build-info">
+        Updated at <strong>{{ buildDatetime }}</strong>
+        <span v-if="build.gitRef !== null">
+          from <strong>{{ build.gitRef }}</strong>
+        </span>
+      </p>
     </div>
   </div>
 </template>
@@ -45,7 +57,13 @@ const { filters, filteredRules } = useRuleFilters(props.list);
     gap: 1rem;
 
     .counter {
-      color: var(--color-on-surface-bright);
+      color: hsl(var(--text-accent));
+    }
+
+    .build-info {
+      color: hsl(var(--text-accent));
+      font-size: 14px;
+      text-align: center;
     }
   }
 
@@ -60,6 +78,10 @@ const { filters, filteredRules } = useRuleFilters(props.list);
 
     .rules {
       flex: 1 1 78%;
+
+      .build-info {
+        text-align: right;
+      }
     }
   }
 }

@@ -21,7 +21,13 @@ declare type RuleMeta = {
   statuses: string[];
 };
 
+declare type RuleBuildInfo = {
+  datetime: string;
+  gitRef: string | null;
+};
+
 declare type RuleList = {
   items: Rule[];
   meta: RuleMeta;
+  build: RuleBuildInfo;
 };

@@ -36,7 +36,7 @@ const isDeprecated = computed(() => rule.status === "DEPRECATED");
     gap: 1rem;
 
     &.deprecated {
-      color: hsl(var(--neutral-600));
+      color: hsl(var(--text-accent));
       text-decoration: line-through;
     }
 
@@ -45,7 +45,7 @@ const isDeprecated = computed(() => rule.status === "DEPRECATED");
     }
 
     .rule-id {
-      color: hsl(var(--neutral-600));
+      color: hsl(var(--text-accent));
     }
   }
 
