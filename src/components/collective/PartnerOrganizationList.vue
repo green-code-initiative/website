@@ -1,9 +1,16 @@
 <script setup lang="ts">
 import organizations from "@/assets/data/partner-organizations.json";
-import PartnerOrganization from "@/components/collective/PartnerOrganization.vue";
+import PartnerOrganization from "@/components/partners/PartnerOrganization.vue";
+
+interface OrganizationBase {
+  img: string;
+  name: string;
+  width: number;
+  height: number;
+}
 
 const props = defineProps<{
-  customList?: typeof organizations;
+  customList?: OrganizationBase[];
   featured?: boolean;
 }>();
 

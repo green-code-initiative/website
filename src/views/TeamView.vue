@@ -5,7 +5,6 @@ import { RouterLink, RouterView } from "vue-router";
 <template>
   <nav>
     <router-link to="membres">Membres contributeurs</router-link>
-    <router-link to="organisations">Organisations partenaires</router-link>
   </nav>
   <router-view />
 </template>

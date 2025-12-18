@@ -14,7 +14,7 @@ import AppButton from "@/components/shared/AppButton.vue";
 
     <AppButton
       variant="neutral"
-      link="/collectif/organisations"
+      link="/partenaires"
       text="Je découvre tous les partenaires"
     />
   </section>
