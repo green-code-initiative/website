@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import GoldBarsIcon from "@/assets/icons/gold_bars.svg";
+import Hero from "@/components/global/Hero.vue";
 import PartnerLevelList from "@/components/partners/PartnerLevelList.vue";
 import AppButton from "@/components/shared/AppButton.vue";
+import AppPdfViewer from "@/components/shared/AppPdfViewer.vue";
 import AppSection from "@/components/shared/AppSection.vue";
-import Hero from "@/components/global/Hero.vue";
-import PdfSlideViewer from "@/components/shared/PdfSlideViewer.vue";
 import { useHead } from "@unhead/vue";
 
 const pdfPath = "/partenariat-sponsoring-2026.pdf";
@@ -21,14 +22,14 @@ useHead({
 </script>
 
 <template>
-  <Hero 
-    variant="secondary" 
+  <Hero
+    variant="secondary"
     title="Nos partenaires et sponsors"
-    subTitle="Ils nous accompagnent et soutiennent notre mission pour un numérique plus durable"
+    sub-title="Ils nous accompagnent et soutiennent notre mission pour un numérique plus durable"
   >
     <template #actions>
       <AppButton
-        variant="primary"
+        variant="secondary"
         link="#offre-partenaire"
         text="Devenir partenaire"
       />
@@ -39,23 +40,22 @@ useHead({
       />
     </template>
   </Hero>
-  
+
   <div class="partners-content">
-    
     <!-- Niveau Platinum -->
     <div class="level-section">
       <div class="level-header-full">
-        <img src="/img/partners/platinium-level.png" alt="Platinum" class="level-badge-full" />
-        <h2 class="level-title-full heading-2">Platinum</h2>
+        <GoldBarsIcon width="64" height="64" color="rgb(82, 140, 233)" />
+        <h2 class="heading-2">Platinum</h2>
       </div>
       <div class="type-columns">
         <div class="type-column partner-column">
           <h3 class="column-label">Partenaires</h3>
-          <PartnerLevelList level="platinum" type="partner" :show-badge="false" />
+          <PartnerLevelList level="platinum" type="partner" />
         </div>
         <div class="type-column sponsor-column">
           <h3 class="column-label">Sponsors</h3>
-          <PartnerLevelList level="platinum" type="sponsor" :show-badge="false" />
+          <PartnerLevelList level="platinum" type="sponsor" />
         </div>
       </div>
     </div>
@@ -63,17 +63,17 @@ useHead({
     <!-- Niveau Or -->
     <div class="level-section">
       <div class="level-header-full">
-        <img src="/img/partners/gold-level.png" alt="Or" class="level-badge-full" />
-        <h2 class="level-title-full heading-2">Or</h2>
+        <GoldBarsIcon width="64" height="64" color="rgb(225, 180, 60)" />
+        <h2 class="heading-2">Or</h2>
       </div>
       <div class="type-columns">
         <div class="type-column partner-column">
           <h3 class="column-label">Partenaires</h3>
-          <PartnerLevelList level="gold" type="partner" :show-badge="false" />
+          <PartnerLevelList level="gold" type="partner" />
         </div>
         <div class="type-column sponsor-column">
           <h3 class="column-label">Sponsors</h3>
-          <PartnerLevelList level="gold" type="sponsor" :show-badge="false" />
+          <PartnerLevelList level="gold" type="sponsor" />
         </div>
       </div>
     </div>
@@ -81,23 +81,26 @@ useHead({
     <!-- Niveau Argent -->
     <div class="level-section">
       <div class="level-header-full">
-        <img src="/img/partners/silver-level.png" alt="Argent" class="level-badge-full" />
-        <h2 class="level-title-full heading-2">Argent</h2>
+        <GoldBarsIcon width="64" height="64" color="rgb(192, 192, 192)" />
+        <h2 class="heading-2">Argent</h2>
       </div>
       <div class="type-columns">
         <div class="type-column partner-column">
           <h3 class="column-label">Partenaires</h3>
-          <PartnerLevelList level="silver" type="partner" :show-badge="false" />
+          <PartnerLevelList level="silver" type="partner" />
         </div>
         <div class="type-column sponsor-column">
           <h3 class="column-label">Sponsors</h3>
-          <PartnerLevelList level="silver" type="sponsor" :show-badge="false" />
+          <PartnerLevelList level="silver" type="sponsor" />
         </div>
       </div>
     </div>
   </div>
-  
-  <AppSection title="Notre offre partenaire et sponsoring" id="offre-partenaire">
+
+  <AppSection
+    title="Notre offre partenaire et sponsoring"
+    id="offre-partenaire"
+  >
     <div class="pdf-container">
       <div class="pdf-actions">
         <AppButton
@@ -108,7 +111,7 @@ useHead({
           download
         />
       </div>
-      <PdfSlideViewer :pdf-url="pdfPath" />
+      <AppPdfViewer :pdf-url="pdfPath" />
     </div>
   </AppSection>
 </template>
@@ -133,7 +136,7 @@ useHead({
   width: calc(100% - 40px);
 
   &:last-child {
-    margin-bottom: 2rem;
+    margin-bottom: 0;
   }
 }
 
@@ -141,21 +144,10 @@ useHead({
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
   padding: 1.5rem;
   background: white;
   border-radius: var(--radius, 8px) var(--radius, 8px) 0 0;
-  margin-bottom: 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-
-  .level-badge-full {
-    width: 60px;
-    height: auto;
-  }
-
-  .level-title-full {
-    margin: 0;
-  }
 }
 
 .type-columns {
@@ -186,7 +178,11 @@ useHead({
   }
 
   &.sponsor-column {
-    background: linear-gradient(135deg, hsl(var(--primary-50)) 0%, hsl(var(--primary-100)) 100%);
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary-50)) 0%,
+      hsl(var(--primary-100)) 100%
+    );
     border-radius: 0 0 var(--radius, 8px) 0;
 
     @media screen and (max-width: 992px) {
@@ -203,10 +199,6 @@ useHead({
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-}
-
-.section {
-  margin-bottom: 50px;
 }
 
 .pdf-container {

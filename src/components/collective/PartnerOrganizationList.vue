@@ -2,15 +2,13 @@
 import organizations from "@/assets/data/partner-organizations.json";
 import PartnerOrganization from "@/components/partners/PartnerOrganization.vue";
 
-interface OrganizationBase {
-  img: string;
-  name: string;
-  width: number;
-  height: number;
-}
+type Organization = Pick<
+  (typeof organizations)[0],
+  "img" | "name" | "width" | "height"
+>;
 
 const props = defineProps<{
-  customList?: OrganizationBase[];
+  customList?: Organization[];
   featured?: boolean;
 }>();
 
