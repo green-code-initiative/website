@@ -1,103 +1,135 @@
 [
   {
-    "img": "region-nouvelle-aquitaine.webp",
-    "name": "Région Nouvelle Aquitaine",
-    "width": 160,
-    "height": 72
+    "img": "capgemini.svg",
+    "name": "Capgemini",
+    "width": 171,
+    "height": 38,
+    "level": "platinum",
+    "type": ["partner"],
+    "featured": 2
   },
   {
-    "img": "uppa.webp",
-    "name": "UPPA",
+    "img": "credit-agricole.webp",
+    "name": "Crédit Agricole",
     "width": 160,
-    "height": 72,
-    "featured": 4
+    "height": 90,
+    "level": "platinum",
+    "type": ["partner", "sponsor"]
   },
   {
-    "img": "pages-jaunes.webp",
-    "name": "Pages Jaunes",
+    "img": "sonar.svg",
+    "name": "Sonar",
     "width": 160,
-    "height": 37,
-    "featured": 3
+    "height": 82,
+    "level": "gold",
+    "type": ["sponsor"]
   },
   {
     "img": "davidson.webp",
     "name": "Davidson",
     "width": 160,
     "height": 36,
+    "level": "gold",
+    "type": ["partner"],
     "featured": 1
   },
   {
-    "img": "credit-agricole.webp",
-    "name": "Crédit Agricole",
+    "img": "uppa.webp",
+    "name": "UPPA",
     "width": 160,
-    "height": 90
-  },
-  {
-    "img": "sonar.svg",
-    "name": "Sonar",
-    "width": 160,
-    "height": 82
-  },
-  {
-    "img": "enedis.svg",
-    "name": "Enedis",
-    "width": 160,
-    "height": 32
-  },
-  {
-    "img": "cgi.webp",
-    "name": "CGI",
-    "width": 80,
-    "height": 37
-  },
-  {
-    "img": "tosit.webp",
-    "name": "TOSIT",
-    "width": 160,
-    "height": 63
-  },
-  {
-    "img": "banque-de-france.svg",
-    "name": "Banque de France",
-    "width": 160,
-    "height": 75.88
-  },
-  {
-    "img": "aubay.svg",
-    "name": "Aubay",
-    "width": 90,
-    "height": 90
+    "height": 72,
+    "level": "gold",
+    "type": ["partner"],
+    "featured": 4
   },
   {
     "img": "inside-app.webp",
     "name": "inside|app",
     "width": 160,
     "height": 66,
+    "level": "gold",
+    "type": ["partner"],
     "featured": 5
   },
   {
-    "img": "capgemini.svg",
-    "name": "Capgemini",
-    "width": 171,
-    "height": 38,
-    "featured": 2
+    "img": "pages-jaunes.webp",
+    "name": "Pages Jaunes",
+    "width": 160,
+    "height": 37,
+    "level": "silver",
+    "type": ["partner"],
+    "featured": 3
   },
   {
     "img": "orange-business.webp",
     "name": "Orange Business",
     "width": 160,
-    "height": 55
+    "height": 55,
+    "level": "silver",
+    "type": ["partner"]
   },
   {
     "img": "accenture.webp",
     "name": "Accenture",
     "width": 160,
-    "height": 42
+    "height": 42,
+    "level": "silver",
+    "type": ["partner"]
+  },
+  {
+    "img": "region-nouvelle-aquitaine.webp",
+    "name": "Région Nouvelle Aquitaine",
+    "width": 160,
+    "height": 72,
+    "level": "silver",
+    "type": ["partner"]
+  },
+  {
+    "img": "enedis.svg",
+    "name": "Enedis",
+    "width": 160,
+    "height": 32,
+    "level": "silver",
+    "type": ["sponsor"]
+  },
+  {
+    "img": "cgi.svg",
+    "name": "CGI",
+    "width": 80,
+    "height": 37,
+    "level": "silver",
+    "type": ["sponsor"]
+  },
+  {
+    "img": "tosit.webp",
+    "name": "TOSIT",
+    "width": 160,
+    "height": 63,
+    "level": "silver",
+    "type": ["sponsor"]
+  },
+  {
+    "img": "banque-de-france.svg",
+    "name": "Banque de France",
+    "width": 160,
+    "height": 75.88,
+    "level": "silver",
+    "type": ["sponsor"]
+  },
+  {
+    "img": "aubay.svg",
+    "name": "Aubay",
+    "width": 90,
+    "height": 90,
+    "level": "silver",
+    "type": ["sponsor"]
   },
   {
     "img": "c2s.png",
     "name": "C2S Bouygues",
     "width": 160,
-    "height": 53
+    "height": 53,
+    "level": "silver",
+    "type": ["sponsor"]
   }
 ]

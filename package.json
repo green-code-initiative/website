@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@fontsource-variable/mulish": "^5.2.8",
+    "@unhead/vue": "^2.0.19",
     "altcha": "^2.2.4",
     "vue": "^3.5.25",
     "vue-router": "^4.6.3"
@@ -21,7 +22,6 @@
   "devDependencies": {
     "@tsconfig/node24": "^24.0.3",
     "@types/node": "^24.10.1",
-    "@unhead/vue": "^2.0.19",
     "@vitejs/plugin-vue": "^6.0.2",
     "@vue/tsconfig": "^0.8.1",
     "eslint": "^9.39.1",
