@@ -22,7 +22,7 @@ withDefaults(
   <a
     v-else-if="type === 'external_link'"
     :class="variant"
-    :href="link.toString()"
+    :href="link?.toString()"
     target="_blank"
     >{{ text }}</a
   >
