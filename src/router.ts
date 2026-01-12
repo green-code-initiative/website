@@ -18,11 +18,6 @@ export const routes: RouterOptions["routes"] = [
     component: () => import("./views/ContributeurView.vue"),
   },
   {
-    path: "/entreprise",
-    name: "entreprise",
-    component: () => import("./views/EntrepriseView.vue"),
-  },
-  {
     path: "/collectif",
     component: () => import("./views/TeamView.vue"),
     children: [

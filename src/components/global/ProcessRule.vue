@@ -43,12 +43,7 @@ const props = defineProps({
 
 const route = useRoute();
 
-const isPage = computed(
-  () =>
-    route.path === "/contributeur" ||
-    route.path === "/entreprise" ||
-    route.path === "/team"
-);
+const isPage = computed(() => route.path === "/contributeur");
 
 const subtitleStyle = computed(() => ({
   backgroundColor: isPage.value

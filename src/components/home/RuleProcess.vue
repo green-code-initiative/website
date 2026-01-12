@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import ProcessRule from "@/components/global/ProcessRule.vue";
-import AppButton from "@/components/shared/AppButton.vue";
 </script>
 
 <template>
@@ -54,11 +53,6 @@ import AppButton from "@/components/shared/AppButton.vue";
         />
       </div>
     </div>
-    <p class="detail">
-      Nous travaillons également sur des règles sur-mesure pour des
-      organisations clientes.
-    </p>
-    <AppButton variant="primary" link="/entreprise" text="En savoir plus" />
   </div>
 </template>
 

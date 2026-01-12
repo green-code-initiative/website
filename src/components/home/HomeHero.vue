@@ -17,8 +17,8 @@ import AppButton from "@/components/shared/AppButton.vue";
       />
       <AppButton
         variant="neutral"
-        link="/entreprise"
-        text="Je souhaite une intégration sur-mesure"
+        link="/collectif/membres"
+        text="Je découvre le collectif"
       />
     </div>
   </div>

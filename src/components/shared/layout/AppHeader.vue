@@ -18,7 +18,6 @@ const navItems = [
     icon: undefined,
     highlight: false,
   },
-  { name: "Entreprises", to: "/entreprise" },
   // {
   //   name: "Challenge 2025",
   //   to: "/challenge",
