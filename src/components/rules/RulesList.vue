@@ -26,7 +26,7 @@ const buildDatetime = new Intl.DateTimeFormat("default", {
       </p>
 
       <template v-for="rule in filteredRules" :key="rule.id">
-        <RuleCard :rule="rule" />
+        <RuleCard :rule="rule" :technologies="meta.technologies" />
       </template>
 
       <p class="build-info">

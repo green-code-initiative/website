@@ -18,7 +18,7 @@ export type RuleFilters = {
 
 export const useRuleFilters = ({ items, meta }: RuleList) => {
   const filters = ref({
-    technologies: createDefaultState(meta.technologies),
+    technologies: createDefaultState(Object.keys(meta.technologies)),
     severities: createDefaultState(meta.severities),
     statuses: createDefaultState(meta.statuses),
   });

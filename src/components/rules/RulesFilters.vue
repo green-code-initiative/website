@@ -12,11 +12,11 @@ const filters = defineModel<RuleFilters>({ required: true });
       <h2>Technologies</h2>
       <div class="filter-items">
         <RuleFilterItem
-          v-for="tech in meta.technologies"
-          :key="tech"
-          :id="tech"
-          :label="tech"
-          v-model="filters.technologies[tech]"
+          v-for="(label, key) in meta.technologies"
+          :key="key"
+          :id="key"
+          :label="label"
+          v-model="filters.technologies[key]"
         />
       </div>
     </div>
@@ -27,7 +27,9 @@ const filters = defineModel<RuleFilters>({ required: true });
           v-for="severity in meta.severities"
           :key="severity"
           :id="severity"
-          :label="severity"
+          :label="
+            severity.charAt(0).toUpperCase() + severity.slice(1).toLowerCase()
+          "
           v-model="filters.severities[severity]"
         />
       </div>
@@ -39,7 +41,9 @@ const filters = defineModel<RuleFilters>({ required: true });
           v-for="status in meta.statuses"
           :key="status"
           :id="status"
-          :label="status"
+          :label="
+            status.charAt(0).toUpperCase() + status.slice(1).toLowerCase()
+          "
           v-model="filters.statuses[status]"
         />
       </div>
@@ -54,7 +58,7 @@ const filters = defineModel<RuleFilters>({ required: true });
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding-right: .5rem;
+  padding-right: 0.5rem;
   height: calc(100vh - 100px);
   overflow-y: auto;
 
@@ -65,7 +69,7 @@ const filters = defineModel<RuleFilters>({ required: true });
   }
 
   &::-webkit-scrollbar-thumb {
-    background: #E8E8E8;
+    background: #e8e8e8;
     border-radius: 4px;
   }
 

@@ -6,7 +6,7 @@ defineProps<{ id: string; label: string }>();
 <template>
   <label class="filter-item" :for="id">
     <input :id="id" type="checkbox" v-model="isChecked" />
-    {{ label.charAt(0).toUpperCase() + label.slice(1).toLowerCase() }}
+    {{ label }}
   </label>
 </template>
 

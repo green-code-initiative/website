@@ -24,7 +24,7 @@ declare type Rule = {
 };
 
 declare type RuleMeta = {
-  technologies: string[];
+  technologies: Record<string, string>;
   severities: string[];
   statuses: string[];
   contentUrlTemplate: string | null;

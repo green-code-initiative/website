@@ -3,7 +3,10 @@ import AppBadge from "@/components/shared/AppBadge.vue";
 import RuleSeverity from "@/components/rules/RuleSeverity.vue";
 import { computed } from "vue";
 
-const { rule } = defineProps<{ rule: Rule }>();
+const { rule, technologies } = defineProps<{
+  rule: Rule;
+  technologies: RuleMeta["technologies"];
+}>();
 const isDeprecated = computed(() => rule.status === "DEPRECATED");
 </script>
 
@@ -15,7 +18,11 @@ const isDeprecated = computed(() => rule.status === "DEPRECATED");
     </div>
     <div class="rule-badges">
       <RuleSeverity :severity="rule.severity" />
-      <AppBadge v-for="tech in rule.technologies" :key="tech" :text="tech" />
+      <AppBadge
+        v-for="tech in rule.technologies"
+        :key="tech"
+        :text="technologies[tech]!"
+      />
     </div>
   </div>
 </template>
