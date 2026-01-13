@@ -19,6 +19,7 @@ declare type RuleMeta = {
   technologies: string[];
   severities: string[];
   statuses: string[];
+  contentUrlTemplate: string | null;
 };
 
 declare type RuleBuildInfo = {

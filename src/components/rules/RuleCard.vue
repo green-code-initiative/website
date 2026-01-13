@@ -10,7 +10,7 @@ const isDeprecated = computed(() => rule.status === "DEPRECATED");
 <template>
   <div class="rule-card">
     <div class="rule-info" :class="isDeprecated ? 'deprecated' : ''">
-      <span class="rule-name">{{ rule.name }}</span>
+      <a :href="`#id:${rule.id}`" class="rule-name">{{ rule.name }}</a>
       <span class="rule-id">{{ rule.id }}</span>
     </div>
     <div class="rule-badges">
@@ -42,6 +42,10 @@ const isDeprecated = computed(() => rule.status === "DEPRECATED");
 
     .rule-name {
       font-weight: bold;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
     .rule-id {

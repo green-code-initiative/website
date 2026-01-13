@@ -42,7 +42,7 @@ export const routes: RouterOptions["routes"] = [
   {
     path: "/rules",
     name: "rules",
-    component: () => import("./views/RulesViews.vue"),
+    component: () => import("./views/RulesView.vue"),
   },
   {
     path: "/partenaires",
@@ -61,7 +61,7 @@ export const navigationGuard: NavigationGuard = (to) => {
 };
 
 export const navigationHookAfter: NavigationHookAfter = (to) => {
-  if (to.hash) {
+  if (to.hash && !to.hash.includes(":")) {
     setTimeout(() => {
       const element = document.querySelector(to.hash);
       if (element) {

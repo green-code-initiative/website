@@ -1,13 +1,13 @@
 @import "variables.css";
 
-* {
+*:not(article *) {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
-a {
+a:not(article a) {
   color: inherit;
   text-decoration: none;
 }
