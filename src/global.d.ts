@@ -1,3 +1,11 @@
+interface ImportMetaEnv {
+  readonly VITE_RULES_URL: string;
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
+}
+
 declare type MemberLinkType = "linkedin" | "github";
 
 declare type Member = {

@@ -1,5 +1,7 @@
 <script lang="ts" setup>
+import { vExternalLinks } from "@/composables/external-links";
 import { useFetchText } from "@/composables/fetch";
+import { computed } from "vue";
 import AppButton from "../shared/AppButton.vue";
 
 const { rule, contentUrlTemplate } = defineProps<{
@@ -7,15 +9,17 @@ const { rule, contentUrlTemplate } = defineProps<{
   contentUrlTemplate: string;
 }>();
 
-const { data: content } = useFetchText(
+const contentUrl = computed(() =>
   contentUrlTemplate
     .replace("{id}", rule.id)
     .replace("{technology}", rule.technologies[0]!)
 );
+
+const { data: content } = useFetchText(contentUrl);
 </script>
 
 <template>
-  <article class="rule-content" v-html="content"></article>
+  <article class="rule-content" v-external-links v-html="content"></article>
   <div class="rule-actions">
     <AppButton text="Go back to list" variant="neutral" link="/rules" />
   </div>
@@ -28,6 +32,14 @@ article.rule-content {
   img {
     max-width: 100%;
     height: auto;
+  }
+
+  pre {
+    overflow-y: auto;
+  }
+
+  a {
+    word-break: break-all;
   }
 }
 
