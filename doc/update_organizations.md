@@ -15,12 +15,12 @@ Partner organizations are listed in the `partner-organizations.json` file. To up
   "img": "logo_filename.webp",
   "width": 160,
   "height": 72,
-  "featured": 5, // optional, from 1 to 5
+  "level": "platinum", // required: "platinum", "gold", or "silver"
+  "type": ["partner"], // required: array of "partner" and/or "sponsor"
 }
 ```
 
-You can add a **"featured"** flag on an organization to display it in the homepage, in the order you chosen.
-Only the first 5 items will be displayed, and an index cannot be used twice.
+Organizations with **"platinum"** or **"gold"** level are automatically displayed on the homepage, sorted alphabetically by name.
 
 ### Example
 
@@ -30,14 +30,17 @@ Only the first 5 items will be displayed, and an index cannot be used twice.
     "name": "Company 1",
     "img": "company_1.webp",
     "width": 160,
-    "height": 72
+    "height": 72,
+    "level": "silver",
+    "type": ["partner"]
   },
   {
     "name": "Company 2",
     "img": "company_2.webp",
     "width": 180,
     "height": 76,
-    "featured": 1
+    "level": "platinum",
+    "type": ["partner", "sponsor"]
   }
 ]
 ```

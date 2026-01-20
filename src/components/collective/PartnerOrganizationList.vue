@@ -7,19 +7,20 @@ type Organization = Pick<
   "img" | "name" | "width" | "height"
 >;
 
+const premiumLevelList = new Set(["platinum", "gold"]);
+
 const props = defineProps<{
   customList?: Organization[];
-  featured?: boolean;
+  premiumLevels?: boolean;
 }>();
 
 const filteredOrganizations =
   props.customList ??
-  (props.featured
+  (props.premiumLevels
     ? organizations
-        .filter((organization) => organization.featured)
-        .sort(
-          (organization1, organization2) =>
-            organization1.featured! - organization2.featured!
+        .filter((organization) => premiumLevelList.has(organization.level))
+        .sort((organization1, organization2) =>
+          organization1.name.localeCompare(organization2.name),
         )
     : organizations);
 </script>
@@ -45,8 +46,8 @@ const filteredOrganizations =
   flex-wrap: wrap;
   justify-content: center;
   padding: 0 1rem;
-  gap: 2.5rem;
-  max-width: 1140px;
+  gap: 2.1rem;
+  max-width: 1280px;
   width: 100%;
 }
 </style>

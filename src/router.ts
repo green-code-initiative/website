@@ -25,12 +25,7 @@ export const routes: RouterOptions["routes"] = [
       {
         path: "membres",
         name: "collectif-membres",
-        component: () => import("./views/team/TeamMembers.vue"),
-      },
-      {
-        path: "organisations",
-        name: "collectif-organisations",
-        component: () => import("./views/team/TeamPartnerOrganizations.vue"),
+        component: () => import("./views/TeamMembers.vue"),
       },
     ],
   },

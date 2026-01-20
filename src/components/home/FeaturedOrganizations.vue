@@ -10,7 +10,7 @@ import AppButton from "@/components/shared/AppButton.vue";
       :
     </h2>
 
-    <PartnerOrganizationList :featured="true" />
+    <PartnerOrganizationList :premium-levels="true" />
 
     <AppButton
       variant="neutral"

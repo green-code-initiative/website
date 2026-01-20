@@ -25,7 +25,7 @@ const navItems = [
   //   highlight: true,
   // },
   { name: "Notre collectif", to: "/collectif" },
-  { name: "Nos Partenaires", to: "/partenaires" },
+  { name: "Nos partenaires", to: "/partenaires" },
 ];
 
 const socialItems = [
