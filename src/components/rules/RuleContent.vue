@@ -1,24 +1,32 @@
 <script lang="ts" setup>
+import AppButton from "@/components/shared/AppButton.vue";
+import AppTabs from "@/components/shared/AppTabs.vue";
 import { vExternalLinks } from "@/composables/external-links";
 import { useFetchText } from "@/composables/fetch";
-import { computed } from "vue";
-import AppButton from "../shared/AppButton.vue";
+import { computed, ref } from "vue";
 
-const { rule, contentUrlTemplate } = defineProps<{
+const { rule, technologies, contentUrlTemplate } = defineProps<{
   rule: Rule;
+  technologies: RuleMeta["technologies"];
   contentUrlTemplate: string;
 }>();
+
+const tabs = computed(() =>
+  rule.technologies.map((tech) => ({ id: tech, label: technologies[tech]! })),
+);
+const selectedTab = ref(rule.technologies[0]!);
 
 const contentUrl = computed(() =>
   contentUrlTemplate
     .replace("{id}", rule.id)
-    .replace("{technology}", rule.technologies[0]!)
+    .replace("{technology}", selectedTab.value),
 );
 
 const { data: content } = useFetchText(contentUrl);
 </script>
 
 <template>
+  <AppTabs v-if="tabs.length > 1" v-model="selectedTab" :tabs="tabs" />
   <article class="rule-content" v-external-links v-html="content"></article>
   <div class="rule-actions">
     <AppButton text="Go back to list" variant="neutral" link="/rules" />

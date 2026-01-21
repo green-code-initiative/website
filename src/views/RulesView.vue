@@ -14,9 +14,9 @@ const { data } = useFetchJson<RuleList>(import.meta.env.VITE_RULES_URL);
 const ruleData = computed(() =>
   route.hash.startsWith("#id:") && data.value
     ? data.value?.items.find(
-        (item) => item.id === route.hash.replace("#id:", "")
+        (item) => item.id === route.hash.replace("#id:", ""),
       )
-    : null
+    : null,
 );
 
 // do not expose this page during alpha testing
@@ -45,6 +45,7 @@ useHead({ meta: [{ name: "robots", content: "noindex" }] });
     <RuleContent
       v-else-if="data && ruleData && data.meta.contentUrlTemplate"
       :rule="ruleData"
+      :technologies="data.meta.technologies"
       :content-url-template="data.meta.contentUrlTemplate"
     />
     <p class="loading" v-else>Loading...</p>
