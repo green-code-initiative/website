@@ -1,7 +1,8 @@
 <script lang="ts" setup>
 import { computed } from "vue";
+import type { Component } from "vue";
 
-const props = defineProps<{ name: string; to: string; icon?: any }>();
+const props = defineProps<{ name: string; to: string; icon?: Component }>();
 
 const isExternal = computed(() => props.to.startsWith("http"));
 </script>

@@ -1,5 +1,12 @@
 <script lang="ts" setup>
-defineProps<{ event: any; child?: boolean }>();
+interface CalendarEvent {
+  type: string;
+  title?: string;
+  description?: string;
+  [key: string]: unknown;
+}
+
+defineProps<{ event: CalendarEvent; child?: boolean }>();
 </script>
 
 <template>

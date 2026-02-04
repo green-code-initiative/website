@@ -11,6 +11,7 @@
 
     <section class="filters-section">
       <div class="filters-container">
+        <!-- eslint-disable vuejs-accessibility/label-has-for -->
         <div class="filter-group">
           <label for="type-filter">Type de projet :</label>
           <select id="type-filter" v-model="selectedType" class="filter-select">
@@ -29,6 +30,7 @@
             <option value="draft">Brouillon</option>
           </select>
         </div>
+        <!-- eslint-enable vuejs-accessibility/label-has-for -->
       </div>
     </section>
 
@@ -36,8 +38,8 @@
       <div class="projects-container">
         <ProjectList 
           :projects="projects" 
-          :selectedType="selectedType"
-          :selectedStatus="selectedStatus"
+          :selected-type="selectedType"
+          :selected-status="selectedStatus"
         />
       </div>
     </section>

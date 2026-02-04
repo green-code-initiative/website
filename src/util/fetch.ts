@@ -2,7 +2,7 @@ const baseApiUrl = import.meta.env.VITE_API_URL ?? "/api";
 
 export const captchaChallengeUrl = `${baseApiUrl}/captcha_challenge`;
 
-export const post = async (resource: string, body: any) => {
+export const post = async (resource: string, body: Record<string, unknown>) => {
   return fetch(`${baseApiUrl}/${resource}`, {
     method: "POST",
     body: new URLSearchParams(body),

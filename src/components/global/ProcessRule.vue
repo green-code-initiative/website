@@ -33,12 +33,12 @@ import ArrowLeft from "@/assets/icons/arrow_left.svg";
 import ArrowRight from "@/assets/icons/arrow_right.svg";
 
 const props = defineProps({
-  title: String,
-  text: String,
-  position: String,
-  titlePosition: String,
-  opacity: Number,
-  image: String,
+  title: { type: String, required: true },
+  text: { type: String, required: true },
+  position: { type: String, required: true },
+  titlePosition: { type: String, required: true },
+  opacity: { type: Number, required: true },
+  image: { type: String, required: true },
 });
 
 const route = useRoute();
