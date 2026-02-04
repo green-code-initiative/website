@@ -13,6 +13,12 @@ const closeMenu = () => (isMenuOpen.value = false);
 
 const navItems = [
   {
+    name: "Projets",
+    to: "/projets",
+    icon: undefined,
+    highlight: false,
+  },
+  {
     name: "Contributeur",
     to: "/contributeur",
     icon: undefined,

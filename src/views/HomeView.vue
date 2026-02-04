@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { event as eventBanner } from "@/assets/data/banners.json";
-import ContactForm from "@/components/home/ContactForm.vue";
+import ContactForm from "@/components/shared/form/ContactForm.vue";
 import CreedengoIntro from "@/components/home/CreedengoIntro.vue";
 import FeaturedOrganizations from "@/components/home/FeaturedOrganizations.vue";
 import HomeHero from "@/components/home/HomeHero.vue";

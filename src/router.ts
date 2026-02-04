@@ -13,6 +13,31 @@ export const routes: RouterOptions["routes"] = [
     component: HomeView,
   },
   {
+    path: "/projets",
+    name: "projets",
+    component: () => import("./views/ProjetsView.vue"),
+  },
+  {
+    path: "/projets/creedengo",
+    name: "projet-creedengo",
+    component: () => import("./views/CreedengoProject.vue"),
+  },
+  {
+    path: "/projets/ecosonar",
+    name: "projet-ecosonar",
+    component: () => import("./views/EcosonarProject.vue"),
+  },
+  {
+    path: "/projets/green-code-rules",
+    name: "projet-green-code-rules",
+    component: () => import("./views/GreenCodeRulesProject.vue"),
+  },
+  {
+    path: "/projets/creedengo-dashboard",
+    name: "projet-creedengo-dashboard",
+    component: () => import("./views/CreedengoProjectDashboard.vue"),
+  },
+  {
     path: "/contributeur",
     name: "contributeur",
     component: () => import("./views/ContributeurView.vue"),
