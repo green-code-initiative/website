@@ -5,7 +5,7 @@ export const captchaChallengeUrl = `${baseApiUrl}/captcha_challenge`;
 export const post = async (resource: string, body: Record<string, unknown>) => {
   return fetch(`${baseApiUrl}/${resource}`, {
     method: "POST",
-    body: new URLSearchParams(body),
+    body: new URLSearchParams(body as Record<string, string>),
     headers: {
       Accept: "application/json",
       "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
