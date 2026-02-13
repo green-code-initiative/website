@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
 import type { Component } from "vue";
 import Github from "@/assets/icons/github.svg?component";

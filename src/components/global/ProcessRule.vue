@@ -33,12 +33,12 @@ import ArrowLeft from "@/assets/icons/arrow_left.svg";
 import ArrowRight from "@/assets/icons/arrow_right.svg";
 
 const props = defineProps({
-  title: { type: String, required: false, default: "" },
-  text: { type: String, required: true },
-  position: { type: String, required: true },
-  titlePosition: { type: String, required: true },
-  opacity: { type: Number, required: false, default: 1 },
-  image: { type: String, required: false, default: "" },
+  title: String,
+  text: String,
+  position: String,
+  titlePosition: String,
+  opacity: Number,
+  image: String,
 });
 
 const route = useRoute();
@@ -83,13 +83,13 @@ onBeforeUnmount(() => {
 });
 
 const showRightArrow = computed(
-  () => props.position === "right" && !isMobile.value
+  () => props.position === "right" && !isMobile.value,
 );
 const showLeftArrow = computed(
-  () => props.position === "left" && !isMobile.value
+  () => props.position === "left" && !isMobile.value,
 );
 const showBottomArrow = computed(
-  () => props.position === "bottom" || isMobile.value
+  () => props.position === "bottom" || isMobile.value,
 );
 
 const isLastItem = ref(false);

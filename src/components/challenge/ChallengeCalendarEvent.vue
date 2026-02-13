@@ -1,21 +1,5 @@
 <script lang="ts" setup>
-interface Speaker {
-  avatar?: string;
-  name: string;
-  title?: string;
-}
-
-interface CalendarEvent {
-  type: string;
-  title?: string;
-  description?: string;
-  speakers?: Speaker[];
-  startsAt?: string;
-  duration?: string;
-  [key: string]: unknown;
-}
-
-defineProps<{ event: CalendarEvent; child?: boolean }>();
+defineProps<{ event: any; child?: boolean }>();
 </script>
 
 <template>
