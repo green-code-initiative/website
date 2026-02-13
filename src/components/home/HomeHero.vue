@@ -12,8 +12,8 @@ import AppButton from "@/components/shared/AppButton.vue";
     <div class="buttons">
       <AppButton
         variant="primary"
-        link="/contributeur"
-        text="Je souhaite contribuer"
+        link="/projets"
+        text="Je parcours les projets"
       />
       <AppButton
         variant="neutral"

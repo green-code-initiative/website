@@ -1,0 +1,177 @@
+[
+  {
+    "id": "creedengo",
+    "name": "Creedengo",
+    "slug": "creedengo",
+    "icon": "/img/projects/creedengo.svg",
+    "status": "published",
+    "type": "Outils d'analyse",
+    "shortDescription": "Collection de plugins SonarQube pour identifier les problèmes d'éco-conception dans votre code source",
+    "longDescription": "Creedengo (anciennement ecoCode) est un projet collectif visant à réduire l'empreinte environnementale du logiciel au niveau du code. Il fournit une collection de plugins pour SonarQube permettant de détecter automatiquement les structures de code ayant un impact écologique négatif : surconsommation d'énergie et de ressources, fatware, réduction de la durée de vie des terminaux, etc.",
+    "github": "https://github.com/green-code-initiative",
+    "website": "https://green-code-initiative.org/",
+    "technologies": [
+      {
+        "name": "Java",
+        "repo": "https://github.com/green-code-initiative/creedengo-java"
+      },
+      {
+        "name": "JavaScript/TypeScript",
+        "repo": "https://github.com/green-code-initiative/creedengo-javascript"
+      },
+      {
+        "name": "PHP",
+        "repo": "https://github.com/green-code-initiative/creedengo-php"
+      },
+      {
+        "name": "Python",
+        "repo": "https://github.com/green-code-initiative/creedengo-python"
+      },
+      {
+        "name": "C#",
+        "repo": "https://github.com/green-code-initiative/creedengo-csharp"
+      },
+      {
+        "name": "Android",
+        "repo": "https://github.com/green-code-initiative/ecoCode-android"
+      },
+      {
+        "name": "iOS",
+        "repo": "https://github.com/green-code-initiative/creedengo-ios"
+      }
+    ],
+    "features": [
+      "Identification automatique des défauts de code",
+      "Intégration avec SonarQube",
+      "Support de 7 technologies",
+      "Open-source et gratuit",
+      "Propulsé par l'intelligence collective"
+    ]
+  },
+  {
+    "id": "ecosonar",
+    "name": "EcoSonar",
+    "slug": "ecosonar",
+    "icon": "/img/projects/ecosonar.webp",
+    "status": "published",
+    "type": "Outils d'analyse",
+    "shortDescription": "Outil d'audit éco-conception combinant analyse statique et dynamique pour réduire l'impact environnemental des applications web",
+    "longDescription": "EcoSonar est une solution complète de monitoring et d'audit environnemental pour les applications web. Il intègre plusieurs outils d'analyse dans une plateforme unifiée pour sensibiliser les équipes de développement, les aider à implémenter les bonnes pratiques et permettre un suivi continu de l'amélioration.",
+    "github": "https://github.com/green-code-initiative/EcoSonar",
+    "website": "https://ecosonar.org/",
+    "features": [
+      "Analyse statique avec SonarQube et plugins EcoCode",
+      "Analyse dynamique avec GreenIT-Analysis/EcoIndex",
+      "Audit de performance avec Google Lighthouse",
+      "Validation W3C pour l'accessibilité",
+      "Monitoring continu de l'impact environnemental",
+      "Stockage des audits dans MongoDB",
+      "Architecture containerisée"
+    ],
+    "tools": [
+      {
+        "name": "GreenIT-Analysis/EcoIndex",
+        "description": "Mesure l'empreinte environnementale basée sur la complexité du DOM, le poids des données et le nombre de requêtes HTTP"
+      },
+      {
+        "name": "Google Lighthouse",
+        "description": "Audit de performance, accessibilité et bonnes pratiques"
+      },
+      {
+        "name": "W3C Validator",
+        "description": "Validation de la qualité HTML et conformité RGAA"
+      },
+      {
+        "name": "EcoCode",
+        "description": "Règles de codage pour réduire l'utilisation de RAM/CPU"
+      }
+    ],
+    "infrastructure": [
+      "Docker Registry",
+      "Serveur Docker (RAM > 4GB)",
+      "Base de données MongoDB",
+      "Réseau privé pour la sécurité"
+    ]
+  },
+  {
+    "id": "creedengo-dashboard",
+    "name": "Creedengo Dashboard",
+    "slug": "creedengo-dashboard",
+    "icon": "/img/projects/creedengo.svg",
+    "status": "draft",
+    "type": "Outils d'analyse",
+    "shortDescription": "Dashboard de visualisation des métriques d'éco-conception pour mieux prioriser les améliorations et prévenir les régressions",
+    "longDescription": "Creedengo Dashboard (anciennement Greesight, développé par Capgemini) est un tableau de bord de visualisation destiné aux développeurs et décideurs. Il présente l'impact potentiel des recommandations non suivies, aide à prioriser les améliorations de code et peut même prévenir l'introduction de nouveaux problèmes en production.",
+    "github": "https://github.com/green-code-initiative/creedengo-dashboard",
+    "website": "https://green-code-initiative.github.io/creedengo-dashboard/",
+    "features": [
+      "Visualisation des métriques d'éco-conception",
+      "Aide à la priorisation des améliorations",
+      "Prévention des régressions",
+      "Architecture ouverte et modulaire",
+      "Extension VSCode disponible",
+      "Plugin SonarQube à venir",
+      "Widgets réutilisables avec Storybook"
+    ],
+    "integrations": [
+      {
+        "name": "Extension VSCode",
+        "description": "Intégration directe dans l'IDE pour les développeurs",
+        "status": "Disponible (v0.2.0)"
+      },
+      {
+        "name": "Plugin SonarQube",
+        "description": "Page d'extension SonarQube pour la visualisation des métriques",
+        "status": "En développement (sortie prévue septembre 2025)"
+      },
+      {
+        "name": "CI/CD",
+        "description": "Intégration dans les Pull/Merge Requests (GitHub, GitLab, Bitbucket, Azure DevOps)",
+        "status": "Planifié"
+      }
+    ],
+    "technologies": [
+      "Vue.js",
+      "JavaScript",
+      "Web Components",
+      "Storybook"
+    ]
+  },
+  {
+    "id": "green-code-rules",
+    "name": "Green Code Rules",
+    "slug": "green-code-rules",
+    "icon": "/img/projects/green-code-rules-icon.svg",
+    "status": "draft",
+    "type": "Documentation",
+    "shortDescription": "Référentiel de bonnes pratiques d'éco-conception logicielle correspondant aux règles des plugins Creedengo",
+    "longDescription": "Green Code Rules est le référentiel central des bonnes pratiques d'éco-conception logicielle développées par le collectif Green Code Initiative. Il regroupe plus de 100 règles couvrant différentes technologies et catégories, servant de base aux plugins Creedengo pour SonarQube.",
+    "github": "https://github.com/green-code-initiative/creedengo-rules-specifications",
+    "website": "https://green-code-initiative.org/rules",
+    "features": [
+      "Plus de 100 règles d'éco-conception",
+      "Couverture multi-technologies",
+      "Catégorisation par domaine",
+      "Niveaux de sévérité définis",
+      "Statut d'implémentation pour chaque règle"
+    ],
+    "categories": [
+      "Base de données et persistance",
+      "Performance et optimisation",
+      "Gestion des ressources",
+      "Frontend et UI/UX",
+      "Mobile",
+      "Data et Intelligence Artificielle"
+    ],
+    "ruleTypes": [
+      "Optimisation JPA et requêtes N+1",
+      "Optimisation des boucles",
+      "Gestion mémoire et garbage collection",
+      "Manipulation du DOM",
+      "Optimisation CSS",
+      "Formats d'images",
+      "Géolocalisation et consommation énergétique",
+      "Vectorisation et opérations sur tenseurs"
+    ]
+  }
+]

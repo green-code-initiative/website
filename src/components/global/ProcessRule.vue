@@ -83,13 +83,13 @@ onBeforeUnmount(() => {
 });
 
 const showRightArrow = computed(
-  () => props.position === "right" && !isMobile.value
+  () => props.position === "right" && !isMobile.value,
 );
 const showLeftArrow = computed(
-  () => props.position === "left" && !isMobile.value
+  () => props.position === "left" && !isMobile.value,
 );
 const showBottomArrow = computed(
-  () => props.position === "bottom" || isMobile.value
+  () => props.position === "bottom" || isMobile.value,
 );
 
 const isLastItem = ref(false);

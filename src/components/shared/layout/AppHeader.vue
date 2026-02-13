@@ -2,6 +2,7 @@
 import GitHubIcon from "@/assets/icons/github.svg";
 import LinkedinIcon from "@/assets/icons/linkedin.svg";
 import SlackIcon from "@/assets/icons/slack.svg";
+// import TrophyIcon from "@/assets/icons/trophy.svg";
 import Logo from "@/assets/img/logo.svg";
 import BurgerMenuButton from "@/components/shared/layout/header/BurgerMenuButton.vue";
 import NavItem from "@/components/shared/layout/header/HeaderNavItem.vue";
@@ -13,8 +14,8 @@ const closeMenu = () => (isMenuOpen.value = false);
 
 const navItems = [
   {
-    name: "Contributeur",
-    to: "/contributeur",
+    name: "Nos projets",
+    to: "/projets",
     icon: undefined,
     highlight: false,
   },
