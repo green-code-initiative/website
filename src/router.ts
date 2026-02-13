@@ -38,11 +38,6 @@ export const routes: RouterOptions["routes"] = [
     component: () => import("./views/CreedengoProjectDashboard.vue"),
   },
   {
-    path: "/contributeur",
-    name: "contributeur",
-    component: () => import("./views/ContributeurView.vue"),
-  },
-  {
     path: "/collectif",
     component: () => import("./views/TeamView.vue"),
     children: [
