@@ -14,29 +14,29 @@
   },
   "dependencies": {
     "@fontsource-variable/mulish": "^5.2.8",
-    "@unhead/vue": "^2.1.4",
+    "@unhead/vue": "^2.1.9",
     "altcha": "^2.3.0",
-    "vue": "^3.5.28",
-    "vue-router": "^5.0.2"
+    "vue": "^3.5.29",
+    "vue-router": "^5.0.3"
   },
   "devDependencies": {
     "@tsconfig/node24": "^24.0.4",
     "@types/node": "^24.10.13",
     "@vitejs/plugin-vue": "^6.0.4",
     "@vue/tsconfig": "^0.8.1",
-    "eslint": "^9.39.2",
+    "eslint": "^10.0.2",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-vue": "^10.7.0",
-    "eslint-plugin-vuejs-accessibility": "^2.4.2",
+    "eslint-plugin-vue": "^10.8.0",
+    "eslint-plugin-vuejs-accessibility": "^2.5.0",
     "prettier": "^3.8.1",
     "sass": "~1.97.3",
     "typescript": "~5.9.3",
-    "typescript-eslint": "^8.55.0",
+    "typescript-eslint": "^8.56.1",
     "vite": "^7.3.1",
     "vite-ssg": "^28.3.0",
     "vite-ssg-sitemap": "^0.10.0",
     "vite-svg-loader": "^5.1.0",
-    "vue-tsc": "^3.2.4"
+    "vue-tsc": "^3.2.5"
   },
   "overrides": {
     "vue-eslint-parser": "^10.0.0"
