@@ -14,16 +14,17 @@
   },
   "dependencies": {
     "@fontsource-variable/mulish": "^5.2.8",
-    "@unhead/vue": "^2.1.9",
+    "@unhead/vue": "^2.1.10",
     "altcha": "^2.3.0",
     "vue": "^3.5.29",
     "vue-router": "^5.0.3"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@tsconfig/node24": "^24.0.4",
-    "@types/node": "^24.10.13",
+    "@types/node": "^24.11.0",
     "@vitejs/plugin-vue": "^6.0.4",
-    "@vue/tsconfig": "^0.8.1",
+    "@vue/tsconfig": "^0.9.0",
     "eslint": "^10.0.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-vue": "^10.8.0",
