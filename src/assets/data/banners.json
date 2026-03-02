@@ -4,12 +4,12 @@
     "content": "ecoCode change de nom et devient <strong>Creendengo</strong> ! L'outil ne change pas, seul le nom évolue."
   },
   "event": {
-    "enable": false,
-    "title": "Green Code Challenge 2025",
-    "content": "Notre hackathon avec le Crédit Agricole revient cette année ! Mettez vos compétences au service d’un numérique plus responsable. Rendez-vous du <strong>20 au 21 mai 2025</strong> !",
+    "enable": true,
+    "title": "Green Code Initiative I/O 2026",
+    "content": "Un nouveau chapitre, de nouvelles ambitions ! LE rendez vous annuel pour découvrir la roadmap et les nouveautés du collectif... Rendez-vous le <strong>06/03/26 de 12h à 13h en ligne</strong> !",
     "action": {
-      "label": "Je veux en savoir plus",
-      "link": "/challenge"
+      "label": "Je m'inscris",
+      "link": "https://www.helloasso.com/associations/green-code-initiative/evenements/inscription-a-la-green-code-initiative-i-o-2026"
     }
   }
 }
