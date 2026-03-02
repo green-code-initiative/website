@@ -1,155 +1,108 @@
-<template>
-  <article class="project-card">
-    <router-link :to="`/projets/${project.slug}`" class="card-link">
-      <div class="card-header">
-        <img 
-          :src="project.icon" 
-          :alt="`Logo ${project.name}`" 
-          class="project-icon"
-        />
-        <div class="card-header-text">
-          <h3 class="project-name">{{ project.name }}</h3>
-          <span class="project-type">
-            {{ (project.types || [project.type]).join(' • ') }}
-          </span>
-        </div>
-      </div>
-      
-      <p class="project-description">{{ project.shortDescription }}</p>
-      
-      <div class="card-footer">
-        <span 
-          class="status-badge" 
-          :class="project.status"
-        >
-          {{ project.status === 'published' ? 'Publié' : 'Brouillon' }}
-        </span>
-        <span class="view-project">Voir le projet →</span>
-      </div>
-    </router-link>
-  </article>
-</template>
-
 <script setup lang="ts">
 interface Project {
   id: string;
   name: string;
-  slug: string;
   icon: string;
   status: string;
   type?: string;
-  types?: string[];
-  shortDescription: string;
+  description: string;
 }
 
-defineProps<{
-  project: Project;
-}>();
+defineProps<{ project: Project }>();
 </script>
+
+<template>
+  <router-link :to="`/projets/${project.id}`" class="project-card">
+    <div class="header">
+      <div class="card-header-text">
+        <h3 class="project-name">{{ project.name }}</h3>
+        <span class="project-type">
+          {{ project.type }}
+        </span>
+      </div>
+
+      <img
+        :src="project.icon"
+        :alt="`Logo ${project.name}`"
+        class="project-icon"
+      />
+    </div>
+
+    <span class="status-badge" :class="project.status">
+      {{ project.status === "published" ? "Publié" : "Brouillon" }}
+    </span>
+
+    <p class="description">{{ project.description }}</p>
+  </router-link>
+</template>
 
 <style scoped lang="scss">
 .project-card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem;
+  box-shadow: var(--shadow-border-small);
+  border-radius: var(--radius);
 
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    box-shadow:
+      var(--shadow-border),
+      0 4px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .header {
+    display: flex;
+    gap: 1rem;
   }
 }
 
-.card-link {
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem;
-  text-decoration: none;
-  color: inherit;
-  min-height: 280px;
-}
-
-.card-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
 .project-icon {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
-  flex-shrink: 0;
+  width: 54px;
+  height: 54px;
 }
 
 .card-header-text {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.375rem;
   flex: 1;
 }
 
 .project-name {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: hsl(var(--text-neutral));
   margin: 0;
-  flex: 1;
-}
+  line-height: 1.3;
+  word-wrap: break-word;
 
-.status-badge {
-  font-size: 0.75rem;
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  flex-shrink: 0;
-
-  &.published {
-    background: #e8f5e9;
-    color: #2e7d32;
-  }
-
-  &.in-progress,
-  &.draft {
-    background: #fff3e0;
-    color: #ef6c00;
+  .card-link:hover & {
+    text-decoration: underline;
   }
 }
 
 .project-type {
-  font-size: 0.875rem;
-  color: var(--color-secondary);
-  font-weight: 600;
+  color: hsl(var(--text-accent));
+}
+
+.status-badge {
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
+  align-self: flex-start;
 
-.project-description {
-  flex: 1;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #333;
-  margin: 0 0 1rem 0;
-}
+  &.published {
+    background-color: hsl(var(--primary-200));
+    color: hsl(var(--primary-900));
+  }
 
-.card-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: auto;
-}
-
-.view-project {
-  color: var(--color-secondary);
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: transform 0.2s ease;
-  
-  .project-card:hover & {
-    transform: translateX(4px);
+  &.in-progress,
+  &.draft {
+    background-color: var(--color-additionnal-1);
+    color: hsl(var(--neutral-900));
   }
 }
 </style>

@@ -12,30 +12,31 @@ export const routes: RouterOptions["routes"] = [
     // most users will pass through the home page
     component: HomeView,
   },
+  // Projects routes
   {
     path: "/projets",
     name: "projets",
-    component: () => import("./views/ProjetsView.vue"),
+    component: () => import("./views/projects/ProjectsList.vue"),
   },
   {
     path: "/projets/creedengo",
     name: "projet-creedengo",
-    component: () => import("./views/CreedengoProject.vue"),
+    component: () => import("./views/projects/CreedengoProject.vue"),
   },
   {
     path: "/projets/ecosonar",
     name: "projet-ecosonar",
-    component: () => import("./views/EcosonarProject.vue"),
+    component: () => import("./views/projects/EcosonarProject.vue"),
   },
   {
     path: "/projets/green-code-rules",
     name: "projet-green-code-rules",
-    component: () => import("./views/GreenCodeRulesProject.vue"),
+    component: () => import("./views/projects/GreenCodeRulesProject.vue"),
   },
   {
     path: "/projets/creedengo-dashboard",
     name: "projet-creedengo-dashboard",
-    component: () => import("./views/CreedengoProjectDashboard.vue"),
+    component: () => import("./views/projects/CreedengoProjectDashboard.vue"),
   },
   {
     path: "/collectif",
