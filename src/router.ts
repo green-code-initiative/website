@@ -1,9 +1,16 @@
+import { projects } from "@/assets/data/projects";
+import HomeView from "@/views/HomeView.vue";
 import type {
   NavigationGuard,
   NavigationHookAfter,
   RouterOptions,
 } from "vue-router";
-import HomeView from "./views/HomeView.vue";
+
+declare module "vue-router" {
+  interface RouteMeta {
+    project?: (typeof projects)[keyof typeof projects];
+  }
+}
 
 export const routes: RouterOptions["routes"] = [
   {
@@ -12,31 +19,41 @@ export const routes: RouterOptions["routes"] = [
     // most users will pass through the home page
     component: HomeView,
   },
-  // Projects routes
   {
     path: "/projets",
-    name: "projets",
-    component: () => import("./views/projects/ProjectsList.vue"),
-  },
-  {
-    path: "/projets/creedengo",
-    name: "projet-creedengo",
-    component: () => import("./views/projects/CreedengoProject.vue"),
-  },
-  {
-    path: "/projets/ecosonar",
-    name: "projet-ecosonar",
-    component: () => import("./views/projects/EcosonarProject.vue"),
-  },
-  {
-    path: "/projets/green-code-rules",
-    name: "projet-green-code-rules",
-    component: () => import("./views/projects/GreenCodeRulesProject.vue"),
-  },
-  {
-    path: "/projets/creedengo-dashboard",
-    name: "projet-creedengo-dashboard",
-    component: () => import("./views/projects/CreedengoProjectDashboard.vue"),
+    component: () => import("./views/projects/ProjectLayout.vue"),
+    children: [
+      {
+        path: "",
+        name: "projets",
+        component: () => import("./views/projects/ProjectsList.vue"),
+      },
+      {
+        path: "creedengo",
+        name: "projet-creedengo",
+        component: () => import("./views/projects/CreedengoProject.vue"),
+        meta: { project: projects.creedengo },
+      },
+      {
+        path: "ecosonar",
+        name: "projet-ecosonar",
+        component: () => import("./views/projects/EcosonarProject.vue"),
+        meta: { project: projects.ecosonar },
+      },
+      {
+        path: "creedengo-dashboard",
+        name: "projet-creedengo-dashboard",
+        component: () =>
+          import("./views/projects/CreedengoDashboardProject.vue"),
+        meta: { project: projects.creedengoDashboard },
+      },
+      {
+        path: "green-code-rules",
+        name: "projet-green-code-rules",
+        component: () => import("./views/projects/GreenCodeRulesProject.vue"),
+        meta: { project: projects.greenCodeRules },
+      },
+    ],
   },
   {
     path: "/collectif",

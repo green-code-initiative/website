@@ -6,6 +6,13 @@ interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
 
+declare type HeaderNavItem = {
+  name: string;
+  to: string;
+  icon?: Component;
+  highlight?: boolean;
+};
+
 declare type MemberLinkType = "linkedin" | "github";
 
 declare type Member = {

@@ -12,13 +12,8 @@ const isMenuOpen = ref(false);
 
 const closeMenu = () => (isMenuOpen.value = false);
 
-const navItems = [
-  {
-    name: "Nos projets",
-    to: "/projets",
-    icon: undefined,
-    highlight: false,
-  },
+const navItems: HeaderNavItem[] = [
+  { name: "Nos projets", to: "/projets" },
   // {
   //   name: "Challenge 2025",
   //   to: "/challenge",

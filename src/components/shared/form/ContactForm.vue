@@ -57,11 +57,7 @@
         />
       </Fieldset>
 
-      <Textfield
-        id="message"
-        name="message"
-        label="Message"
-      />
+      <Textfield id="message" name="message" label="Message" />
 
       <div class="form-submit">
         <Alert v-if="error" variant="error">{{ error }}</Alert>
@@ -91,29 +87,18 @@ import Selectfield from "@/components/shared/form/AppSelectfield.vue";
 import Textfield from "@/components/shared/form/AppTextfield.vue";
 import { post } from "@/util/fetch";
 import { extractFormData, validatePhone } from "@/util/form";
-import { ref, watch, computed } from "vue";
+import { computed, ref, watch } from "vue";
 import AppSection from "../AppSection.vue";
 
 interface ContactFormProps {
-  title?: string;
+  title: string;
+  individualOptions: string[];
+  organizationOptions: string[];
   sectionId?: string;
-  individualOptions?: string[];
-  organizationOptions?: string[];
 }
 
 const props = withDefaults(defineProps<ContactFormProps>(), {
-  title: "On discute ?",
   sectionId: "contact",
-  individualOptions: () => [
-    "Je souhaite contribuer aux projets du collectif",
-    "Je souhaite des informations sur le collectif et ses projets",
-  ],
-  organizationOptions: () => [
-    "Je souhaite développer des règles pour mon organisation",
-    "Je souhaite contribuer aux projets du collectif (mise à contribution de collaborateurs)",
-    "Je souhaite soutenir le collectif financièrement",
-    "Je souhaite des informations sur le collectif et ses projets",
-  ],
 });
 
 const error = ref("");
@@ -138,8 +123,8 @@ const type = ref("individu");
 const subject = ref(props.individualOptions[0] || "");
 
 const currentOptions = computed(() => {
-  return type.value === "individu" 
-    ? props.individualOptions 
+  return type.value === "individu"
+    ? props.individualOptions
     : props.organizationOptions;
 });
 

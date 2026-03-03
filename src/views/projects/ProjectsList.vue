@@ -1,8 +1,12 @@
 <script setup lang="ts">
-import projectsData from "@/assets/data/projects.json";
 import ProjectList from "@/components/projects/ProjectList.vue";
 import { useHead } from "@unhead/vue";
-import { ref } from "vue";
+import { computed, ref } from "vue";
+import { useRouter, type RouteRecordNormalized } from "vue-router";
+
+type RouteWithProjectMeta = RouteRecordNormalized & {
+  meta: { project: NonNullable<RouteRecordNormalized["meta"]["project"]> };
+};
 
 useHead({
   title: "Nos Projets - Green Code Initiative",
@@ -15,7 +19,22 @@ useHead({
   ],
 });
 
-const projects = ref(projectsData);
+const router = useRouter();
+
+const projects = computed(() =>
+  router
+    .getRoutes()
+    .filter((route): route is RouteWithProjectMeta => !!route.meta.project)
+    .map((route) => ({
+      path: route.path,
+      name: route.meta.project.title,
+      logoComponent: route.meta.project.logoComponent,
+      type: route.meta.project.type,
+      status: route.meta.project.status,
+      description: route.meta.project.description,
+    })),
+);
+
 const selectedType = ref("all");
 const selectedStatus = ref("all");
 </script>
@@ -26,27 +45,26 @@ const selectedStatus = ref("all");
       <h1>Nos Projets</h1>
     </div>
   </div>
-  <div class="container">
+  <main class="container">
     <div class="filters">
-      <!-- eslint-disable vuejs-accessibility/label-has-for -->
-      <div class="filter-group">
-        <label for="type-filter">Type de projet :</label>
+      <label for="type-filter">
+        Type de projet :
         <select id="type-filter" v-model="selectedType">
           <option value="all">Tous les types</option>
           <option value="Outils d'analyse">Outils d'analyse</option>
           <option value="Documentation">Documentation</option>
-          <option value="Recherche">Recherche</option>
+          <option value="Tableau de bord">Tableau de bord</option>
         </select>
-      </div>
+      </label>
 
-      <div class="filter-group">
-        <label for="status-filter">Statut :</label>
+      <label for="status-filter">
+        Statut :
         <select id="status-filter" v-model="selectedStatus">
           <option value="all">Tous les statuts</option>
           <option value="published">Publié</option>
           <option value="draft">Brouillon</option>
         </select>
-      </div>
+      </label>
     </div>
 
     <ProjectList
@@ -54,7 +72,7 @@ const selectedStatus = ref("all");
       :selected-type="selectedType"
       :selected-status="selectedStatus"
     />
-  </div>
+  </main>
 </template>
 
 <style scoped lang="scss">
@@ -95,26 +113,20 @@ const selectedStatus = ref("all");
   flex-wrap: wrap;
   padding: 1rem 0;
 
-  .filter-group {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  label {
+    font-weight: 600;
+  }
 
-    label {
-      font-weight: 600;
-    }
+  select {
+    padding: 0.5rem;
+    border: 1px solid hsl(var(--neutral-300));
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
 
-    select {
-      padding: 0.5rem;
-      border: 1px solid hsl(var(--neutral-300));
-      border-radius: 4px;
-      background: white;
-      cursor: pointer;
-
-      &:focus {
-        outline: 2px solid hsl(var(--text-accent));
-        outline-offset: 1px;
-      }
+    &:focus {
+      outline: 2px solid hsl(var(--text-accent));
+      outline-offset: 1px;
     }
   }
 }

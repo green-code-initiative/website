@@ -1,15 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import ProjectCard from "./ProjectCard.vue";
-
-interface Project {
-  id: string;
-  name: string;
-  icon: string;
-  status: string;
-  type: string;
-  description: string;
-}
+import ProjectCard, { type Project } from "./ProjectCard.vue";
 
 const props = defineProps<{
   projects: Project[];
@@ -37,7 +28,7 @@ const filteredProjects = computed(() => {
     <div v-else class="projects-grid">
       <ProjectCard
         v-for="project in filteredProjects"
-        :key="project.id"
+        :key="project.path"
         :project="project"
       />
     </div>

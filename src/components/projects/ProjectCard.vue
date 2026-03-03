@@ -1,8 +1,10 @@
 <script setup lang="ts">
-interface Project {
-  id: string;
+import type { Component } from "vue";
+
+export interface Project {
+  path: string;
   name: string;
-  icon: string;
+  logoComponent: Component;
   status: string;
   type?: string;
   description: string;
@@ -12,19 +14,24 @@ defineProps<{ project: Project }>();
 </script>
 
 <template>
-  <router-link :to="`/projets/${project.id}`" class="project-card">
+  <router-link
+    :to="project.path"
+    class="project-card"
+    :aria-label="project.name"
+  >
     <div class="header">
-      <div class="card-header-text">
-        <h3 class="project-name">{{ project.name }}</h3>
+      <div class="header-text">
+        <h2 class="project-name">{{ project.name }}</h2>
         <span class="project-type">
           {{ project.type }}
         </span>
       </div>
 
-      <img
-        :src="project.icon"
+      <component
+        :is="project.logoComponent"
+        width="40"
+        height="40"
         :alt="`Logo ${project.name}`"
-        class="project-icon"
       />
     </div>
 
@@ -57,12 +64,11 @@ defineProps<{ project: Project }>();
   }
 }
 
-.project-icon {
-  width: 54px;
-  height: 54px;
+svg {
+  color: hsl(var(--primary-700));
 }
 
-.card-header-text {
+.header-text {
   display: flex;
   flex-direction: column;
   gap: 0.375rem;
@@ -73,13 +79,7 @@ defineProps<{ project: Project }>();
   font-size: 1.25rem;
   font-weight: 700;
   color: hsl(var(--text-neutral));
-  margin: 0;
-  line-height: 1.3;
   word-wrap: break-word;
-
-  .card-link:hover & {
-    text-decoration: underline;
-  }
 }
 
 .project-type {

@@ -1,16 +1,28 @@
 <script setup lang="ts">
-defineProps<{
-  title: string;
-  subTitle?: string;
-  backgroundColor?: "white" | "grey";
-}>();
+withDefaults(
+  defineProps<{
+    title?: string;
+    subTitle?: string;
+    backgroundColor?: "white" | "grey";
+    container?: boolean;
+  }>(),
+  {
+    title: undefined,
+    subTitle: undefined,
+    backgroundColor: "white",
+    container: false,
+  },
+);
 </script>
 
 <template>
   <div class="section" :class="backgroundColor">
-    <h2 class="heading-2">{{ title }}</h2>
-    <h3 class="heading-3" v-if="subTitle">{{ subTitle }}</h3>
-    <slot />
+    <h2 class="heading-2" v-if="title">{{ title }}</h2>
+    <p class="sub-title" v-if="subTitle">{{ subTitle }}</p>
+    <div v-if="container" :class="{ container }">
+      <slot />
+    </div>
+    <slot v-else />
   </div>
 </template>
 
@@ -23,12 +35,25 @@ defineProps<{
   padding: 2rem 0;
 
   .heading-2,
-  .heading-3 {
+  .sub-title {
     text-align: center;
+  }
+
+  .sub-title {
+    font-size: 1.25rem;
+    color: hsl(var(--text-accent));
+    max-width: 820px;
   }
 
   &.grey {
     background-color: #f3f3f3;
+  }
+
+  .container {
+    width: 100%;
+    /* 1080px + 2 x 1rem */
+    max-width: 1112px;
+    padding: 0 1rem;
   }
 }
 </style>
