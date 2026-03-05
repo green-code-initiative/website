@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import { event as eventBanner } from "@/assets/data/banners.json";
-import ContactForm from "@/components/home/ContactForm.vue";
 import CreedengoIntro from "@/components/home/CreedengoIntro.vue";
 import FeaturedOrganizations from "@/components/home/FeaturedOrganizations.vue";
 import HomeHero from "@/components/home/HomeHero.vue";
-import RuleProcess from "@/components/home/RuleProcess.vue";
 import AppEventBanner from "@/components/shared/AppEventBanner.vue";
+import ContactForm from "@/components/shared/form/ContactForm.vue";
 import { useHead } from "@unhead/vue";
 
 useHead({
@@ -27,9 +26,19 @@ useHead({
 
   <CreedengoIntro />
 
-  <RuleProcess />
-
-  <ContactForm />
+  <ContactForm
+    title="On discute ?"
+    :individual-options="[
+      'Je souhaite contribuer aux projets du collectif',
+      'Je souhaite des informations sur le collectif et ses projets',
+    ]"
+    :organization-options="[
+      'Je souhaite développer des règles pour mon organisation',
+      'Je souhaite contribuer aux projets du collectif (mise à contribution de collaborateurs)',
+      'Je souhaite soutenir le collectif financièrement',
+      'Je souhaite des informations sur le collectif et ses projets',
+    ]"
+  />
 </template>
 
 <style lang="scss" scoped>

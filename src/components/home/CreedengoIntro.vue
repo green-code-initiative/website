@@ -10,6 +10,7 @@ import CreedengoScreenshot from "@/assets/img/screenshot.webp";
 import Creedengo from "@/assets/img/creedengo.svg";
 import CreedengoTechnology from "@/components/home/CreedengoTechnology.vue";
 import AppButton from "@/components/shared/AppButton.vue";
+import AppCard from "@/components/shared/AppCard.vue";
 </script>
 
 <template>
@@ -26,7 +27,7 @@ import AppButton from "@/components/shared/AppButton.vue";
     </p>
 
     <div class="feature-grid">
-      <div class="card large">
+      <AppCard class="large">
         <div class="title-container">
           <ViewIcon />
           <p class="title">
@@ -36,7 +37,7 @@ import AppButton from "@/components/shared/AppButton.vue";
         </div>
         <p class="description">
           Une collection de plugins pour
-          <strong>SonarQube</strong> afin d’analyser votre base de code.
+          <strong>SonarQube</strong> afin d'analyser votre base de code.
         </p>
         <img
           :src="CreedengoScreenshot"
@@ -44,19 +45,19 @@ import AppButton from "@/components/shared/AppButton.vue";
           width="871"
           height="200"
         />
-      </div>
-      <div class="card primary focused">
+      </AppCard>
+      <AppCard variant="primary" padding="comfortable">
         <LeafIcon />
         <p class="title">
-          Il vous aide à limiter l’<strong>impact écologique</strong> de vos
+          Il vous aide à limiter l'<strong>impact écologique</strong> de vos
           programmes
         </p>
-      </div>
-      <div class="card focused">
+      </AppCard>
+      <AppCard padding="comfortable">
         <HandHeartIcon />
         <p class="title">Il est open-source et<br />complètement gratuit</p>
-      </div>
-      <div class="card secondary">
+      </AppCard>
+      <AppCard variant="secondary">
         <div class="title-container">
           <UsersIcon />
           <p class="title">Il tire sa force du collectif</p>
@@ -76,8 +77,8 @@ import AppButton from "@/components/shared/AppButton.vue";
             <p>Individuels</p>
           </div>
         </div>
-      </div>
-      <div class="card">
+      </AppCard>
+      <AppCard>
         <div class="title-container">
           <BracesIcon />
           <p class="title">Il s’adapte à vos<br />technologies préférées</p>
@@ -94,13 +95,12 @@ import AppButton from "@/components/shared/AppButton.vue";
             <CreedengoTechnology name="C#" />
           </div>
         </div>
-      </div>
+      </AppCard>
     </div>
 
     <AppButton
-      link="https://github.com/green-code-initiative/creedengo-rules-specifications"
-      text="Je découvre le projet sur GitHub"
-      type="external_link"
+      link="/projets/creedengo"
+      text="Je découvre le projet"
       variant="primary"
     />
   </div>
@@ -151,146 +151,107 @@ import AppButton from "@/components/shared/AppButton.vue";
     max-width: 100%;
     padding: 1rem;
 
-    .card {
+    .title-container {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 1rem;
       gap: 1rem;
+      align-items: center;
+    }
+
+    .underlined {
+      text-decoration: underline;
+      text-decoration-color: red;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 2px;
+      text-decoration-style: wavy;
+    }
+
+    img {
+      margin-bottom: -50px;
+    }
+
+    .title {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: hsl(var(--text-accent));
+    }
+
+    // Big icon in comfortable (focused) cards; overridden below for title icons
+    svg {
+      width: 96px;
+      height: 96px;
+    }
+
+    .title-container svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .network {
       position: relative;
-      overflow: hidden;
-      text-align: left;
+      align-self: center;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      margin: 1rem;
+      border: 6px solid white;
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
-      background: hsl(var(--neutral-100));
-      border-radius: 2rem;
-
-      &.focused {
-        padding: 3rem 2rem;
-        align-items: center;
-        justify-content: center;
-        gap: 1.5rem;
-        text-align: center;
-
-        svg {
-          width: 96px;
-          height: 96px;
-        }
-      }
-
-      &.primary {
-        background: linear-gradient(
-          200deg,
-          hsl(var(--primary-600)) 4%,
-          hsl(var(--primary-800)) 86%
-        );
-        color: white;
-      }
-
-      &.secondary {
-        background: linear-gradient(
-          200deg,
-          hsl(var(--secondary-400)) -14%,
-          hsl(var(--secondary-700)) 86%
-        );
-        color: white;
-      }
-
-      .title-container {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-      }
-
-      .underlined {
-        text-decoration: underline;
-        text-decoration-color: red;
-        text-decoration-thickness: 2px;
-        text-underline-offset: 2px;
-        text-decoration-style: wavy;
-      }
-
-      img {
-        margin-bottom: -50px;
-      }
-
-      .title-container svg {
-        width: 28px;
-        height: 28px;
-      }
-
-      .title {
-        font-size: 1.25rem;
-        font-weight: 700;
-      }
-
-      .description {
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: hsl(var(--text-accent));
-      }
-
-      .network {
-        position: relative;
-        align-self: center;
-        width: 160px;
-        height: 160px;
-        border-radius: 50%;
-        margin: 1rem;
-        border: 6px solid white;
-        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-
-        .node {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          position: absolute;
-          color: hsl(var(--text-neutral));
-
-          .icon {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            margin-bottom: -14px;
-
-            background: white;
-
-            svg {
-              width: 24px;
-              height: 24px;
-              margin-bottom: 10px;
-            }
-          }
-
-          p {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 2px 8px;
-
-            background-color: hsl(var(--neutral-100));
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            border-radius: 2rem;
-            font-size: 14px;
-          }
-        }
-      }
-
-      .technologies {
+      .node {
         display: flex;
         flex-direction: column;
-        align-self: center;
+        align-items: center;
+        position: absolute;
+        color: hsl(var(--text-neutral));
 
-        .line {
+        .icon {
           display: flex;
+          justify-content: center;
+          align-items: center;
 
-          &:nth-child(2n) {
-            margin-top: -11px;
-            margin-left: 44px;
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          margin-bottom: -14px;
+
+          background: white;
+
+          svg {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 10px;
           }
+        }
+
+        p {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 2px 8px;
+
+          background-color: hsl(var(--neutral-100));
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          border-radius: 2rem;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .technologies {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+
+      .line {
+        display: flex;
+
+        &:nth-child(2n) {
+          margin-top: -11px;
+          margin-left: 44px;
         }
       }
     }
@@ -299,11 +260,8 @@ import AppButton from "@/components/shared/AppButton.vue";
       gap: 1.5rem;
       padding: 0;
 
-      .card {
-        padding: 2rem;
-        &.large {
-          grid-column: span 2;
-        }
+      .large {
+        grid-column: span 2;
       }
     }
   }

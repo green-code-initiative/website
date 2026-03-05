@@ -61,7 +61,7 @@ import ProcessRule from "@/components/global/ProcessRule.vue";
   width: 100%;
   min-height: 396px;
   height: max-content;
-  background-color: #f3f3f3;
+  background-color: hsl(var(--neutral-100));
   z-index: 2;
   display: flex;
   flex-direction: column;

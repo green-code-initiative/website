@@ -1,5 +1,5 @@
 <template>
-  <AppSection title="On discute ?" id="contact">
+  <AppSection :title="title" :id="sectionId">
     <form @submit.prevent="submitForm" aria-label="Formulaire de contact">
       <div class="form-field" role="radiogroup" aria-labelledby="i-am">
         <span class="text-label" id="i-am">Je suis :</span>
@@ -30,13 +30,13 @@
         name="subject"
         v-model="subject"
         label="Je souhaite :"
-        :items="options"
+        :items="currentOptions"
       />
 
       <Textfield
         id="entity-name"
         name="name"
-        label="Nom de l’entreprise / Personne"
+        label="Nom de l'entreprise / Personne"
       />
 
       <Fieldset>
@@ -57,11 +57,7 @@
         />
       </Fieldset>
 
-      <Textfield
-        id="message"
-        name="message"
-        label="Des éléments supplémentaires ?"
-      />
+      <Textfield id="message" name="message" label="Message" />
 
       <div class="form-submit">
         <Alert v-if="error" variant="error">{{ error }}</Alert>
@@ -91,8 +87,19 @@ import Selectfield from "@/components/shared/form/AppSelectfield.vue";
 import Textfield from "@/components/shared/form/AppTextfield.vue";
 import { post } from "@/util/fetch";
 import { extractFormData, validatePhone } from "@/util/form";
-import { ref, watch } from "vue";
-import AppSection from "../shared/AppSection.vue";
+import { computed, ref, watch } from "vue";
+import AppSection from "../AppSection.vue";
+
+interface ContactFormProps {
+  title: string;
+  individualOptions: string[];
+  organizationOptions: string[];
+  sectionId?: string;
+}
+
+const props = withDefaults(defineProps<ContactFormProps>(), {
+  sectionId: "contact",
+});
 
 const error = ref("");
 const success = ref("");
@@ -113,32 +120,19 @@ const submitForm = async (event: Event) => {
 };
 
 const type = ref("individu");
-const subject = ref(
-  "Je souhaite contribuer à la création de règles sur Creedengo"
-);
-const options = ref([
-  "Je souhaite contribuer à la création de règles sur Creedengo",
-  "Je souhaite m’impliquer sur d’autres aspects de Creedengo",
-  "Je souhaite des informations sur Creedengo",
-]);
+const subject = ref(props.individualOptions[0] || "");
+
+const currentOptions = computed(() => {
+  return type.value === "individu"
+    ? props.individualOptions
+    : props.organizationOptions;
+});
 
 watch(type, (newValue) => {
   if (newValue === "individu") {
-    options.value = [
-      "Je souhaite contribuer à la création de règles sur Creedengo",
-      "Je souhaite m’impliquer sur d’autres aspects de Creedengo",
-      "Je souhaite des informations sur Creedengo",
-    ];
-    subject.value =
-      "Je souhaite contribuer à la création de règles sur Creedengo";
+    subject.value = props.individualOptions[0] || "";
   } else if (newValue === "organisation") {
-    options.value = [
-      "Je souhaite développer des règles pour mon organisation",
-      "Je souhaite contribuer à Creedengo (mise à contribution de collaborateurs)",
-      "Je souhaite soutenir Creedengo financièrement",
-      "Je souhaite des informations sur Creedengo",
-    ];
-    subject.value = "Je souhaite développer des règles pour mon organisation";
+    subject.value = props.organizationOptions[0] || "";
   }
 });
 </script>
