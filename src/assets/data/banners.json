@@ -6,10 +6,10 @@
   "event": {
     "enable": true,
     "title": "Green Code Initiative I/O 2026",
-    "content": "Un nouveau chapitre, de nouvelles ambitions ! LE rendez vous annuel pour découvrir la roadmap et les nouveautés du collectif... Rendez-vous le <strong>06/03/26 de 12h à 13h en ligne</strong> !",
+    "content": "Un nouveau chapitre, de nouvelles ambitions ! LE rendez vous annuel pour découvrir la roadmap et les nouveautés du collectif... Disponible en replay sur notre chaîne YouTube !",
     "action": {
-      "label": "Je m'inscris",
-      "link": "https://www.helloasso.com/associations/green-code-initiative/evenements/inscription-a-la-green-code-initiative-i-o-2026"
+      "label": "Je regarde la rediffusion",
+      "link": "https://www.youtube.com/watch?v=zWmsi92s27o"
     }
   }
 }
