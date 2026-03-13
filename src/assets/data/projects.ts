@@ -71,7 +71,7 @@ export const projects = {
       },
     },
   },
-  greencodeql: {
+  greenCodeQL: {
     title: "Green CodeQL",
     subTitle: undefined,
     description:
