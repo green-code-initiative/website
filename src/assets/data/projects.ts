@@ -1,6 +1,7 @@
 import CreedengoLogo from "@/assets/img/projects/creedengo.svg?component";
 import EcoSonarLogo from "@/assets/img/projects/ecosonar.svg?component";
 import GreenCodeRulesLogo from "@/assets/img/projects/green-code-rules.svg?component";
+import GreenCodeQLLogo from "@/assets/img/projects/green-code-ql.svg?component";
 
 export const projects = {
   creedengo: {
@@ -68,6 +69,21 @@ export const projects = {
         link: "/rules",
         variant: "black",
       },
+    },
+  },
+  greenCodeQL: {
+    title: "Green CodeQL",
+    subTitle: undefined,
+    description:
+      "Collection de packs de requêtes CodeQL pour identifier les problèmes d'éco-conception directement dans vos dépôts GitHub",
+    githubLink:
+      "https://github.com/green-code-initiative/green-codeql-queries",
+    logoComponent: GreenCodeQLLogo,
+    type: "Outils d'analyse",
+    status: "draft",
+    hero: {
+      variant: "primary",
+      secondButton: undefined,
     },
   },
 } as const;

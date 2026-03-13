@@ -53,6 +53,12 @@ export const routes: RouterOptions["routes"] = [
         component: () => import("./views/projects/GreenCodeRulesProject.vue"),
         meta: { project: projects.greenCodeRules },
       },
+      {
+        path: "green-codeql",
+        name: "projet-green-codeql",
+        component: () => import("./views/projects/GreenCodeQLProject.vue"),
+        meta: { project: projects.greenCodeQL },
+      },
     ],
   },
   {
