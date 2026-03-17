@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import PartnerOrganizationList from "@/components/collective/PartnerOrganizationList.vue";
-import organizations from "@/assets/data/challenge-organizations.json";
+// import PartnerOrganizationList from "@/components/collective/PartnerOrganizationList.vue";
+// import organizations from "@/assets/data/challenge-organizations.json";
 </script>
 
 <template>
@@ -17,8 +17,12 @@ import organizations from "@/assets/data/challenge-organizations.json";
       </a>
     </div>
     <div class="sponsor-list">
-      <p>De <strong>nombreux partenaires</strong> prennent part au défi :</p>
-      <PartnerOrganizationList :custom-list="organizations" />
+      <p>
+        🙏 Merci à <strong>nos partenaires</strong> pour leur engagement<br />
+        en faveur d'un numérique responsable.
+      </p>
+      <!-- <p>De <strong>nombreux partenaires</strong> prennent part au défi :</p> -->
+      <!-- <PartnerOrganizationList :custom-list="organizations" /> -->
     </div>
   </div>
 </template>

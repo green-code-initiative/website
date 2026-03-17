@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import ChallengeCalendar from "@/components/challenge/ChallengeCalendar.vue";
+// import ChallengeCalendar from "@/components/challenge/ChallengeCalendar.vue";
 import ChallengeContact from "@/components/challenge/ChallengeContact.vue";
 import ChallengeGoals from "@/components/challenge/ChallengeGoals.vue";
 import ChallengeHero from "@/components/challenge/ChallengeHero.vue";
-import ChallengeHistory from "@/components/challenge/ChallengeHistory.vue";
+// import ChallengeHistory from "@/components/challenge/ChallengeHistory.vue";
 import ChallengeSponsors from "@/components/challenge/ChallengeSponsors.vue";
 import { useHead } from "@unhead/vue";
 
 useHead({
-  title: "Challenge 2025 - Green Code Initiative",
+  title: "Challenge 2026 - Green Code Initiative",
   meta: [
     {
       name: "description",
       content:
-        "Notre hackathon avec le Crédit Agricole revient du 20 au 21 mai 2025 ! Mettez vos compétences au service d'un numérique plus responsable.",
+        "Retrouvez-nous cette année pour (re)découvrir la Green Code Initiative et collaborer au développement de logiciels bas carbone ! Rendez-vous du 19 au 20 mai 2026 !",
     },
   ],
 });
@@ -40,16 +40,16 @@ useHead({
     <section>
       <ChallengeGoals />
     </section>
-    <section id="planning">
+    <!-- <section id="planning">
       <ChallengeCalendar />
-    </section>
+    </section> -->
     <section class="neutral">
       <ChallengeSponsors />
     </section>
-    <section>
+    <!-- <section>
       <ChallengeHistory />
-    </section>
-    <section class="neutral">
+    </section> -->
+    <section>
       <ChallengeContact />
     </section>
   </div>

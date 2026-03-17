@@ -5,11 +5,11 @@
   },
   "event": {
     "enable": true,
-    "title": "Green Code Initiative I/O 2026",
-    "content": "Un nouveau chapitre, de nouvelles ambitions ! LE rendez vous annuel pour découvrir la roadmap et les nouveautés du collectif... Disponible en replay sur notre chaîne YouTube !",
+    "title": "Green Code Challenge 2026",
+    "content": "Venez nous retrouver cette année pour (re)découvrir la Green Code Initiative et collaborer au développement de logiciels bas carbone ! Rendez-vous du <strong>19 au 20 mai 2026</strong> !",
     "action": {
-      "label": "Je regarde la rediffusion",
-      "link": "https://www.youtube.com/watch?v=zWmsi92s27o"
+      "label": "Je veux en savoir plus",
+      "link": "/challenge"
     }
   }
 }
