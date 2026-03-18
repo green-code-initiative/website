@@ -6,7 +6,7 @@ import ContactForm from "@/components/shared/form/ContactForm.vue";
 
 <template>
   <AppSection
-    title="Analyse d'éco-conception directement dans GitHub"
+    title="Analyse d'éco-conception native dans GitHub"
     sub-title="Green CodeQL offre une collection de packs de requêtes CodeQL pour détecter automatiquement les comportements non écologiques dans votre code (processus inutiles, fuites mémoire, etc.) directement dans vos dépôts GitHub grâce à l'analyse statique native de la plateforme."
     container
   >
@@ -113,7 +113,7 @@ import ContactForm from "@/components/shared/form/ContactForm.vue";
       </AppCard>
 
       <AppCard class="language-card" align="center">
-        <div class="language-icon">🔄</div>
+        <div class="language-icon">▶️</div>
         <h3>Actions/YAML</h3>
         <p>Amélioration de l'efficacité des workflows CI/CD.</p>
       </AppCard>
