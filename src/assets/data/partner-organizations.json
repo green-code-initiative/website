@@ -126,5 +126,13 @@
     "height": 53,
     "level": "silver",
     "type": ["sponsor"]
+  },
+  {
+    "img": "wavestone.svg",
+    "name": "Wavestone",
+    "width": 160,
+    "height": 53,
+    "level": "silver",
+    "type": ["sponsor"]
   }
 ]
