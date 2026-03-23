@@ -15,10 +15,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Use Node.js 24.X
+      - name: Use Node.js 24.x
         uses: actions/setup-node@v6
         with:
-          node-version: 24.X
+          node-version: 24.x
           cache: npm
 
       - name: Install dependencies
@@ -33,7 +33,7 @@ jobs:
       - name: Replace symlinks by the targeted file
         run: find ./dist -type l -exec sh -c 'cp --remove-destination "$(readlink "{}")" "{}"' \;
 
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v7
         with:
           name: website
           path: ./dist/
@@ -44,18 +44,16 @@ jobs:
 
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           name: website
 
       - name: Upload to SFTP
-        # fixed because latest has issues with removeExtraFilesOnServer
-        uses: wangyucode/sftp-upload-action@v2.0.3
+        uses: wangyucode/sftp-upload-action@a1e64f60df0d085b26ca9efff77566e79f1c6b78 # v3.0.0
         with:
           host: ${{ secrets.UPLOAD_SFTP_HOST }}
           username: ${{ secrets.UPLOAD_SFTP_USERNAME }}
           password: ${{ secrets.UPLOAD_SFTP_PASSWORD }}
-          compress: true
           localDir: ${{ github.workspace }}
           remoteDir: ${{ secrets.UPLOAD_SFTP_DIRECTORY }}
           exclude: "/api/,/.htaccess"
