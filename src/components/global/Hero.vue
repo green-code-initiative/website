@@ -1,4 +1,5 @@
 <script setup lang="ts">
+defineOptions({ name: "AppHero" });
 defineProps<{
   variant: "primary" | "secondary" | "quaternary";
   title: string;

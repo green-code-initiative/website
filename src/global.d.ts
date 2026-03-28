@@ -47,3 +47,17 @@ declare type RuleList = {
   meta: RuleMeta;
   build: RuleBuildInfo;
 };
+
+declare type ChallengeCalendarEventSpeaker = {
+  name: string;
+  avatar?: string;
+  title?: string;
+};
+
+declare type ChallengeCalendarEvent = {
+  type: string;
+  startsAt: string;
+  title: string;
+  speakers?: ChallengeCalendarEventSpeaker[];
+  duration?: string;
+};

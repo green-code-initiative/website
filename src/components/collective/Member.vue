@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import type { Component } from "vue";
 import Github from "@/assets/icons/github.svg?component";
 import Linkedin from "@/assets/icons/linkedin.svg?component";
+import type { Component } from "vue";
+
+defineOptions({ name: "TeamMember" });
 
 const { member } = defineProps<{ member: Member }>();
 

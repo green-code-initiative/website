@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-defineProps<{ event: any; child?: boolean }>();
+defineProps<{ event: ChallengeCalendarEvent; child?: boolean }>();
 </script>
 
 <template>
