@@ -49,6 +49,12 @@ button {
   }
 
   &.active svg {
+    @media (prefers-reduced-motion: reduce) {
+      path {
+        animation-duration: 0s !important;
+      }
+    }
+
     .top-line {
       animation: down-rotate 0.6s ease-out both;
     }

@@ -47,7 +47,7 @@ useHead({
   margin: -3rem auto 4rem;
 
   @media screen and (max-width: 768px) {
-    margin: -3rem 1rem 4rem;
+    margin: -1rem 1rem 4rem;
   }
 }
 </style>

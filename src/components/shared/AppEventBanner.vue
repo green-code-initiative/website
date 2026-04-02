@@ -48,6 +48,10 @@ const isRoute = computed(() => action.link.startsWith("/"));
   color: white;
   animation: pulse 2s infinite;
 
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+
   .title {
     display: flex;
     gap: 1rem;
