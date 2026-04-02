@@ -78,7 +78,7 @@ const selectedStatus = ref("all");
 <style scoped lang="scss">
 .hero {
   padding: 2rem 0.5rem;
-  background-color: hsl(var(--neutral-50));
+  background-color: hsl(var(--accent));
   box-shadow: var(--shadow-border-small);
 
   h1 {

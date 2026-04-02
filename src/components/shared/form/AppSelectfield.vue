@@ -46,7 +46,7 @@ defineProps<{
   & > .container {
     position: relative;
     height: 56px;
-    background-color: white;
+    background-color: hsl(var(--accent));
     border-radius: 0.5rem;
     border: solid 1px #d8dae5;
     transition: box-shadow 0.08s ease-in-out;
@@ -56,10 +56,15 @@ defineProps<{
       background: none;
       appearance: none;
       border: none;
+      color: hsl(var(--text-neutral));
       outline: none;
       width: 100%;
       padding: 1rem 3rem 1rem 1rem;
       font-size: 18px;
+
+      option {
+        color: initial;
+      }
     }
 
     & > svg {

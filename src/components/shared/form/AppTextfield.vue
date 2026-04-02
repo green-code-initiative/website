@@ -9,7 +9,7 @@ withDefaults(
     type?: string;
     centered?: boolean;
   }>(),
-  { type: "text", modelValue: "", centered: false }
+  { type: "text", modelValue: "", centered: false },
 );
 </script>
 
@@ -56,7 +56,8 @@ withDefaults(
   & > textarea {
     appearance: none;
     height: 56px;
-    background-color: white;
+    background-color: hsl(var(--accent));
+    color: hsl(var(--text-neutral));
     padding: 1rem;
     border-radius: 0.5rem;
     border: solid 1px #d8dae5;

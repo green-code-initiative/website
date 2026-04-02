@@ -92,7 +92,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  background-color: var(--color-surface);
+  background-color: hsl(var(--background));
   box-shadow: var(--shadow-border-small);
   z-index: 1;
 
@@ -125,7 +125,7 @@ nav {
   display: none;
   align-items: center;
   gap: 1.25rem;
-  background-color: var(--color-surface);
+  background-color: hsl(var(--background));
 }
 
 @media screen and (min-width: 920px) {

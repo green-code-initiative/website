@@ -22,6 +22,7 @@
   --secondary-800: 246 63% 20%;
   --secondary-900: 247 65% 10%;
   --secondary-950: 244 62% 5%;
+  --neutral-0: 0 0 100%;
   --neutral-50: 0 0 98%;
   --neutral-100: 0 0 96%;
   --neutral-200: 0 0 90%;
@@ -37,6 +38,10 @@
   /*** Theme specific values ***/
   --text-neutral: var(--neutral-900);
   --text-accent: var(--neutral-600);
+  --background: var(--neutral-0);
+  --accent: var(--neutral-50);
+  --card: var(--neutral-100);
+  --surface: var(--neutral-100);
 }
 
 /* OLD and Deprecated values */
@@ -54,8 +59,6 @@
   --color-on-quaternary: #ffffff;
   --color-additionnal-1: hsl(40, 100%, 89%);
   --color-additionnal-1-hover: hsl(40, 100%, 81%);
-
-  --color-surface: white;
 
   /* Shadows */
   --shadow-small: 0px 2px 2px rgba(0, 0, 0, 0.04);

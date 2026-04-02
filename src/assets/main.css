@@ -16,6 +16,7 @@ body {
   font-family: "Mulish Variable", sans-serif;
   font-weight: 500;
   color: hsl(var(--text-neutral));
+  background: hsl(var(--background));
 }
 
 button,

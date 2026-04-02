@@ -74,7 +74,7 @@ const links = Object.entries(linkTypes)
 
 img {
   border-radius: 50%;
-  border: solid 3px #87ccff;
+  border: solid 3px hsl(var(--secondary-300));
 }
 
 .name {

@@ -8,7 +8,7 @@
 <style lang="scss" scoped>
 footer {
   height: 60px;
-  background-color: var(--color-surface);
+  background-color: hsl(var(--background));
   box-shadow: var(--shadow-border-small);
   display: flex;
   flex-direction: row;

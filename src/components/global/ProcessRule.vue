@@ -2,7 +2,7 @@
   <div class="container-block">
     <h3 class="heading-3" :class="computedTitleClass">{{ title }}</h3>
     <div class="container">
-      <div :style="subtitleStyle" class="container-text">
+      <div class="container-text">
         <a
           v-if="image === 'true'"
           href="https://github.com/green-code-initiative"
@@ -26,11 +26,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount, computed } from "vue";
-import { useRoute } from "vue-router";
 import ArrowDown from "@/assets/icons/arrow_down.svg";
 import ArrowLeft from "@/assets/icons/arrow_left.svg";
 import ArrowRight from "@/assets/icons/arrow_right.svg";
+import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 
 const props = defineProps({
   title: { type: String, default: "" },
@@ -40,19 +39,6 @@ const props = defineProps({
   opacity: { type: Number, default: 0 },
   image: { type: String, default: "" },
 });
-
-const route = useRoute();
-
-const isPage = computed(() => route.path === "/contributeur");
-
-const subtitleStyle = computed(() => ({
-  backgroundColor: isPage.value
-    ? `rgba(135, 204, 255, ${props.opacity})`
-    : "white",
-  border: isPage.value
-    ? "solid 2px #87ccff"
-    : "solid 2px rgba(135, 204, 255, 0)",
-}));
 
 const isMobile = ref(false);
 
@@ -128,6 +114,7 @@ if (props.title === "utilisation" || props.image) {
   height: 140px;
   padding: 0 19px;
   border-radius: 20px;
+  background-color: hsl(var(--background));
   box-shadow: var(--shadow-border-small);
   display: flex;
   flex-direction: row;

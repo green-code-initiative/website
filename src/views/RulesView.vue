@@ -64,7 +64,7 @@ useHead({ meta: [{ name: "robots", content: "noindex" }] });
 <style lang="scss" scoped>
 .hero {
   padding: 2rem 0.5rem;
-  background-color: hsl(var(--neutral-50));
+  background-color: hsl(var(--accent));
   box-shadow: var(--shadow-border-small);
 
   h1 {

@@ -46,7 +46,7 @@ withDefaults(
   }
 
   &.grey {
-    background-color: #f3f3f3;
+    background-color: hsl(var(--surface));
   }
 
   .container {
