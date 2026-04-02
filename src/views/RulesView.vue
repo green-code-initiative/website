@@ -3,6 +3,7 @@ import RuleContent from "@/components/rules/RuleContent.vue";
 import RuleSeverity from "@/components/rules/RuleSeverity.vue";
 import RulesList from "@/components/rules/RulesList.vue";
 import AppAlert from "@/components/shared/AppAlert.vue";
+import AppBadge from "@/components/shared/AppBadge.vue";
 import { useFetchJson } from "@/composables/fetch";
 import { useHead } from "@unhead/vue";
 import { computed } from "vue";
@@ -19,6 +20,13 @@ const ruleData = computed(() =>
     : null,
 );
 
+// if the rule applies to a single technology, show it as a badge next to the title
+const ruleTechBadge = computed(() =>
+  ruleData.value?.technologies.length === 1 && data.value
+    ? data.value.meta.technologies[ruleData.value.technologies[0]]
+    : null,
+);
+
 // do not expose this page during alpha testing
 useHead({ meta: [{ name: "robots", content: "noindex" }] });
 </script>
@@ -31,6 +39,7 @@ useHead({ meta: [{ name: "robots", content: "noindex" }] });
         <div class="metadata">
           <h2>{{ ruleData.id }}</h2>
           <RuleSeverity :severity="ruleData.severity" />
+          <AppBadge v-if="ruleTechBadge" :text="ruleTechBadge" />
         </div>
       </template>
       <h1 v-else>Our rule repository</h1>
