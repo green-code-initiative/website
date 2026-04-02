@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import RuleCard from "@/components/rules/RuleCard.vue";
 import RulesFilters from "@/components/rules/RulesFilters.vue";
+import AppButton from "@/components/shared/AppButton.vue";
 import { useRuleFilters } from "@/composables/rule-filters";
 
 const props = defineProps<{ list: RuleList }>();
@@ -28,6 +29,16 @@ const buildDatetime = new Intl.DateTimeFormat("default", {
       <template v-for="rule in filteredRules" :key="rule.id">
         <RuleCard :rule="rule" :technologies="meta.technologies" />
       </template>
+
+      <div class="rule-proposal-card">
+        <p>Couldn't find a rule that seems relevant to you?</p>
+        <AppButton
+          text="I propose"
+          variant="primary"
+          type="external_link"
+          link="https://github.com/green-code-initiative/creedengo-rules-specifications/issues/new?template=new_rule_suggestion.md"
+        />
+      </div>
 
       <p class="build-info">
         Updated at <strong>{{ buildDatetime }}</strong>
@@ -82,6 +93,33 @@ const buildDatetime = new Intl.DateTimeFormat("default", {
       .build-info {
         text-align: right;
       }
+    }
+  }
+
+  .rule-proposal-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    background: linear-gradient(
+      40deg,
+      hsl(var(--secondary-50)) 0%,
+      hsl(var(--background)) 120%
+    );
+    box-shadow: var(--shadow-border-small);
+
+    @media (min-width: 920px) {
+      flex-direction: row;
+
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    p {
+      font-weight: bold;
     }
   }
 }
