@@ -146,7 +146,7 @@ form {
 }
 
 .text-label {
-  color: var(--color-primary);
+  color: hsl(var(--secondary-700));
   font-size: 18px;
   font-weight: 900;
   outline: none;
@@ -186,8 +186,8 @@ input[type="radio"] {
   &:checked {
     width: 20px;
     height: 20px;
-    border: 2px solid var(--color-secondary);
-    background-color: var(--color-secondary);
+    border: 2px solid hsl(var(--primary-600));
+    background-color: hsl(var(--primary-600));
   }
 }
 

@@ -42,7 +42,7 @@ defineProps<{ variant: "error" | "success" | "warning" }>();
   }
 
   &.warning {
-    background-color: var(--color-additionnal-1);
+    background-color: hsl(var(--warning-300));
   }
 }
 </style>

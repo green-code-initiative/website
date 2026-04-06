@@ -58,7 +58,6 @@ const isRoute = computed(() => action.link.startsWith("/"));
     align-items: center;
 
     .icon {
-      color: var(--color-additionnal-1);
       transform: rotate(-15deg);
 
       @media screen and (max-width: 768px) {

@@ -21,7 +21,7 @@ defineProps({
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   width: 100%;
-  background-color: var(--color-additionnal-1);
+  background-color: hsl(var(--warning-300));
   font-size: 1.05rem;
 
   svg {

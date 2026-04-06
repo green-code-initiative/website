@@ -101,7 +101,7 @@ svg {
 
   &.in-progress,
   &.draft {
-    background-color: var(--color-additionnal-1);
+    background-color: hsl(var(--warning-300));
     color: hsl(var(--neutral-900));
   }
 }

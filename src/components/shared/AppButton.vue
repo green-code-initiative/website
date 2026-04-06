@@ -8,7 +8,7 @@ withDefaults(
     type?: "external_link" | "button" | "submit";
     link?: RouterLinkProps["to"];
   }>(),
-  { type: "button", link: undefined }
+  { type: "button", link: undefined },
 );
 </script>
 
@@ -63,7 +63,7 @@ a {
 
   &.neutral {
     background-color: hsl(var(--neutral-200));
-    color: hsl(var(--text-neutral));
+    color: hsl(var(--neutral-900));
 
     &:hover {
       background-color: hsl(var(--neutral-300));

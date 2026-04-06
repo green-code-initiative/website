@@ -23,7 +23,6 @@ useHead({
 
 <template>
   <Hero
-    variant="secondary"
     title="Nos partenaires et sponsors"
     sub-title="Ils nous accompagnent et soutiennent notre mission pour un numérique plus durable"
   >

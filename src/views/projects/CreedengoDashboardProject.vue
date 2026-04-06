@@ -259,7 +259,6 @@ import ContactForm from "@/components/shared/form/ContactForm.vue";
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background-color: hsl(var(--neutral-50)) !important;
 
   .header {
     display: flex;
@@ -281,7 +280,7 @@ import ContactForm from "@/components/shared/form/ContactForm.vue";
     }
 
     &.in-progress {
-      background-color: var(--color-additionnal-1);
+      background-color: hsl(var(--warning-300));
       color: hsl(var(--neutral-900));
     }
 

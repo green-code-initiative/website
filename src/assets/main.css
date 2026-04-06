@@ -33,7 +33,7 @@ textarea {
   text-align: center;
   margin: 0 1rem;
   max-width: 1200px;
-  color: var(--color-primary);
+  color: hsl(var(--secondary-700));
 }
 
 .heading-3 {

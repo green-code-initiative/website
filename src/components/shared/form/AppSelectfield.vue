@@ -39,7 +39,7 @@ defineProps<{
   flex-direction: column;
   gap: 0.5rem;
 
-  color: var(--color-primary);
+  color: hsl(var(--secondary-700));
   font-size: 18px;
   font-weight: 900;
 
@@ -73,14 +73,13 @@ defineProps<{
       top: 1rem;
       width: 24px;
       height: 24px;
-      color: var(--color-primary);
+      color: hsl(var(--secondary-700));
       pointer-events: none;
     }
 
     &:focus,
     &:focus-within {
-      border-color: var(--color-primary-lighter);
-      box-shadow: var(--color-primary-focus-ring) 0 0 0 3px;
+      border-color: hsl(var(--secondary-500));
     }
   }
 }

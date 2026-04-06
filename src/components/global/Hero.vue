@@ -1,14 +1,10 @@
 <script setup lang="ts">
 defineOptions({ name: "AppHero" });
-defineProps<{
-  variant: "primary" | "secondary" | "quaternary";
-  title: string;
-  subTitle: string;
-}>();
+defineProps<{ title: string; subTitle: string }>();
 </script>
 
 <template>
-  <div class="hero-container" :class="variant">
+  <div class="hero-container">
     <slot></slot>
     <h1>{{ title }}</h1>
     <h2>{{ subTitle }}</h2>
@@ -27,20 +23,8 @@ defineProps<{
   padding: 4rem;
   text-align: center;
 
-  &.primary {
-    background-color: var(--color-primary);
-    color: var(--color-on-primary);
-  }
-
-  &.secondary {
-    background-color: var(--color-secondary);
-    color: var(--color-on-secondary);
-  }
-
-  &.quaternary {
-    background-color: var(--color-quaternary);
-    color: var(--color-on-quaternary);
-  }
+  background-color: hsl(var(--primary-600));
+  color: white;
 
   h1 {
     max-width: 1200px;

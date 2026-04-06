@@ -49,7 +49,7 @@ a {
   &:hover,
   &.router-link-active {
     opacity: 1;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: hsl(var(--text-neutral) / 0.1);
   }
 }
 </style>

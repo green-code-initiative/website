@@ -44,7 +44,7 @@ withDefaults(
   flex-direction: column;
   gap: 0.5rem;
 
-  color: var(--color-primary);
+  color: hsl(var(--secondary-700));
   font-size: 18px;
   font-weight: 900;
 
@@ -68,8 +68,7 @@ withDefaults(
 
     &:focus,
     &:focus-within {
-      border-color: var(--color-primary-lighter);
-      box-shadow: var(--color-primary-focus-ring) 0 0 0 3px;
+      border-color: hsl(var(--secondary-500));
     }
   }
 

@@ -34,6 +34,7 @@
   --neutral-800: 0 0 15%;
   --neutral-900: 0 0 9%;
   --neutral-950: 0 0 4%;
+  --warning-300: 40 100% 83%;
 
   /*** Theme specific values ***/
   --text-neutral: var(--neutral-900);
@@ -46,20 +47,6 @@
 
 /* OLD and Deprecated values */
 :root {
-  /* Colors */
-  --color-primary: hsl(var(--secondary-600));
-  --color-on-primary: #ffffff;
-  --color-primary-lighter: hsl(220, 43%, 65%);
-  --color-primary-focus-ring: hwb(220 21% 47% / 0.2);
-  --color-secondary: hsl(var(--primary-600));
-  --color-on-secondary: #ffffff;
-  --color-tertiary: #e03258;
-  --color-on-tertiary: #ffffff;
-  --color-quaternary: #5b53c9;
-  --color-on-quaternary: #ffffff;
-  --color-additionnal-1: hsl(40, 100%, 89%);
-  --color-additionnal-1-hover: hsl(40, 100%, 81%);
-
   /* Shadows */
   --shadow-small: 0px 2px 2px rgba(0, 0, 0, 0.04);
   --shadow-border: 0 0 0 1px rgba(0, 0, 0, 0.08);
