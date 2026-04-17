@@ -88,6 +88,11 @@ export const routes: RouterOptions["routes"] = [
     name: "partenaires",
     component: () => import("./views/PartnersView.vue"),
   },
+  {
+    path: "/mentions-legales",
+    name: "mentions-legales",
+    component: () => import("./views/LegalNoticeView.vue"),
+  },
   // redirect all other paths to homepage
   { path: "/:pathMatch(.*)*", name: "not-found", redirect: "/" },
 ];
