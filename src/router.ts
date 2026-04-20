@@ -63,14 +63,10 @@ export const routes: RouterOptions["routes"] = [
   },
   {
     path: "/collectif",
-    component: () => import("./views/TeamView.vue"),
+    name: "collectif",
+    component: () => import("./views/CollectiveView.vue"),
     children: [
-      { path: "", name: "collectif", redirect: "/collectif/membres" },
-      {
-        path: "membres",
-        name: "collectif-membres",
-        component: () => import("./views/TeamMembers.vue"),
-      },
+      { path: "membres", name: "collectif-membres", redirect: "/collectif" },
     ],
   },
   {

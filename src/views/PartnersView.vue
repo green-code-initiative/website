@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import GoldBarsIcon from "@/assets/icons/gold_bars.svg";
-import Hero from "@/components/global/Hero.vue";
 import PartnerLevelList from "@/components/partners/PartnerLevelList.vue";
 import AppButton from "@/components/shared/AppButton.vue";
+import AppHero from "@/components/shared/AppHero.vue";
 import AppPdfViewer from "@/components/shared/AppPdfViewer.vue";
 import AppSection from "@/components/shared/AppSection.vue";
 import { useHead } from "@unhead/vue";
@@ -22,9 +22,10 @@ useHead({
 </script>
 
 <template>
-  <Hero
+  <AppHero
     title="Nos partenaires et sponsors"
     sub-title="Ils nous accompagnent et soutiennent notre mission pour un numérique plus durable"
+    variant="primary"
   >
     <template #actions>
       <AppButton
@@ -38,7 +39,7 @@ useHead({
         text="Devenir sponsor"
       />
     </template>
-  </Hero>
+  </AppHero>
 
   <div class="partners-content">
     <!-- Niveau Platinum -->

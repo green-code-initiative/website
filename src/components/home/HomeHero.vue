@@ -36,8 +36,8 @@ import AppButton from "@/components/shared/AppButton.vue";
 
   background: linear-gradient(
     84.38deg,
-    rgba(140, 130, 227, 0.15) -5.58%,
-    rgba(133, 230, 163, 0.15) 103.22%
+    hsl(var(--secondary-300) / 0.15) -5.58%,
+    hsl(var(--primary-300) / 0.15) 103.22%
   );
   box-shadow: var(--shadow-border-small);
 

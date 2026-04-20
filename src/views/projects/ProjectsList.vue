@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ProjectList from "@/components/projects/ProjectList.vue";
+import AppHero from "@/components/shared/AppHero.vue";
 import { useHead } from "@unhead/vue";
 import { computed, ref } from "vue";
 import { useRouter, type RouteRecordNormalized } from "vue-router";
@@ -40,11 +41,7 @@ const selectedStatus = ref("all");
 </script>
 
 <template>
-  <div class="hero">
-    <div class="container">
-      <h1>Nos Projets</h1>
-    </div>
-  </div>
+  <AppHero title="Nos Projets" />
   <main class="container">
     <div class="filters">
       <label for="type-filter">
@@ -76,25 +73,6 @@ const selectedStatus = ref("all");
 </template>
 
 <style scoped lang="scss">
-.hero {
-  padding: 2rem 0.5rem;
-  background-color: hsl(var(--accent));
-  box-shadow: var(--shadow-border-small);
-
-  h1 {
-    font-weight: 900;
-  }
-
-  p {
-    font-size: 1.125rem;
-    margin: 0.5rem 0 0;
-  }
-
-  @media (min-width: 1144px) {
-    padding: 4rem 2rem;
-  }
-}
-
 .container {
   display: flex;
   flex-direction: column;
@@ -112,6 +90,7 @@ const selectedStatus = ref("all");
   gap: 1.5rem;
   flex-wrap: wrap;
   padding: 1rem 0;
+  margin-top: 1rem;
 
   label {
     font-weight: 600;

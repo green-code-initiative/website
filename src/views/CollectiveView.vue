@@ -2,11 +2,12 @@
 import contributors from "@/assets/data/contributors.json";
 import coreMembers from "@/assets/data/core-members.json";
 import MemberList from "@/components/collective/MemberList.vue";
+import AppHero from "@/components/shared/AppHero.vue";
 import AppSection from "@/components/shared/AppSection.vue";
 import { useHead } from "@unhead/vue";
 
 useHead({
-  title: "Membres contributeurs - Green Code Initiative",
+  title: "Notre collectif - Green Code Initiative",
   meta: [
     {
       name: "description",
@@ -18,6 +19,8 @@ useHead({
 </script>
 
 <template>
+  <AppHero title="Notre collectif" />
+
   <AppSection title="Core team">
     <MemberList :members="coreMembers" />
   </AppSection>

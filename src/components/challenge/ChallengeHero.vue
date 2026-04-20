@@ -133,7 +133,7 @@ import TicketCheckIcon from "@/assets/icons/ticket_check.svg";
           bottom: -20px;
 
           background: hsl(var(--primary-300));
-          color: hsl(var(--text-neutral));
+          color: hsl(var(--neutral-900));
           border-radius: 100px;
 
           font-weight: 600;
