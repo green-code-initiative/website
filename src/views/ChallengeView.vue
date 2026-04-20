@@ -3,7 +3,7 @@
 import ChallengeContact from "@/components/challenge/ChallengeContact.vue";
 import ChallengeGoals from "@/components/challenge/ChallengeGoals.vue";
 import ChallengeHero from "@/components/challenge/ChallengeHero.vue";
-// import ChallengeHistory from "@/components/challenge/ChallengeHistory.vue";
+import ChallengeHistory from "@/components/challenge/ChallengeHistory.vue";
 import ChallengeSponsors from "@/components/challenge/ChallengeSponsors.vue";
 import { useHead } from "@unhead/vue";
 
@@ -46,9 +46,9 @@ useHead({
     <section class="neutral">
       <ChallengeSponsors />
     </section>
-    <!-- <section>
+    <section>
       <ChallengeHistory />
-    </section> -->
+    </section>
     <section>
       <ChallengeContact />
     </section>
