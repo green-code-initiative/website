@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import { captchaChallengeUrl } from "@/util/fetch";
-import { onMounted } from "vue";
+import type { WidgetAttributes } from "altcha/types";
+import { onMounted, type DefineComponent } from "vue";
+
+declare module "vue" {
+  interface GlobalComponents {
+    "altcha-widget": DefineComponent<WidgetAttributes>;
+  }
+}
 
 onMounted(async () => {
   await import("altcha");
@@ -9,9 +16,9 @@ onMounted(async () => {
 
 <template>
   <altcha-widget
-    :challengeurl="captchaChallengeUrl"
+    :challenge="captchaChallengeUrl"
     name="captcha"
     spamfilter
-    floating
+    display="floating"
   />
 </template>
