@@ -9,9 +9,9 @@ onMounted(async () => {
 
 <template>
   <altcha-widget
-    :challengeurl="captchaChallengeUrl"
+    :challenge="captchaChallengeUrl"
     name="captcha"
     spamfilter
-    floating
+    display="floating"
   />
 </template>
