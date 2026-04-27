@@ -66,15 +66,15 @@ useHead(head);
   }
 
   &.primary {
-    background: hsl(var(--primary-50));
+    background: hsl(var(--primary-300) / 0.15);
   }
 
   &.secondary {
-    background: hsl(var(--secondary-50));
+    background: hsl(var(--secondary-300) / 0.15);
   }
 
   &.neutral {
-    background: hsl(var(--neutral-50));
+    background: hsl(var(--accent));
   }
 
   .content {

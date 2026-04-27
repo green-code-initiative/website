@@ -90,7 +90,7 @@ img {
 
 .links {
   display: flex;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: hsl(var(--surface));
   border-radius: 0.5rem;
   padding: 0.5rem;
   gap: 0.5rem;

@@ -24,8 +24,8 @@ import ContactForm from "@/components/shared/form/ContactForm.vue";
         <div class="feature-icon">🚀</div>
         <h3>Intégration native</h3>
         <p>
-          Profitez de l'infrastructure CodeQL de GitHub pour analyser votre
-          code sans configuration supplémentaire complexe.
+          Profitez de l'infrastructure CodeQL de GitHub pour analyser votre code
+          sans configuration supplémentaire complexe.
         </p>
       </AppCard>
 
@@ -197,7 +197,7 @@ import ContactForm from "@/components/shared/form/ContactForm.vue";
   }
 
   p {
-    color: hsl(var(--neutral-600));
+    color: hsl(var(--text-accent));
   }
 }
 
@@ -213,7 +213,7 @@ import ContactForm from "@/components/shared/form/ContactForm.vue";
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    background-color: hsl(var(--primary-500));
+    background-color: hsl(var(--primary-700));
     color: white;
     display: flex;
     align-items: center;
@@ -230,7 +230,7 @@ import ContactForm from "@/components/shared/form/ContactForm.vue";
   }
 
   p {
-    color: hsl(var(--neutral-600));
+    color: hsl(var(--text-accent));
   }
 }
 
@@ -254,7 +254,7 @@ import ContactForm from "@/components/shared/form/ContactForm.vue";
   }
 
   p {
-    color: hsl(var(--neutral-600));
+    color: hsl(var(--text-accent));
     font-size: 0.9rem;
   }
 }

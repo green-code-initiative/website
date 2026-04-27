@@ -127,7 +127,7 @@ import AppCard from "@/components/shared/AppCard.vue";
       border-radius: var(--radius);
       font-size: 1.2rem;
       color: hsl(var(--text-neutral));
-      background-color: hsl(var(--neutral-200));
+      background-color: hsl(var(--surface));
     }
   }
 
@@ -206,7 +206,7 @@ import AppCard from "@/components/shared/AppCard.vue";
         flex-direction: column;
         align-items: center;
         position: absolute;
-        color: hsl(var(--text-neutral));
+        color: hsl(var(--neutral-900));
 
         .icon {
           display: flex;
@@ -232,7 +232,6 @@ import AppCard from "@/components/shared/AppCard.vue";
           justify-content: center;
           align-items: center;
           padding: 2px 8px;
-
           background-color: hsl(var(--neutral-100));
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
           border-radius: 2rem;

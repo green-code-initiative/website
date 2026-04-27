@@ -32,6 +32,7 @@ const isDeprecated = computed(() => rule.status === "DEPRECATED");
   display: flex;
   flex-direction: column;
   gap: 10px;
+  background: hsl(var(--card));
   box-shadow: var(--shadow-border-small);
   border-radius: 0.5rem;
   padding: 1rem;

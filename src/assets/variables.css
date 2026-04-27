@@ -41,7 +41,7 @@
   --text-accent: var(--neutral-600);
   --background: var(--neutral-0);
   --accent: var(--neutral-50);
-  --card: var(--neutral-100);
+  --card: var(--neutral-0);
   --surface: var(--neutral-100);
 }
 

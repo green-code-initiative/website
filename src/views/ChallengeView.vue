@@ -69,7 +69,7 @@ section {
   }
 
   &.neutral {
-    background-color: hsl(var(--neutral-50));
+    background-color: hsl(var(--accent));
     box-shadow: var(--shadow-border-small);
   }
 

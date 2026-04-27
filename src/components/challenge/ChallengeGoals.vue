@@ -52,7 +52,11 @@
       padding: 3rem 1rem;
       gap: 10px;
 
-      background: linear-gradient(204.35deg, #f5f5f5 -5.42%, #e5e5e5 108.21%);
+      background: linear-gradient(
+        204.35deg,
+        hsl(var(--surface) / 0.2) -5.42%,
+        hsl(var(--surface)) 108.21%
+      );
       border-radius: 16px;
 
       box-shadow: var(--shadow-border-small);

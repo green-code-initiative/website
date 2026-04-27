@@ -26,9 +26,9 @@ withDefaults(
 <style lang="scss" scoped>
 .hero {
   background: linear-gradient(
-    160deg,
-    hsl(var(--background)) 30%,
-    hsl(var(--primary-50)) 100%
+    100deg,
+    hsl(var(--background)) 0%,
+    hsl(var(--primary-300) / 0.15) 100%
   );
   box-shadow: var(--shadow-border-small);
 

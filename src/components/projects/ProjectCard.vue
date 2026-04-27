@@ -49,6 +49,7 @@ defineProps<{ project: Project }>();
   flex-direction: column;
   gap: 1rem;
   padding: 1.25rem;
+  background: hsl(var(--card));
   box-shadow: var(--shadow-border-small);
   border-radius: var(--radius);
 

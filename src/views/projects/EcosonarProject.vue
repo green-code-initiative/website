@@ -153,7 +153,7 @@ import ContactForm from "@/components/shared/form/ContactForm.vue";
   gap: 1.5rem;
 
   .tool-card {
-    background-color: hsl(var(--primary-50));
+    background-color: hsl(var(--primary-300) / 0.15);
 
     h3 {
       font-size: 1.25rem;
@@ -179,7 +179,7 @@ import ContactForm from "@/components/shared/form/ContactForm.vue";
 
       li {
         line-height: 1.8;
-        color: #555;
+        color: hsl(var(--text-accent));
       }
     }
   }

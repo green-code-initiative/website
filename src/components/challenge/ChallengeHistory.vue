@@ -151,7 +151,7 @@ import PinIcon from "@/assets/icons/pin.svg";
           font-size: 14px;
           font-weight: 600;
           border-radius: 0.5rem;
-          background-color: hsl(var(--neutral-50));
+          background-color: hsl(var(--accent));
           color: hsl(var(--text-accent));
         }
 

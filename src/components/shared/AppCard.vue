@@ -36,7 +36,7 @@ withDefaults(
   gap: 1rem;
 
   &.variant-default {
-    background: hsl(var(--card));
+    background: hsl(var(--surface));
     color: hsl(var(--text-neutral));
   }
 

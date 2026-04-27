@@ -35,7 +35,7 @@ defineProps<{
   height: 100px;
   border-radius: var(--radius);
   box-shadow: var(--shadow-border-small);
-  background-color: white;
+  background-color: hsl(var(--card));
 }
 
 .name {

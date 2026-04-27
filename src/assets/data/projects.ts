@@ -43,7 +43,7 @@ export const projects = {
     type: "Tableau de bord",
     status: "draft",
     hero: {
-      variant: undefined,
+      variant: "neutral",
       secondButton: {
         text: "Voir le design system",
         link: "https://green-code-initiative.github.io/creedengo-dashboard/",
@@ -76,8 +76,7 @@ export const projects = {
     subTitle: undefined,
     description:
       "Collection de packs de requêtes CodeQL pour identifier les problèmes d'éco-conception directement dans vos dépôts GitHub",
-    githubLink:
-      "https://github.com/green-code-initiative/green-codeql-queries",
+    githubLink: "https://github.com/green-code-initiative/green-codeql-queries",
     logoComponent: GreenCodeQLLogo,
     type: "Outils d'analyse",
     status: "draft",

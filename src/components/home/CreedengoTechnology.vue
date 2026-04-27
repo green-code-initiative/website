@@ -35,6 +35,7 @@ div {
 
   p {
     font-weight: bold;
+    color: hsl(var(--neutral-900));
     z-index: 1;
   }
 }
