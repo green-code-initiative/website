@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@fontsource-variable/mulish": "^5.2.8",
-    "@unhead/vue": "^2.1.13",
+    "@unhead/vue": "^3.1.0",
     "altcha": "^3.0.4",
     "vue": "^3.5.33",
     "vue-router": "^5.0.6"
@@ -32,7 +32,7 @@
     "prettier": "^3.8.3",
     "sass": "~1.99.0",
     "typescript": "~6.0.3",
-    "typescript-eslint": "^8.59.0",
+    "typescript-eslint": "^8.59.1",
     "vite": "^8.0.10",
     "vite-ssg": "^28.3.0",
     "vite-ssg-sitemap": "^0.10.0",
