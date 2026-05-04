@@ -100,10 +100,9 @@ svg {
     color: hsl(var(--primary-900));
   }
 
-  &.in-progress,
   &.draft {
     background-color: hsl(var(--warning-300));
-    color: hsl(var(--neutral-900));
+    color: hsl(var(--text-neutral));
   }
 }
 </style>

@@ -44,7 +44,7 @@ withDefaults(
   flex-direction: column;
   gap: 0.5rem;
 
-  color: hsl(var(--secondary-700));
+  color: hsl(var(--text-secondary));
   font-size: 18px;
   font-weight: 900;
 
@@ -60,7 +60,7 @@ withDefaults(
     color: hsl(var(--text-neutral));
     padding: 1rem;
     border-radius: 0.5rem;
-    border: solid 1px #d8dae5;
+    border: solid 1px hsl(var(--surface-accent));
     font-size: 18px;
     font-weight: 500;
     outline: none;
@@ -68,7 +68,7 @@ withDefaults(
 
     &:focus,
     &:focus-within {
-      border-color: hsl(var(--secondary-500));
+      border-color: hsl(var(--text-secondary));
     }
   }
 

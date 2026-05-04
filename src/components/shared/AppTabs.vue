@@ -33,7 +33,7 @@ const emit = defineEmits<{
   align-items: flex-start;
   padding: 0.25rem;
   gap: 0.25rem;
-  background: hsl(var(--neutral-100));
+  background: hsl(var(--surface));
   border-radius: 0.5rem;
   width: fit-content;
 }
@@ -43,13 +43,14 @@ const emit = defineEmits<{
   background: transparent;
   border: none;
   border-radius: 0.5rem;
+  color: hsl(var(--text-neutral));
   cursor: pointer;
   flex: 1;
   font-size: 0.875rem;
   font-weight: 700;
 
   &.active {
-    background: #ffffff;
+    background: hsl(var(--surface-accent));
   }
 }
 </style>

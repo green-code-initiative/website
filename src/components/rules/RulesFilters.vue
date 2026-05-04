@@ -69,7 +69,7 @@ const filters = defineModel<RuleFilters>({ required: true });
   }
 
   &::-webkit-scrollbar-thumb {
-    background: #e8e8e8;
+    background: hsl(var(--surface-accent));
     border-radius: 4px;
   }
 

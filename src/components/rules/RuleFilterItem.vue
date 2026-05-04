@@ -17,7 +17,7 @@ defineProps<{ id: string; label: string }>();
   align-items: center;
   gap: 0.625rem;
   border-radius: 0.5rem;
-  background-color: hsl(0 0% 91% / 50%);
+  background-color: hsl(var(--surface));
   padding: 0.5rem 1rem;
 
   font-weight: bold;
@@ -35,7 +35,7 @@ defineProps<{ id: string; label: string }>();
   }
 
   &:hover {
-    background-color: hsl(0 0% 91%);
+    background-color: hsl(var(--surface-accent));
   }
 
   input[type="checkbox"] {

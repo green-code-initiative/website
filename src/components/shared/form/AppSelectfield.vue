@@ -39,7 +39,7 @@ defineProps<{
   flex-direction: column;
   gap: 0.5rem;
 
-  color: hsl(var(--secondary-700));
+  color: hsl(var(--text-secondary));
   font-size: 18px;
   font-weight: 900;
 
@@ -48,7 +48,7 @@ defineProps<{
     height: 56px;
     background-color: hsl(var(--accent));
     border-radius: 0.5rem;
-    border: solid 1px #d8dae5;
+    border: solid 1px hsl(var(--surface-accent));
     transition: box-shadow 0.08s ease-in-out;
     overflow: hidden;
 
@@ -73,13 +73,13 @@ defineProps<{
       top: 1rem;
       width: 24px;
       height: 24px;
-      color: hsl(var(--secondary-700));
+      color: hsl(var(--text-secondary));
       pointer-events: none;
     }
 
     &:focus,
     &:focus-within {
-      border-color: hsl(var(--secondary-500));
+      border-color: hsl(var(--text-secondary));
     }
   }
 }

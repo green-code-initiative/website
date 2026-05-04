@@ -121,16 +121,6 @@ useHead({
   padding: 3rem 0;
 }
 
-.intro-text {
-  text-align: center;
-  font-size: 1.125rem;
-  color: var(--color-text-secondary, #666);
-  margin-bottom: 3rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .level-section {
   margin: 0 20px 4rem 20px;
   width: calc(100% - 40px);

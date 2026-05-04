@@ -146,7 +146,7 @@ form {
 }
 
 .text-label {
-  color: hsl(var(--secondary-700));
+  color: hsl(var(--text-secondary));
   font-size: 18px;
   font-weight: 900;
   outline: none;
@@ -177,8 +177,8 @@ input[type="radio"] {
   height: 20px;
   padding: 2px;
   background-clip: content-box;
-  border: 2px solid #c1d8cfff;
-  background-color: #e7e6e7;
+  border: 2px solid hsl(var(--surface-accent));
+  background-color: hsl(var(--surface-accent));
   border-radius: 50%;
   font-size: 18px;
   font-weight: 500;

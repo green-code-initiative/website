@@ -39,10 +39,13 @@
   /*** Theme specific values ***/
   --text-neutral: var(--neutral-900);
   --text-accent: var(--neutral-600);
+  --text-primary: var(--primary-700);
+  --text-secondary: var(--secondary-700);
   --background: var(--neutral-0);
   --accent: var(--neutral-50);
   --card: var(--neutral-0);
   --surface: var(--neutral-100);
+  --surface-accent: var(--neutral-200);
 }
 
 /* OLD and Deprecated values */

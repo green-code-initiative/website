@@ -12,7 +12,7 @@ defineProps<{ text: string }>();
 .badge {
   padding: 6px 8px;
   border-radius: 8px;
-  background-color: #E8E8E8;
+  background-color: hsl(var(--surface-accent));
   font-size: 0.875rem;
   font-weight: bold;
 }

@@ -52,6 +52,6 @@ p.no-result {
   padding: 3rem 1rem;
   text-align: center;
   font-size: 1.125rem;
-  color: #666;
+  color: hsl(var(--text-accent));
 }
 </style>

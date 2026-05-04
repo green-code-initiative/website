@@ -33,7 +33,7 @@ textarea {
   text-align: center;
   margin: 0 1rem;
   max-width: 1200px;
-  color: hsl(var(--secondary-700));
+  color: hsl(var(--text-secondary));
 }
 
 .heading-3 {
@@ -42,7 +42,7 @@ textarea {
   text-align: center;
   margin: 0 1rem;
   max-width: 1050px;
-  color: hsl(var(--primary-700));
+  color: hsl(var(--text-primary));
 }
 
 @media screen and (max-width: 768px) {
