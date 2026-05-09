@@ -35,9 +35,9 @@ import AppButton from "@/components/shared/AppButton.vue";
   text-align: center;
 
   background: linear-gradient(
-    84.38deg,
-    hsl(var(--secondary-300) / 0.15) -5.58%,
-    hsl(var(--primary-300) / 0.15) 103.22%
+    84deg,
+    hsl(var(--secondary-300) / var(--gradient-opacity)) 0,
+    hsl(var(--primary-300) / var(--gradient-opacity)) 100%
   );
   box-shadow: var(--shadow-border-small);
 
@@ -60,7 +60,7 @@ import AppButton from "@/components/shared/AppButton.vue";
     .soc {
       background: linear-gradient(
         25deg,
-        hsl(var(--secondary-800)) 0%,
+        hsl(var(--secondary-700)) 0%,
         hsl(var(--secondary-500)) 80%
       );
       -webkit-background-clip: text;

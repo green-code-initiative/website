@@ -49,6 +49,26 @@
   --gradient-opacity: 0.15;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-neutral: var(--neutral-50);
+    --text-accent: var(--neutral-400);
+    --text-primary: var(--primary-300);
+    --text-secondary: var(--secondary-300);
+    --background: var(--neutral-900);
+    --accent: var(--neutral-800);
+    --card: var(--neutral-800);
+    --surface: var(--neutral-800);
+    --surface-accent: var(--neutral-700);
+    --warning-300: 40 100% 16%;
+    --gradient-opacity: 0.08;
+  }
+
+  a {
+    color: hsl(var(--secondary-300));
+  }
+}
+
 /* OLD and Deprecated values */
 :root {
   /* Shadows */

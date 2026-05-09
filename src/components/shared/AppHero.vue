@@ -3,9 +3,9 @@ withDefaults(
   defineProps<{
     title: string;
     subTitle?: string;
-    variant?: "default" | "primary" | "secondary";
+    variant?: "primary" | "primary-fill" | "secondary";
   }>(),
-  { subTitle: undefined, variant: "default" },
+  { subTitle: undefined, variant: "primary" },
 );
 </script>
 
@@ -26,25 +26,21 @@ withDefaults(
 <style lang="scss" scoped>
 .hero {
   background: linear-gradient(
-    100deg,
+    84deg,
     hsl(var(--background)) 0%,
-    hsl(var(--primary-300) / 0.15) 100%
+    hsl(var(--primary-300) / var(--gradient-opacity)) 100%
   );
   box-shadow: var(--shadow-border-small);
 
-  &.primary {
-    background: linear-gradient(
-      160deg,
-      hsl(var(--primary-50)) 0%,
-      hsl(var(--primary-100)) 100%
-    );
+  &.primary-fill {
+    background: hsl(var(--primary-300) / var(--gradient-opacity));
   }
 
   &.secondary {
     background: linear-gradient(
-      160deg,
-      hsl(var(--secondary-50)) 0%,
-      hsl(var(--secondary-100)) 100%
+      84deg,
+      hsl(var(--background)) 0%,
+      hsl(var(--secondary-300) / var(--gradient-opacity)) 100%
     );
   }
 
