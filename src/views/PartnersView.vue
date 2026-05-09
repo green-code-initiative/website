@@ -45,8 +45,12 @@ useHead({
     <!-- Niveau Platinum -->
     <div class="level-section">
       <div class="level-header-full">
-        <GoldBarsIcon width="64" height="64" color="rgb(82, 140, 233)" />
-        <h2 class="heading-2">Platinum</h2>
+        <GoldBarsIcon
+          width="48"
+          height="48"
+          color="hsl(var(--secondary-500))"
+        />
+        <h2>Platinum</h2>
       </div>
       <div class="type-columns">
         <div class="type-column partner-column">
@@ -63,8 +67,8 @@ useHead({
     <!-- Niveau Or -->
     <div class="level-section">
       <div class="level-header-full">
-        <GoldBarsIcon width="64" height="64" color="rgb(225, 180, 60)" />
-        <h2 class="heading-2">Or</h2>
+        <GoldBarsIcon width="48" height="48" color="rgb(225, 180, 60)" />
+        <h2>Or</h2>
       </div>
       <div class="type-columns">
         <div class="type-column partner-column">
@@ -81,8 +85,8 @@ useHead({
     <!-- Niveau Argent -->
     <div class="level-section">
       <div class="level-header-full">
-        <GoldBarsIcon width="64" height="64" color="rgb(192, 192, 192)" />
-        <h2 class="heading-2">Argent</h2>
+        <GoldBarsIcon width="48" height="48" color="hsl(var(--neutral-500))" />
+        <h2>Argent</h2>
       </div>
       <div class="type-columns">
         <div class="type-column partner-column">
@@ -118,26 +122,32 @@ useHead({
 
 <style lang="scss" scoped>
 .partners-content {
-  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 0;
 }
 
 .level-section {
-  margin: 0 20px 4rem 20px;
-  width: calc(100% - 40px);
-
-  &:last-child {
-    margin-bottom: 0;
-  }
+  margin: 0 1rem;
+  box-shadow: var(--shadow-border-small);
+  border-radius: var(--radius);
+  background: hsl(var(--card));
+  overflow: hidden;
 }
 
 .level-header-full {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
   padding: 1.5rem;
-  background: white;
-  border-radius: var(--radius, 8px) var(--radius, 8px) 0 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid hsl(var(--surface-accent));
+
+  h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+  }
 }
 
 .type-columns {
@@ -152,54 +162,37 @@ useHead({
 }
 
 .type-column {
-  padding: 2rem 1.5rem;
+  padding: 2rem;
   display: flex;
+  gap: 1.5rem;
   flex-direction: column;
   align-items: center;
-  min-height: 200px;
 
   &.partner-column {
-    background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
-    border-radius: 0 0 0 var(--radius, 8px);
-
-    @media screen and (max-width: 992px) {
-      border-radius: 0;
-    }
+    background: hsl(var(--secondary-300) / var(--gradient-opacity));
+    border-right: 1px solid hsl(var(--surface-accent));
   }
 
   &.sponsor-column {
-    background: linear-gradient(
-      135deg,
-      hsl(var(--primary-50)) 0%,
-      hsl(var(--primary-100)) 100%
-    );
-    border-radius: 0 0 var(--radius, 8px) 0;
-
-    @media screen and (max-width: 992px) {
-      border-radius: 0 0 var(--radius, 8px) var(--radius, 8px);
-    }
+    background: hsl(var(--primary-300) / var(--gradient-opacity));
   }
-}
 
-.column-label {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: var(--color-text-primary, #333);
-  margin-bottom: 1.5rem;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  .column-label {
+    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
 }
 
 .pdf-container {
   width: 100%;
   max-width: 1140px;
   margin: 0 auto;
-}
+  gap: 2rem;
 
-.pdf-actions {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2rem;
+  .pdf-actions {
+    display: flex;
+    justify-content: center;
+  }
 }
 </style>

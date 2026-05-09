@@ -46,6 +46,7 @@
   --card: var(--neutral-0);
   --surface: var(--neutral-100);
   --surface-accent: var(--neutral-200);
+  --gradient-opacity: 0.15;
 }
 
 /* OLD and Deprecated values */
