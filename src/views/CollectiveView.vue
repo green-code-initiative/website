@@ -19,7 +19,7 @@ useHead({
 </script>
 
 <template>
-  <AppHero title="Notre collectif" />
+  <AppHero title="Notre collectif" variant="secondary" />
 
   <AppSection title="Core team">
     <MemberList :members="coreMembers" />

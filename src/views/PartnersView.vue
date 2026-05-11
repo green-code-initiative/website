@@ -25,7 +25,7 @@ useHead({
   <AppHero
     title="Nos partenaires et sponsors"
     sub-title="Ils nous accompagnent et soutiennent notre mission pour un numérique plus durable"
-    variant="primary"
+    variant="primary-fill"
   >
     <template #actions>
       <AppButton

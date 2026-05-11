@@ -27,6 +27,8 @@ const icon = computed(() => icons[props.severity]);
 
 <style lang="scss" scoped>
 .rule-severity {
+  --background-opacity: 0.5;
+
   display: flex;
   align-items: center;
   gap: 0.25rem;
@@ -34,33 +36,54 @@ const icon = computed(() => icons[props.severity]);
   border-radius: 8px;
   font-size: 0.875rem;
   font-weight: bold;
-  background-color: rgba(var(--background-color), 0.5);
+  background-color: hsl(var(--background-color) / var(--background-opacity));
 
   svg {
     width: 20px;
     height: 20px;
-    color: rgb(var(--icon-color));
+    color: hsl(var(--icon-color));
   }
 
   &.info,
   &.minor {
-    --background-color: 133, 218, 255;
-    --icon-color: 57, 98, 115;
+    --background-color: 198 100% 76%;
+    --icon-color: 198 34% 34%;
   }
 
   &.major {
-    --background-color: 255, 206, 133;
-    --icon-color: 151, 116, 63;
+    --background-color: 36 100% 76%;
+    --icon-color: 36 41% 42%;
   }
 
   &.critical {
-    --background-color: 255, 133, 133;
-    --icon-color: 151, 68, 63;
+    --background-color: 0 100% 76%;
+    --icon-color: 3 41% 42%;
   }
 
   &.blocker {
-    --background-color: 178, 178, 178;
-    --icon-color: 77, 77, 77;
+    --background-color: 0 0% 70%;
+    --icon-color: 0 0% 30%;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    --background-opacity: 0.2;
+
+    &.info,
+    &.minor {
+      --icon-color: 198 60% 70%;
+    }
+
+    &.major {
+      --icon-color: 36 70% 70%;
+    }
+
+    &.critical {
+      --icon-color: 3 70% 70%;
+    }
+
+    &.blocker {
+      --icon-color: 0 0% 70%;
+    }
   }
 }
 </style>

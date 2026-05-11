@@ -106,7 +106,7 @@ const buildDatetime = new Intl.DateTimeFormat("default", {
     border-radius: 0.5rem;
     background: linear-gradient(
       40deg,
-      hsl(var(--secondary-50)) 0%,
+      hsl(var(--secondary-300) / var(--gradient-opacity)) 0%,
       hsl(var(--background)) 120%
     );
     box-shadow: var(--shadow-border-small);

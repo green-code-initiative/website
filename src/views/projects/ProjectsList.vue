@@ -99,12 +99,13 @@ const selectedStatus = ref("all");
   select {
     padding: 0.5rem;
     border: 1px solid hsl(var(--neutral-300));
-    border-radius: 4px;
-    background: white;
+    border-radius: var(--radius);
+    background: hsl(var(--card));
+    color: hsl(var(--text-neutral));
     cursor: pointer;
 
     &:focus {
-      outline: 2px solid hsl(var(--text-accent));
+      outline: 2px solid hsl(var(--text-secondary));
       outline-offset: 1px;
     }
   }
