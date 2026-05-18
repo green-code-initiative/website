@@ -6,6 +6,7 @@ on:
 
 env:
   VITE_API_URL: ${{ vars.API_URL }}
+  VITE_CHALLENGE_DASHBOARD_URL: ${{ vars.CHALLENGE_DASHBOARD_URL }}
   VITE_RULES_URL: ${{ vars.RULES_URL }}
 
 jobs:

@@ -75,6 +75,11 @@ export const routes: RouterOptions["routes"] = [
     component: () => import("./views/ChallengeView.vue"),
   },
   {
+    path: "/challenge-stats",
+    name: "challenge-stats",
+    component: () => import("./views/ChallengeStatsView.vue"),
+  },
+  {
     path: "/rules",
     name: "rules",
     component: () => import("./views/RulesView.vue"),

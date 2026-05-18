@@ -1,4 +1,5 @@
 interface ImportMetaEnv {
+  readonly VITE_CHALLENGE_DASHBOARD_URL: string;
   readonly VITE_RULES_URL: string;
 }
 
