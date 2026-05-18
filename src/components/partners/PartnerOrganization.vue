@@ -41,5 +41,6 @@ defineProps<{
 .name {
   font-size: 0.875rem;
   text-align: center;
+  white-space: pre-wrap;
 }
 </style>

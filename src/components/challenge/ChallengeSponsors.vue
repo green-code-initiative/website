@@ -1,8 +1,3 @@
-<script setup lang="ts">
-// import PartnerOrganizationList from "@/components/collective/PartnerOrganizationList.vue";
-// import organizations from "@/assets/data/challenge-organizations.json";
-</script>
-
 <template>
   <div class="sponsors">
     <div class="sponsor-list">
@@ -18,11 +13,11 @@
     </div>
     <div class="sponsor-list">
       <p>
-        🙏 Merci à <strong>nos partenaires</strong> pour leur engagement<br />
+        🙏 Merci à
+        <router-link to="/partenaires">nos partenaires</router-link> pour leur
+        engagement<br />
         en faveur d'un numérique responsable.
       </p>
-      <!-- <p>De <strong>nombreux partenaires</strong> prennent part au défi :</p> -->
-      <!-- <PartnerOrganizationList :custom-list="organizations" /> -->
     </div>
   </div>
 </template>
@@ -46,9 +41,13 @@
       font-weight: 700;
       text-align: center;
 
-      strong {
+      a {
         font-weight: 900;
-        color: hsl(var(--text-neutral));
+        color: hsl(var(--text-secondary));
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }

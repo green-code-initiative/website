@@ -46,7 +46,7 @@ const filteredOrganizations =
   flex-wrap: wrap;
   justify-content: center;
   padding: 0 1rem;
-  gap: 2.1rem;
+  gap: 1.5rem 2rem;
   max-width: 1280px;
   width: 100%;
 }

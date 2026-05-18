@@ -7,10 +7,12 @@ const props = defineProps<{
   type: "partner" | "sponsor";
 }>();
 
-const filteredOrganizations = organizations.filter(
-  (org) =>
-    org.level === props.level && org.type && org.type.includes(props.type),
-);
+const filteredOrganizations = organizations
+  .filter(
+    (org) =>
+      org.level === props.level && org.type && org.type.includes(props.type),
+  )
+  .sort((org1, org2) => org1.name.localeCompare(org2.name));
 </script>
 
 <template>

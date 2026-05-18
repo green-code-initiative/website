@@ -100,15 +100,7 @@
     "name": "TOSIT",
     "width": 160,
     "height": 63,
-    "level": "silver",
-    "type": ["sponsor"]
-  },
-  {
-    "img": "banque-de-france.svg",
-    "name": "Banque de France",
-    "width": 160,
-    "height": 75.88,
-    "level": "silver",
+    "level": "gold",
     "type": ["sponsor"]
   },
   {
@@ -116,15 +108,15 @@
     "name": "Aubay",
     "width": 90,
     "height": 90,
-    "level": "silver",
+    "level": "gold",
     "type": ["sponsor"]
   },
   {
-    "img": "c2s.png",
-    "name": "C2S Bouygues",
+    "img": "bt-business-solution.webp",
+    "name": "Bouygues Telecom\nBusiness Solution",
     "width": 160,
-    "height": 53,
-    "level": "silver",
+    "height": 47,
+    "level": "gold",
     "type": ["sponsor"]
   },
   {
@@ -132,6 +124,22 @@
     "name": "Wavestone",
     "width": 160,
     "height": 53,
+    "level": "silver",
+    "type": ["sponsor"]
+  },
+  {
+    "img": "talan.webp",
+    "name": "Talan",
+    "width": 160,
+    "height": 52,
+    "level": "silver",
+    "type": ["sponsor"]
+  },
+  {
+    "img": "thales.svg",
+    "name": "Thales",
+    "width": 160,
+    "height": 32,
     "level": "silver",
     "type": ["sponsor"]
   }
