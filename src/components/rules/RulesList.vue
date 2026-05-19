@@ -2,12 +2,15 @@
 import RuleCard from "@/components/rules/RuleCard.vue";
 import RulesFilters from "@/components/rules/RulesFilters.vue";
 import AppButton from "@/components/shared/AppButton.vue";
+import AppSearchBar from "@/components/shared/AppSearchbar.vue";
+import { ref } from "vue";
 import { useRuleFilters } from "@/composables/rule-filters";
 
 const props = defineProps<{ list: RuleList }>();
 const { items, meta, build } = props.list;
+const searchKeyword = ref('');
 
-const { filters, filteredRules } = useRuleFilters(props.list);
+const { filters, filteredRules } = useRuleFilters({list: props.list, searchKeyword});
 
 const buildDatetime = new Intl.DateTimeFormat("default", {
   dateStyle: "short",
@@ -16,6 +19,7 @@ const buildDatetime = new Intl.DateTimeFormat("default", {
 </script>
 
 <template>
+  <AppSearchBar v-model="searchKeyword"/>
   <div class="content">
     <RulesFilters :meta="meta" class="filters" v-model="filters" />
     <div class="rules">
