@@ -11,6 +11,9 @@ updates:
       - dependency-type: "direct"
     ignore:
       - dependency-name: "@types/node"
+      - dependency-name: "@unhead/vue"
+        # vite-ssg does not support unhead v3, see https://github.com/antfu-collective/vite-ssg/issues/469
+        versions: [">=3"]
     groups:
       all-dependencies:
         patterns:
