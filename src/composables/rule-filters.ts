@@ -1,4 +1,4 @@
-import { computed, ref, watch } from "vue";
+import { computed, ref, watch, type Ref } from "vue";
 
 const STORAGE_KEY = "ruleFilters";
 
@@ -8,6 +8,10 @@ const createDefaultState = (values: string[]): Record<string, boolean> => {
 
 const isFilterEnabled = (filter: RuleFilter): boolean => {
   return Object.values(filter).some((value) => value);
+};
+
+const isSearchEnabled = (keyword: string): boolean => {
+  return keyword.trim().length > 0;
 };
 
 const loadFiltersFromStorage = (meta: RuleMeta): RuleFilters => {
@@ -35,17 +39,36 @@ export type RuleFilters = {
   statuses: RuleFilter;
 };
 
-export const useRuleFilters = ({ items, meta }: RuleList) => {
-  const filters = ref(loadFiltersFromStorage(meta));
+type UseRuleFiltersOptions = {
+  list: RuleList;
+  searchKeyword: Ref<string>;
+};
+
+const searchRule = (keyword: string, item: Rule): boolean => {
+  return (
+    item.id.toLocaleLowerCase().includes(keyword) ||
+    item.name.toLocaleLowerCase().includes(keyword)
+  );
+};
+
+export const useRuleFilters = ({
+  list,
+  searchKeyword,
+}: UseRuleFiltersOptions) => {
+  const filters = ref(loadFiltersFromStorage(list.meta));
 
   const filteredRules = computed(() => {
     const { technologies, severities, statuses } = filters.value;
-    return items.filter(
+    const normalizedSearchKeyword = searchKeyword.value.toLocaleLowerCase();
+    return list.items.filter(
       (item) =>
         (!isFilterEnabled(technologies) ||
           item.technologies.some((tech) => technologies[tech])) &&
         (!isFilterEnabled(severities) || severities[item.severity]) &&
-        (!isFilterEnabled(statuses) || statuses[item.status])
+        (!isFilterEnabled(statuses) || statuses[item.status]) &&
+        // Search Rule if keyword exists
+        (!isSearchEnabled(normalizedSearchKeyword) ||
+          searchRule(normalizedSearchKeyword, item)),
     );
   });
 
@@ -59,7 +82,10 @@ export const useRuleFilters = ({ items, meta }: RuleList) => {
         // Ignore storage errors
       }
     },
-    { deep: true }
+    {
+      deep: true,
+      flush: "post", // update cache only after DOM is rendered
+    },
   );
 
   return { filters, filteredRules };

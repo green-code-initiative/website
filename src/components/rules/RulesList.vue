@@ -2,12 +2,22 @@
 import RuleCard from "@/components/rules/RuleCard.vue";
 import RulesFilters from "@/components/rules/RulesFilters.vue";
 import AppButton from "@/components/shared/AppButton.vue";
+import AppSearchBar from "@/components/shared/AppSearchbar.vue";
+import AppSliderIcon from "@/assets/icons/sliders.svg";
+import { ref } from "vue";
 import { useRuleFilters } from "@/composables/rule-filters";
+import RuleDialogFilter from "@/components/rules/RuleDialogFilter.vue";
 
 const props = defineProps<{ list: RuleList }>();
 const { items, meta, build } = props.list;
+const searchKeyword = ref("");
 
-const { filters, filteredRules } = useRuleFilters(props.list);
+const { filters, filteredRules } = useRuleFilters({
+  list: props.list,
+  searchKeyword,
+});
+
+const isDialogOpen = ref(false);
 
 const buildDatetime = new Intl.DateTimeFormat("default", {
   dateStyle: "short",
@@ -16,6 +26,17 @@ const buildDatetime = new Intl.DateTimeFormat("default", {
 </script>
 
 <template>
+  <div class="search">
+    <AppSearchBar class="search-bar" v-model="searchKeyword" />
+    <button class="show-filters" @click="() => (isDialogOpen = !isDialogOpen)">
+      <AppSliderIcon width="24px" height="24px" />
+    </button>
+    <RuleDialogFilter
+      v-model:show="isDialogOpen"
+      :meta="meta"
+      v-model:filters="filters"
+    />
+  </div>
   <div class="content">
     <RulesFilters :meta="meta" class="filters" v-model="filters" />
     <div class="rules">
@@ -51,13 +72,39 @@ const buildDatetime = new Intl.DateTimeFormat("default", {
 </template>
 
 <style lang="scss" scoped>
+.search {
+  display: flex;
+  flex: 0 0 100%;
+  flex-direction: row;
+  justify-content: center;
+
+  .search-bar {
+    flex: 1 0 80%;
+  }
+
+  .show-filters {
+    margin-left: 0.75rem;
+    padding: 5px;
+    border-radius: 8px;
+  }
+
+  @media (min-width: 920px) {
+    .show-filters {
+      display: none;
+    }
+
+    .search-bar {
+      flex: 1 0 100%;
+    }
+  }
+}
+
 .content {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin-bottom: 1rem;
 
-  /* TODO rework the component for mobile devices */
   .filters {
     display: none;
   }
