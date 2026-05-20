@@ -2,11 +2,13 @@
 import {
   date,
   edition,
+  galleryUrl,
   location,
   registration,
 } from "@/assets/data/challenge.json";
 import BackpackIcon from "@/assets/icons/backpack.svg";
 import CalendarIcon from "@/assets/icons/calendar.svg";
+import CameraIcon from "@/assets/icons/camera.svg";
 import ExternalLinkIcon from "@/assets/icons/external_link.svg";
 import HeartHandshakeIcon from "@/assets/icons/heart_handshake.svg";
 import PinIcon from "@/assets/icons/pin.svg";
@@ -42,6 +44,13 @@ import TicketCheckIcon from "@/assets/icons/ticket_check.svg";
           class="registration onboarding"
           target="_blank"
           ><BackpackIcon width="24" height="24" /> Accéder au Starter pack</a
+        >
+        <a
+          v-else-if="galleryUrl"
+          :href="galleryUrl"
+          class="registration ended"
+          target="_blank"
+          ><CameraIcon width="24" height="24" /> Accéder à la galerie photo</a
         >
       </div>
       <div class="meta-info">

@@ -73,6 +73,10 @@ const isRoute = computed(() => action.link.startsWith("/"));
   a {
     align-self: flex-end;
   }
+
+  p {
+    white-space: pre-wrap;
+  }
 }
 
 @keyframes pulse {
