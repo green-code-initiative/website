@@ -21,7 +21,7 @@ const loadFiltersFromStorage = (meta: RuleMeta): RuleFilters => {
   }
 
   return {
-    technologies: createDefaultState(Object.keys(meta.technologies)),
+    languages: createDefaultState(Object.keys(meta.languages)),
     severities: createDefaultState(meta.severities),
     statuses: createDefaultState(meta.statuses),
   };
@@ -30,7 +30,7 @@ const loadFiltersFromStorage = (meta: RuleMeta): RuleFilters => {
 export type RuleFilter = Record<string, boolean>;
 
 export type RuleFilters = {
-  technologies: RuleFilter;
+  languages: RuleFilter;
   severities: RuleFilter;
   statuses: RuleFilter;
 };
@@ -39,13 +39,14 @@ export const useRuleFilters = ({ items, meta }: RuleList) => {
   const filters = ref(loadFiltersFromStorage(meta));
 
   const filteredRules = computed(() => {
-    const { technologies, severities, statuses } = filters.value;
+    const { languages, severities, statuses } = filters.value;
     return items.filter(
       (item) =>
-        (!isFilterEnabled(technologies) ||
-          item.technologies.some((tech) => technologies[tech])) &&
+        (!isFilterEnabled(languages) ||
+          Object.keys(item.languages).some((lang) => languages[lang])) &&
         (!isFilterEnabled(severities) || severities[item.severity]) &&
-        (!isFilterEnabled(statuses) || statuses[item.status])
+        (!isFilterEnabled(statuses) ||
+          Object.values(item.languages).some((lang) => statuses[lang.status])),
     );
   });
 
@@ -59,7 +60,7 @@ export const useRuleFilters = ({ items, meta }: RuleList) => {
         // Ignore storage errors
       }
     },
-    { deep: true }
+    { deep: true },
   );
 
   return { filters, filteredRules };

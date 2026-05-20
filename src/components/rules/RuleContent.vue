@@ -5,21 +5,24 @@ import { vExternalLinks } from "@/composables/external-links";
 import { useFetchText } from "@/composables/fetch";
 import { computed, ref } from "vue";
 
-const { rule, technologies, contentUrlTemplate } = defineProps<{
+const { rule, languages, contentUrlTemplate } = defineProps<{
   rule: Rule;
-  technologies: RuleMeta["technologies"];
+  languages: RuleMeta["languages"];
   contentUrlTemplate: string;
 }>();
 
 const tabs = computed(() =>
-  rule.technologies.map((tech) => ({ id: tech, label: technologies[tech]! })),
+  Object.keys(rule.languages).map((lang) => ({
+    id: lang,
+    label: languages[lang]!,
+  })),
 );
-const selectedTab = ref(rule.technologies[0]!);
+const selectedTab = ref(Object.keys(rule.languages)[0]!);
 
 const contentUrl = computed(() =>
   contentUrlTemplate
     .replace("{id}", rule.id)
-    .replace("{technology}", selectedTab.value),
+    .replace("{language}", selectedTab.value),
 );
 
 const { data: content } = useFetchText(contentUrl);
