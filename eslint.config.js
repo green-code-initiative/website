@@ -25,6 +25,6 @@ export default [
       "vue/multi-word-component-names": "warn",
     },
   },
+  creedengo.configs.recommended,
   eslintConfigPrettier,
-  creedengo.configs.recommended
 ];
