@@ -1,19 +1,21 @@
 <script lang="ts" setup>
 const model = defineModel<string>({
-  default: ''
+  default: "",
 });
 </script>
 
 <template>
-<div class="search-container">
-    <input type="text"
-    class="searchbar"
-    v-model="model"
-    placeholder="Rechercher... "/>
-</div>
+  <div class="search-container">
+    <input
+      type="text"
+      aria-label="Filtrer les règles par identifiant ou titre"
+      class="searchbar"
+      v-model="model"
+      placeholder="Rechercher... "
+    />
+  </div>
 </template>
 <style lang="scss" scoped>
-
 .search-container {
   display: flex;
 }
@@ -27,6 +29,8 @@ const model = defineModel<string>({
   border: none;
   border-radius: 8px;
   outline: none;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 </style>

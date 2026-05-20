@@ -8,9 +8,12 @@ import { useRuleFilters } from "@/composables/rule-filters";
 
 const props = defineProps<{ list: RuleList }>();
 const { items, meta, build } = props.list;
-const searchKeyword = ref('');
+const searchKeyword = ref("");
 
-const { filters, filteredRules } = useRuleFilters({list: props.list, searchKeyword});
+const { filters, filteredRules } = useRuleFilters({
+  list: props.list,
+  searchKeyword,
+});
 
 const buildDatetime = new Intl.DateTimeFormat("default", {
   dateStyle: "short",
@@ -19,7 +22,7 @@ const buildDatetime = new Intl.DateTimeFormat("default", {
 </script>
 
 <template>
-  <AppSearchBar v-model="searchKeyword"/>
+  <AppSearchBar v-model="searchKeyword" />
   <div class="content">
     <RulesFilters :meta="meta" class="filters" v-model="filters" />
     <div class="rules">

@@ -1,4 +1,4 @@
-import { computed, reactive, watch, type Ref } from "vue";
+import { computed, ref, watch, type Ref } from "vue";
 
 const STORAGE_KEY = "ruleFilters";
 
@@ -45,15 +45,20 @@ type UseRuleFiltersOptions = {
 };
 
 const searchRule = (keyword: string, item: Rule): boolean => {
-  return item.id.toLocaleLowerCase().includes(keyword) ||
-    item.name.toLocaleLowerCase().includes(keyword);
-}
+  return (
+    item.id.toLocaleLowerCase().includes(keyword) ||
+    item.name.toLocaleLowerCase().includes(keyword)
+  );
+};
 
-export const useRuleFilters = ({list, searchKeyword}: UseRuleFiltersOptions) => {
-  const filters = reactive(loadFiltersFromStorage(list.meta));
+export const useRuleFilters = ({
+  list,
+  searchKeyword,
+}: UseRuleFiltersOptions) => {
+  const filters = ref(loadFiltersFromStorage(list.meta));
 
   const filteredRules = computed(() => {
-    const { technologies, severities, statuses } = filters;
+    const { technologies, severities, statuses } = filters.value;
     const normalizedSearchKeyword = searchKeyword.value.toLocaleLowerCase();
     return list.items.filter(
       (item) =>
@@ -62,7 +67,8 @@ export const useRuleFilters = ({list, searchKeyword}: UseRuleFiltersOptions) => 
         (!isFilterEnabled(severities) || severities[item.severity]) &&
         (!isFilterEnabled(statuses) || statuses[item.status]) &&
         // Search Rule if keyword exists
-        (!isSearchEnabled(normalizedSearchKeyword) || searchRule(normalizedSearchKeyword, item))
+        (!isSearchEnabled(normalizedSearchKeyword) ||
+          searchRule(normalizedSearchKeyword, item)),
     );
   });
 
@@ -76,10 +82,10 @@ export const useRuleFilters = ({list, searchKeyword}: UseRuleFiltersOptions) => 
         // Ignore storage errors
       }
     },
-    { 
+    {
       deep: true,
-      flush: 'post'
-    }
+      flush: "post", // update cache only after DOM is rendered
+    },
   );
 
   return { filters, filteredRules };
