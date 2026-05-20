@@ -20,12 +20,13 @@ const ruleData = computed(() =>
     : null,
 );
 
-// if the rule applies to a single technology, show it as a badge next to the title
-const ruleTechBadge = computed(() =>
-  ruleData.value?.technologies.length === 1 && data.value
-    ? data.value.meta.technologies[ruleData.value.technologies[0]]
-    : null,
-);
+// if the rule applies to a single language, show it as a badge next to the title
+const ruleTechBadge = computed(() => {
+  if (!ruleData.value || !data.value) return null;
+
+  const langs = Object.keys(ruleData.value.languages);
+  return langs.length === 1 ? data.value.meta.languages[langs[0]] : null;
+});
 
 // do not expose this page during alpha testing
 useHead({ meta: [{ name: "robots", content: "noindex" }] });
@@ -54,7 +55,7 @@ useHead({ meta: [{ name: "robots", content: "noindex" }] });
     <RuleContent
       v-else-if="data && ruleData && data.meta.contentUrlTemplate"
       :rule="ruleData"
-      :technologies="data.meta.technologies"
+      :languages="data.meta.languages"
       :content-url-template="data.meta.contentUrlTemplate"
     />
     <p class="loading" v-else>Loading...</p>

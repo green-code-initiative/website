@@ -34,7 +34,7 @@ const buildDatetime = new Intl.DateTimeFormat("default", {
       </p>
 
       <template v-for="rule in filteredRules" :key="rule.id">
-        <RuleCard :rule="rule" :technologies="meta.technologies" />
+        <RuleCard :rule="rule" :languages="meta.languages" />
       </template>
 
       <div class="rule-proposal-card">

@@ -48,7 +48,7 @@ const selectedStatus = ref("all");
         Type de projet :
         <select id="type-filter" v-model="selectedType">
           <option value="all">Tous les types</option>
-          <option value="Outils d'analyse">Outils d'analyse</option>
+          <option value="Outil d'analyse">Outil d'analyse</option>
           <option value="Documentation">Documentation</option>
           <option value="Tableau de bord">Tableau de bord</option>
         </select>

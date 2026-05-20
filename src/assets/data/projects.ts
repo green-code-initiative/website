@@ -12,7 +12,7 @@ export const projects = {
     githubLink:
       "https://github.com/orgs/green-code-initiative/repositories?q=creedengo",
     logoComponent: CreedengoLogo,
-    type: "Outils d'analyse",
+    type: "Outil d'analyse",
     status: "published",
     hero: {
       variant: "neutral",
@@ -26,7 +26,7 @@ export const projects = {
       "Outil d'audit éco-conception combinant analyse statique et dynamique pour réduire l'impact environnemental des applications web",
     githubLink: "https://github.com/green-code-initiative/EcoSonar",
     logoComponent: EcoSonarLogo,
-    type: "Outils d'analyse",
+    type: "Outil d'analyse",
     status: "published",
     hero: {
       variant: "primary",
@@ -78,7 +78,7 @@ export const projects = {
       "Collection de packs de requêtes CodeQL pour identifier les problèmes d'éco-conception directement dans vos dépôts GitHub",
     githubLink: "https://github.com/green-code-initiative/green-codeql-queries",
     logoComponent: GreenCodeQLLogo,
-    type: "Outils d'analyse",
+    type: "Outil d'analyse",
     status: "draft",
     hero: {
       variant: "primary",

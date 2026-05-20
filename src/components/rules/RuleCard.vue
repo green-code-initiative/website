@@ -1,13 +1,15 @@
 <script lang="ts" setup>
-import AppBadge from "@/components/shared/AppBadge.vue";
 import RuleSeverity from "@/components/rules/RuleSeverity.vue";
+import AppBadge from "@/components/shared/AppBadge.vue";
 import { computed } from "vue";
 
-const { rule, technologies } = defineProps<{
+const { rule, languages } = defineProps<{
   rule: Rule;
-  technologies: RuleMeta["technologies"];
+  languages: RuleMeta["languages"];
 }>();
-const isDeprecated = computed(() => rule.status === "DEPRECATED");
+const isDeprecated = computed(() =>
+  Object.values(rule.languages).every((l) => l.status === "DEPRECATED"),
+);
 </script>
 
 <template>
@@ -19,9 +21,10 @@ const isDeprecated = computed(() => rule.status === "DEPRECATED");
     <div class="rule-badges">
       <RuleSeverity :severity="rule.severity" />
       <AppBadge
-        v-for="tech in rule.technologies"
-        :key="tech"
-        :text="technologies[tech]!"
+        v-for="({ status }, lang) in rule.languages"
+        :key="lang"
+        :text="languages[lang]!"
+        :struck-through="status === 'DEPRECATED'"
       />
     </div>
   </div>

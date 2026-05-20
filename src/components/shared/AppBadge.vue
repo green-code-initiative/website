@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-defineProps<{ text: string }>();
+defineProps<{ text: string; struckThrough?: boolean }>();
 </script>
 
 <template>
-  <div class="badge">
+  <div class="badge" :class="{ struckThrough }">
     <p>{{ text }}</p>
   </div>
 </template>
@@ -15,5 +15,10 @@ defineProps<{ text: string }>();
   background-color: hsl(var(--surface-accent));
   font-size: 0.875rem;
   font-weight: bold;
+
+  &.struckThrough {
+    color: hsl(var(--text-accent));
+    text-decoration: line-through;
+  }
 }
 </style>

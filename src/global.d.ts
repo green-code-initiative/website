@@ -27,12 +27,15 @@ declare type Rule = {
   id: string;
   name: string;
   severity: "CRITICAL" | "INFO" | "MAJOR" | "MINOR" | "BLOCKER";
-  technologies: string[];
+  languages: Record<string, RuleLanguageEntry>;
+};
+
+declare type RuleLanguageEntry = {
   status: string;
 };
 
 declare type RuleMeta = {
-  technologies: Record<string, string>;
+  languages: Record<string, string>;
   severities: string[];
   statuses: string[];
   contentUrlTemplate: string | null;

@@ -3,6 +3,7 @@ import pluginVue from "eslint-plugin-vue";
 import pluginVueA11y from "eslint-plugin-vuejs-accessibility";
 import ts from "typescript-eslint";
 import eslintConfigPrettier from "eslint-config-prettier";
+import creedengo from "@creedengo/eslint-plugin";
 
 export default [
   js.configs.recommended,
@@ -24,5 +25,6 @@ export default [
       "vue/multi-word-component-names": "warn",
     },
   },
+  creedengo.configs.recommended,
   eslintConfigPrettier,
 ];

@@ -25,7 +25,7 @@ const loadFiltersFromStorage = (meta: RuleMeta): RuleFilters => {
   }
 
   return {
-    technologies: createDefaultState(Object.keys(meta.technologies)),
+    languages: createDefaultState(Object.keys(meta.languages)),
     severities: createDefaultState(meta.severities),
     statuses: createDefaultState(meta.statuses),
   };
@@ -34,7 +34,7 @@ const loadFiltersFromStorage = (meta: RuleMeta): RuleFilters => {
 export type RuleFilter = Record<string, boolean>;
 
 export type RuleFilters = {
-  technologies: RuleFilter;
+  languages: RuleFilter;
   severities: RuleFilter;
   statuses: RuleFilter;
 };
@@ -52,20 +52,23 @@ const searchRule = (keyword: string, item: Rule): boolean => {
 };
 
 export const useRuleFilters = ({
-  list,
+  list: { meta, items },
   searchKeyword,
 }: UseRuleFiltersOptions) => {
-  const filters = ref(loadFiltersFromStorage(list.meta));
+  const filters = ref(loadFiltersFromStorage(meta));
 
   const filteredRules = computed(() => {
-    const { technologies, severities, statuses } = filters.value;
+    const { languages, severities, statuses } = filters.value;
     const normalizedSearchKeyword = searchKeyword.value.toLocaleLowerCase();
-    return list.items.filter(
+    return items.filter(
       (item) =>
-        (!isFilterEnabled(technologies) ||
-          item.technologies.some((tech) => technologies[tech])) &&
+        (!isFilterEnabled(languages) ||
+          Object.keys(item.languages).some((lang) => languages[lang])) &&
         (!isFilterEnabled(severities) || severities[item.severity]) &&
-        (!isFilterEnabled(statuses) || statuses[item.status]) &&
+        (!isFilterEnabled(statuses) ||
+          Object.values(item.languages).some(
+            (lang) => statuses[lang.status],
+          )) &&
         // Search Rule if keyword exists
         (!isSearchEnabled(normalizedSearchKeyword) ||
           searchRule(normalizedSearchKeyword, item)),
