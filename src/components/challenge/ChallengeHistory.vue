@@ -15,6 +15,17 @@ import PinIcon from "@/assets/icons/pin.svg";
         />
         <div class="info">
           <h3>2-3 juin 2022</h3>
+          <div class="location">
+            <PinIcon width="18" height="18" />
+            <span>Simplon.co, 55 Rue de Vincennes<br />93100 Montreuil</span>
+          </div>
+          <div class="links">
+            <a
+              href="https://photos.app.goo.gl/FH2TXuvpTBmUgcsv7"
+              target="_blank"
+              >Galerie photo <ExternalLinkIcon width="14" height="14"
+            /></a>
+          </div>
         </div>
       </div>
       <div class="event">
