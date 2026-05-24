@@ -69,8 +69,8 @@
           Conformément à la loi n°78-17 du 6 janvier 1978 relative à
           l'informatique, aux fichiers et aux libertés, modifiée par la loi
           n°2004-801 du 6 août 2004, et au Règlement Général sur la Protection
-          des Données (RGPD) du 27 avril 2016, vous disposez d'un droit
-          d'accès, de rectification, de suppression et d'opposition aux données
+          des Données (RGPD) du 27 avril 2016, vous disposez d'un droit d'accès,
+          de rectification, de suppression et d'opposition aux données
           personnelles vous concernant.
         </p>
         <p>
