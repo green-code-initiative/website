@@ -6,7 +6,8 @@ import { computed, ref } from "vue";
 
 const currentDateId = ref(data.dates[0]!.id);
 const events = computed(
-  () => data.dates.find((date) => date.id === currentDateId.value)?.events ?? []
+  () =>
+    data.dates.find((date) => date.id === currentDateId.value)?.events ?? [],
 );
 </script>
 

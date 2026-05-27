@@ -3,7 +3,7 @@ import { ref, toValue, watchEffect, type Ref } from "vue";
 const useFetch = <T>(
   url: string | Ref<string>,
   parser: (res: Response) => Promise<T>,
-  options?: RequestInit
+  options?: RequestInit,
 ) => {
   const data = ref<T | null>(null);
   const error = ref<Error | null>(null);
@@ -28,10 +28,10 @@ const useFetch = <T>(
 
 export const useFetchJson = <T>(
   url: string | Ref<string>,
-  options?: RequestInit
+  options?: RequestInit,
 ) => useFetch<T>(url, (res) => res.json(), options);
 
 export const useFetchText = (
   url: string | Ref<string>,
-  options?: RequestInit
+  options?: RequestInit,
 ) => useFetch<string>(url, (res) => res.text(), options);

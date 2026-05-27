@@ -26,17 +26,15 @@ const buildDatetime = new Intl.DateTimeFormat("default", {
 </script>
 
 <template>
-  <div class="search">
-    <AppSearchBar class="search-bar" v-model="searchKeyword" />
-    <button class="show-filters" @click="() => (isDialogOpen = !isDialogOpen)">
-      <AppSliderIcon width="24px" height="24px" />
-    </button>
-    <RuleDialogFilter
-      v-model:show="isDialogOpen"
-      :meta="meta"
-      v-model:filters="filters"
-    />
-  </div>
+  <AppSearchBar v-model="searchKeyword" />
+  <button class="show-filters" @click="() => (isDialogOpen = !isDialogOpen)">
+    <AppSliderIcon />
+  </button>
+  <RuleDialogFilter
+    v-model:show="isDialogOpen"
+    :meta="meta"
+    v-model:filters="filters"
+  />
   <div class="content">
     <RulesFilters :meta="meta" class="filters" v-model="filters" />
     <div class="rules">
@@ -48,7 +46,7 @@ const buildDatetime = new Intl.DateTimeFormat("default", {
       </p>
 
       <template v-for="rule in filteredRules" :key="rule.id">
-        <RuleCard :rule="rule" :technologies="meta.technologies" />
+        <RuleCard :rule="rule" :languages="meta.languages" />
       </template>
 
       <div class="rule-proposal-card">
@@ -72,30 +70,38 @@ const buildDatetime = new Intl.DateTimeFormat("default", {
 </template>
 
 <style lang="scss" scoped>
-.search {
-  display: flex;
-  flex: 0 0 100%;
-  flex-direction: row;
-  justify-content: center;
+.show-filters {
+  position: absolute;
+  left: calc(500px + 1.5rem);
+  @media (max-width: calc(500px + 5.5rem)) {
+    left: calc(100% - 4rem);
+  }
+  transform: translateY(-50%);
+  padding: 2.5px;
+  appearance: none;
+  background-color: hsl(var(--card));
+  color: hsl(var(--text-neutral));
+  border-radius: 0.5rem;
+  border: solid 1px hsl(var(--surface-accent));
+  height: 3rem;
+  width: 3rem;
+  outline: none;
+  transition: box-shadow 0.08s ease-in-out;
 
-  .search-bar {
-    flex: 1 0 80%;
+  &:focus,
+  &:focus-within {
+    border-color: hsl(var(--text-secondary));
   }
 
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+@media (min-width: 920px) {
   .show-filters {
-    margin-left: 0.75rem;
-    padding: 5px;
-    border-radius: 8px;
-  }
-
-  @media (min-width: 920px) {
-    .show-filters {
-      display: none;
-    }
-
-    .search-bar {
-      flex: 1 0 100%;
-    }
+    display: none;
   }
 }
 

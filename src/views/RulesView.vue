@@ -2,7 +2,6 @@
 import RuleContent from "@/components/rules/RuleContent.vue";
 import RuleSeverity from "@/components/rules/RuleSeverity.vue";
 import RulesList from "@/components/rules/RulesList.vue";
-import AppAlert from "@/components/shared/AppAlert.vue";
 import AppBadge from "@/components/shared/AppBadge.vue";
 import { useFetchJson } from "@/composables/fetch";
 import { useHead } from "@unhead/vue";
@@ -20,12 +19,13 @@ const ruleData = computed(() =>
     : null,
 );
 
-// if the rule applies to a single technology, show it as a badge next to the title
-const ruleTechBadge = computed(() =>
-  ruleData.value?.technologies.length === 1 && data.value
-    ? data.value.meta.technologies[ruleData.value.technologies[0]]
-    : null,
-);
+// if the rule applies to a single language, show it as a badge next to the title
+const ruleTechBadge = computed(() => {
+  if (!ruleData.value || !data.value) return null;
+
+  const langs = Object.keys(ruleData.value.languages);
+  return langs.length === 1 ? data.value.meta.languages[langs[0]] : null;
+});
 
 // do not expose this page during alpha testing
 useHead({ meta: [{ name: "robots", content: "noindex" }] });
@@ -46,15 +46,11 @@ useHead({ meta: [{ name: "robots", content: "noindex" }] });
     </div>
   </div>
   <div class="container">
-    <AppAlert variant="warning">
-      This is an <strong>alpha version</strong> of the rule repository. Some
-      features may not work as expected.
-    </AppAlert>
     <RulesList v-if="data && !ruleData" :list="data" />
     <RuleContent
       v-else-if="data && ruleData && data.meta.contentUrlTemplate"
       :rule="ruleData"
-      :technologies="data.meta.technologies"
+      :languages="data.meta.languages"
       :content-url-template="data.meta.contentUrlTemplate"
     />
     <p class="loading" v-else>Loading...</p>
@@ -63,7 +59,7 @@ useHead({ meta: [{ name: "robots", content: "noindex" }] });
 
 <style lang="scss" scoped>
 .hero {
-  padding: 2rem 0.5rem;
+  padding: 3rem 0.5rem;
   background-color: hsl(var(--accent));
   box-shadow: var(--shadow-border-small);
 
@@ -103,10 +99,6 @@ useHead({ meta: [{ name: "robots", content: "noindex" }] });
   @media (min-width: 1112px) {
     margin: 0 auto;
   }
-}
-
-.alert {
-  margin: 2rem 0 1rem;
 }
 
 .loading {

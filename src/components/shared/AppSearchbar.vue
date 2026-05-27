@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-const model = defineModel<string>({
-  default: "",
-});
+import SearchIcon from "@/assets/icons/search.svg?component";
+
+const model = defineModel<string>({ default: "" });
 </script>
 
 <template>
@@ -9,28 +9,49 @@ const model = defineModel<string>({
     <input
       type="text"
       aria-label="Filtrer les règles par identifiant ou titre"
-      class="searchbar"
       v-model="model"
       placeholder="Rechercher... "
     />
+    <SearchIcon />
   </div>
 </template>
+
 <style lang="scss" scoped>
 .search-container {
-  display: flex;
-}
+  position: relative;
+  max-width: 500px;
 
-.searchbar {
-  width: 100%;
-  padding: 10px 45px;
-  background: white url("@/assets/icons/search.svg") no-repeat 12px center;
-  background-size: 24px 24px;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  outline: none;
-  box-shadow:
-    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  @media (max-width: calc(500px + 5.5rem)) {
+    max-width: calc(100% - 3.5rem);
+  }
+
+  svg {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    left: 0.875rem;
+    top: -0.75rem;
+  }
+
+  input {
+    appearance: none;
+    background-color: hsl(var(--card));
+    color: hsl(var(--text-neutral));
+    padding: 1rem 1rem 1rem 3rem;
+    border-radius: 0.5rem;
+    border: solid 1px hsl(var(--surface-accent));
+    font-size: 18px;
+    font-weight: 500;
+    height: 3rem;
+    outline: none;
+    width: 100%;
+    transform: translateY(-50%);
+    transition: box-shadow 0.08s ease-in-out;
+
+    &:focus,
+    &:focus-within {
+      border-color: hsl(var(--text-secondary));
+    }
+  }
 }
 </style>

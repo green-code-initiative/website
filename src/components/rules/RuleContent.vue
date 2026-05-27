@@ -5,35 +5,47 @@ import { vExternalLinks } from "@/composables/external-links";
 import { useFetchText } from "@/composables/fetch";
 import { computed, ref } from "vue";
 
-const { rule, technologies, contentUrlTemplate } = defineProps<{
+const { rule, languages, contentUrlTemplate } = defineProps<{
   rule: Rule;
-  technologies: RuleMeta["technologies"];
+  languages: RuleMeta["languages"];
   contentUrlTemplate: string;
 }>();
 
 const tabs = computed(() =>
-  rule.technologies.map((tech) => ({ id: tech, label: technologies[tech]! })),
+  Object.keys(rule.languages).map((lang) => ({
+    id: lang,
+    label: languages[lang]!,
+  })),
 );
-const selectedTab = ref(rule.technologies[0]!);
+const selectedTab = ref(Object.keys(rule.languages)[0]!);
 
 const contentUrl = computed(() =>
   contentUrlTemplate
     .replace("{id}", rule.id)
-    .replace("{technology}", selectedTab.value),
+    .replace("{language}", selectedTab.value),
 );
 
 const { data: content } = useFetchText(contentUrl);
 </script>
 
 <template>
-  <AppTabs v-if="tabs.length > 1" v-model="selectedTab" :tabs="tabs" />
-  <article class="rule-content" v-external-links v-html="content"></article>
-  <div class="rule-actions">
-    <AppButton text="Go back to list" variant="neutral" link="/rules" />
-  </div>
+  <main>
+    <AppTabs v-if="tabs.length > 1" v-model="selectedTab" :tabs="tabs" />
+    <article class="rule-content" v-external-links v-html="content"></article>
+    <div class="rule-actions">
+      <AppButton text="Go back to list" variant="neutral" link="/rules" />
+    </div>
+  </main>
 </template>
 
 <style lang="scss">
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
 article.rule-content {
   min-height: 60vh;
 
@@ -53,7 +65,6 @@ article.rule-content {
 
 .rule-actions {
   display: flex;
-  justify-content: left;
-  margin: 0 0 2rem;
+  justify-content: flex-start;
 }
 </style>
