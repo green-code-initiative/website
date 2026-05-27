@@ -8,7 +8,11 @@ defineProps<{ modelValue: boolean }>();
     :class="{ active: modelValue }"
     @click="$emit('update:modelValue', !modelValue)"
   >
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+    >
       <path
         class="top-line"
         fill-rule="evenodd"
@@ -40,6 +44,7 @@ button {
   padding: 0.75rem;
   width: 48px;
   height: 48px;
+  color: hsl(var(--text-neutral));
 
   svg {
     path {
