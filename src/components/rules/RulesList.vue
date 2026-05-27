@@ -1,10 +1,12 @@
 <script lang="ts" setup>
+import AppFunnelPlusIcon from "@/assets/icons/funnel_plus.svg";
 import RuleCard from "@/components/rules/RuleCard.vue";
+import RuleDialogFilter from "@/components/rules/RuleDialogFilter.vue";
 import RulesFilters from "@/components/rules/RulesFilters.vue";
 import AppButton from "@/components/shared/AppButton.vue";
 import AppSearchBar from "@/components/shared/AppSearchbar.vue";
-import { ref } from "vue";
 import { useRuleFilters } from "@/composables/rule-filters";
+import { ref } from "vue";
 
 const props = defineProps<{ list: RuleList }>();
 const { items, meta, build } = props.list;
@@ -15,6 +17,8 @@ const { filters, filteredRules } = useRuleFilters({
   searchKeyword,
 });
 
+const isDialogOpen = ref(false);
+
 const buildDatetime = new Intl.DateTimeFormat("default", {
   dateStyle: "short",
   timeStyle: "short",
@@ -22,7 +26,21 @@ const buildDatetime = new Intl.DateTimeFormat("default", {
 </script>
 
 <template>
-  <AppSearchBar v-model="searchKeyword" />
+  <div class="action-bar">
+    <AppSearchBar v-model="searchKeyword" />
+    <button
+      class="show-filters"
+      @click="() => (isDialogOpen = !isDialogOpen)"
+      aria-label="Appliquer des filtres"
+    >
+      <AppFunnelPlusIcon />
+    </button>
+  </div>
+  <RuleDialogFilter
+    :meta="meta"
+    v-model:show="isDialogOpen"
+    v-model:filters="filters"
+  />
   <div class="content">
     <RulesFilters :meta="meta" class="filters" v-model="filters" />
     <div class="rules">
@@ -58,13 +76,44 @@ const buildDatetime = new Intl.DateTimeFormat("default", {
 </template>
 
 <style lang="scss" scoped>
+.action-bar {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  max-width: 540px;
+  width: 100%;
+  gap: 1rem;
+  transform: translateY(-50%);
+
+  .show-filters {
+    padding: 2.5px;
+    appearance: none;
+    background-color: hsl(var(--card));
+    color: hsl(var(--text-neutral));
+    border-radius: 0.5rem;
+    border: solid 1px hsl(var(--surface-accent));
+    height: 3rem;
+    width: 3rem;
+    outline: none;
+    transition: box-shadow 0.08s ease-in-out;
+
+    &:focus,
+    &:focus-within {
+      border-color: hsl(var(--text-secondary));
+    }
+
+    @media (min-width: 920px) {
+      display: none;
+    }
+  }
+}
+
 .content {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin-bottom: 1rem;
 
-  /* TODO rework the component for mobile devices */
   .filters {
     display: none;
   }

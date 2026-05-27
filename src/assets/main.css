@@ -19,6 +19,10 @@ body {
   background: hsl(var(--background));
 }
 
+body:has([role="dialog"].opened) {
+  overflow: hidden;
+}
+
 button,
 input,
 optgroup,
