@@ -19,18 +19,14 @@ const model = defineModel<string>({ default: "" });
 <style lang="scss" scoped>
 .search-container {
   position: relative;
-  max-width: 500px;
-
-  @media (max-width: calc(500px + 5.5rem)) {
-    max-width: calc(100% - 3.5rem);
-  }
+  width: 100%;
 
   svg {
     position: absolute;
     width: 1.5rem;
     height: 1.5rem;
     left: 0.875rem;
-    top: -0.75rem;
+    top: 0.875rem;
   }
 
   input {
@@ -45,7 +41,6 @@ const model = defineModel<string>({ default: "" });
     height: 3rem;
     outline: none;
     width: 100%;
-    transform: translateY(-50%);
     transition: box-shadow 0.08s ease-in-out;
 
     &:focus,

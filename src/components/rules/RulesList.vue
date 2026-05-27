@@ -1,12 +1,12 @@
 <script lang="ts" setup>
+import AppFunnelPlusIcon from "@/assets/icons/funnel_plus.svg";
 import RuleCard from "@/components/rules/RuleCard.vue";
+import RuleDialogFilter from "@/components/rules/RuleDialogFilter.vue";
 import RulesFilters from "@/components/rules/RulesFilters.vue";
 import AppButton from "@/components/shared/AppButton.vue";
 import AppSearchBar from "@/components/shared/AppSearchbar.vue";
-import AppSliderIcon from "@/assets/icons/sliders.svg";
-import { ref } from "vue";
 import { useRuleFilters } from "@/composables/rule-filters";
-import RuleDialogFilter from "@/components/rules/RuleDialogFilter.vue";
+import { ref } from "vue";
 
 const props = defineProps<{ list: RuleList }>();
 const { items, meta, build } = props.list;
@@ -26,13 +26,19 @@ const buildDatetime = new Intl.DateTimeFormat("default", {
 </script>
 
 <template>
-  <AppSearchBar v-model="searchKeyword" />
-  <button class="show-filters" @click="() => (isDialogOpen = !isDialogOpen)">
-    <AppSliderIcon />
-  </button>
+  <div class="action-bar">
+    <AppSearchBar v-model="searchKeyword" />
+    <button
+      class="show-filters"
+      @click="() => (isDialogOpen = !isDialogOpen)"
+      aria-label="Appliquer des filtres"
+    >
+      <AppFunnelPlusIcon />
+    </button>
+  </div>
   <RuleDialogFilter
-    v-model:show="isDialogOpen"
     :meta="meta"
+    v-model:show="isDialogOpen"
     v-model:filters="filters"
   />
   <div class="content">
@@ -70,38 +76,35 @@ const buildDatetime = new Intl.DateTimeFormat("default", {
 </template>
 
 <style lang="scss" scoped>
-.show-filters {
-  position: absolute;
-  left: calc(500px + 1.5rem);
-  @media (max-width: calc(500px + 5.5rem)) {
-    left: calc(100% - 4rem);
-  }
+.action-bar {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  max-width: 540px;
+  width: 100%;
+  gap: 1rem;
   transform: translateY(-50%);
-  padding: 2.5px;
-  appearance: none;
-  background-color: hsl(var(--card));
-  color: hsl(var(--text-neutral));
-  border-radius: 0.5rem;
-  border: solid 1px hsl(var(--surface-accent));
-  height: 3rem;
-  width: 3rem;
-  outline: none;
-  transition: box-shadow 0.08s ease-in-out;
 
-  &:focus,
-  &:focus-within {
-    border-color: hsl(var(--text-secondary));
-  }
-
-  svg {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-}
-
-@media (min-width: 920px) {
   .show-filters {
-    display: none;
+    padding: 2.5px;
+    appearance: none;
+    background-color: hsl(var(--card));
+    color: hsl(var(--text-neutral));
+    border-radius: 0.5rem;
+    border: solid 1px hsl(var(--surface-accent));
+    height: 3rem;
+    width: 3rem;
+    outline: none;
+    transition: box-shadow 0.08s ease-in-out;
+
+    &:focus,
+    &:focus-within {
+      border-color: hsl(var(--text-secondary));
+    }
+
+    @media (min-width: 920px) {
+      display: none;
+    }
   }
 }
 

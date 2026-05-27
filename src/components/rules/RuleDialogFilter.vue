@@ -1,94 +1,86 @@
 <script lang="ts" setup>
-import RulesFilters from "./RulesFilters.vue";
-import AppCircleCross from "@/assets/icons/xmark.svg";
+import AppXIcon from "@/assets/icons/x.svg";
 import type { RuleFilters } from "@/composables/rule-filters";
-import { nextTick, onMounted, onUnmounted, watch } from "vue";
+import { onMounted, onUnmounted } from "vue";
+import RulesFilters from "./RulesFilters.vue";
 
 const { meta } = defineProps<{ meta: RuleMeta }>();
 const filters = defineModel<RuleFilters>("filters", { required: true });
 const show = defineModel<boolean>("show", { default: false });
-
-onMounted(() => window.addEventListener("resize", onResize));
-onUnmounted(() => {
-  window.removeEventListener("resize", onResize);
-  document.body.style.overflow = "";
-});
-
-watch(
-  () => show.value,
-  async (isOpen) => {
-    await nextTick();
-
-    document.body.style.overflow = isOpen ? "hidden" : "";
-  },
-);
 
 const onResize = () => {
   if (show.value && window.innerWidth > 920) {
     show.value = false;
   }
 };
+
+onMounted(() => window.addEventListener("resize", onResize));
+onUnmounted(() => window.removeEventListener("resize", onResize));
 </script>
 
 <template>
-  <div v-if="show" class="overlay"></div>
-  <div v-if="show" class="dialog">
-    <button class="close" type="button" @click="show = false">
-      <AppCircleCross width="1.5rem" height="1.5rem" />
-    </button>
+  <div
+    v-if="show"
+    class="container opened"
+    role="dialog"
+    aria-label="Dialogue de filtres pour les règles"
+  >
+    <div class="dialog">
+      <button
+        class="close"
+        type="button"
+        @click="show = false"
+        aria-label="Fermer la dialogue"
+      >
+        <AppXIcon />
+      </button>
 
-    <div class="content">
       <RulesFilters :meta="meta" v-model="filters" class="filters" />
     </div>
   </div>
 </template>
 
-<style scoped>
-.dialog {
+<style scoped lang="scss">
+.container {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background: hsl(var(--background));
-  display: flex;
-  flex-direction: column;
-  border-radius: 0.5rem;
-  overflow: hidden;
-}
-
-.close {
-  all: unset;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 10;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  fill: hsl(var(--text-neutral));
-}
-
-.content {
-  flex: 1;
-  overflow-y: none;
-  margin: 1.5rem;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: contain;
-  .filters {
-    height: 40dvh;
-    overscroll-behavior: contain;
-  }
-}
-
-.overlay {
   z-index: 1000;
-  background: hsl(var(--accent));
-  opacity: 70%;
-  position: fixed;
-  top: 0px;
-  height: 50%;
-  width: 100%;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(1px) brightness(0.2);
+
+  .dialog {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65%;
+    background: hsl(var(--background));
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .close {
+    all: unset;
+    align-self: flex-end;
+    cursor: pointer;
+    fill: hsl(var(--text-neutral));
+    border: solid 1px hsl(var(--surface-accent));
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    flex-shrink: 0;
+
+    &:focus,
+    &:focus-within {
+      border-color: hsl(var(--text-secondary));
+    }
+  }
 }
 </style>
