@@ -53,6 +53,11 @@ const links = Object.entries(linkTypes)
         <Component :is="link.logo" width="24" height="24" />
       </a>
     </div>
+    <div class="info" v-if="technical-leading">
+      <p class="technical-lead">
+        <span v-for="tec in technical-leading">{{ tec }}<br/></span>
+      </p>
+    </div>
   </div>
 </template>
 
@@ -84,6 +89,11 @@ img {
 }
 
 .company {
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.technical-lead {
   font-size: 0.875rem;
   text-align: center;
 }

@@ -1,0 +1,111 @@
+[
+  {
+    "name": "Ashvin Appigadoo",
+    "company": "Accenture",
+    "profile": "ashvin_appigadoo.webp",
+    "links": {
+      "linkedin": "ashvin-appigadoo-801256153",
+      "github": "ashvinappi24-cmd"
+    },
+    "technical-leading" : ["ecoSonar"]
+  },{
+    "name": "Vianney de Bellabre",
+    "company": "C2S Bouygues",
+    "profile": "vianney_de_bellabre.webp",
+    "links": {
+      "linkedin": "vianney-de-bellabre",
+      "github": "Djoums"
+    },
+    "technical-leading" : ["creedengo-csharp"]
+  },
+  {
+    "name": "David De Carvalho",
+    "company": "Capgemini",
+    "profile": "david_de_carvalho.webp",
+    "links": {
+      "linkedin": "david--de--carvalho",
+      "github": "dedece35"
+    },
+    "technical-leading" : ["global", "creedengo-java", "creedengo-php"]
+  },
+  {
+    "name": "Benjamin Delahais",
+    "company": "Solocal",
+    "profile": "benjamin_delahais.webp",
+    "links": {
+      "linkedin": "benjamin-delahai-381476b5",
+      "github": "B3ND3L"
+    },
+    "technical-leading" : ["creedengo-python"]
+  },
+  {
+    "name": "Thierno Diallo",
+    "company": "Axa",
+    "profile": "thierno_diallo.webp",
+    "links": {
+      "linkedin": "diallo-thierno-afa",
+      "github": "thiernodialloAFA"
+    },
+    "technical-leading" : ["creedengo-infra"]
+  },
+  {
+    "name": "Johanna Duigou",
+    "company": "Orange Business",
+    "profile": "johanna_duigou.webp",
+    "links": {
+      "linkedin": "johannaduigou",
+      "github": "jduigoudev"
+    },
+    "technical-leading" : ["creedengo-android-java", "creedengo-android-kotlin"]
+  },
+  {
+    "name": "Gilles Grousset",
+    "company": "inside|app",
+    "profile": "gilles_grousset.webp",
+    "links": {
+      "linkedin": "gillesgrousset",
+      "github": "zippy1978"
+    },
+    "technical-leading" : ["creedengo-ios"]
+  },
+  {
+    "name": "Olivier Le Goaër",
+    "company": "LIUPPA",
+    "profile": "olivier_le_goaer.webp",
+    "links": {
+      "linkedin": "olivierlegoaer",
+      "github": "olegoaer"
+    },
+    "technical-leading" : ["codeql"]
+  },
+  {
+    "name": "Maxime Malgorn",
+    "company": "Fulll (In Extenso)",
+    "profile": "maxime_malgorn.webp",
+    "links": {
+      "linkedin": "maximemalgorn",
+      "github": "utarwyn"
+    },
+    "technical-leading" : ["creedengo-javascript", "website", "website-rules"]
+  },
+  {
+    "name": "Alexandre Morgaut",
+    "company": "Capgemini",
+    "profile": "alexandre_morgaut.webp",
+    "links": {
+      "linkedin": "alexandre-morgaut",
+      "github": "AMorgaut"
+    },
+    "technical-leading" : ["creedengo-dashboard", "ia-green-skills"]
+  },
+  {
+    "name": "Florian Stormacq",
+    "company": "Univversité de NAMUR",
+    "profile": "florian_stormacq.webp",
+    "links": {
+      "linkedin": "florian-stormacq-4184b13aa",
+      "github": "fstormacq"
+    },
+    "technical-leading" : ["energyTracer"]
+  }
+]

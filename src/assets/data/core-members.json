@@ -1,5 +1,13 @@
 [
   {
+    "name": "Vianney de Bellabre",
+    "company": "C2S Bouygues",
+    "profile": "vianney_de_bellabre.webp",
+    "links": {
+      "linkedin": "vianney-de-bellabre",
+      "github": "Djoums"
+    }
+    },{
     "name": "David De Carvalho",
     "company": "Capgemini",
     "profile": "david_de_carvalho.webp",
@@ -15,6 +23,15 @@
     "links": {
       "linkedin": "jules-delecour-498680118",
       "github": "jules-delecour-dav"
+    }
+  },
+  {
+    "name": "Johanna Duigou",
+    "company": "Orange Business",
+    "profile": "johanna_duigou.webp",
+    "links": {
+      "linkedin": "johannaduigou",
+      "github": "jduigoudev"
     }
   },
   {
@@ -68,6 +85,14 @@
     "links": {
       "linkedin": "alexandre-morgaut",
       "github": "AMorgaut"
+    }
+  },
+  {
+    "name": "Mickaël PICARD",
+    "company": "Aubay",
+    "profile": "mickael_picard.webp",
+    "links": {
+      "github": "MP-Aubay"
     }
   }
 ]

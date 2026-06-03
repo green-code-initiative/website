@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import contributors from "@/assets/data/contributors.json";
 import coreMembers from "@/assets/data/core-members.json";
+import technicalLeaders from "@/assets/data/technical-leaders.json";
 import MemberList from "@/components/collective/MemberList.vue";
 import AppHero from "@/components/shared/AppHero.vue";
 import AppSection from "@/components/shared/AppSection.vue";
@@ -25,7 +26,11 @@ useHead({
     <MemberList :members="coreMembers" />
   </AppSection>
 
-  <AppSection title="Contributrices et contributeurs" background-color="grey">
+  <AppSection title="Technical Leaders" background-color="grey">
+    <MemberList :members="technicalLeaders" />
+  </AppSection>
+
+  <AppSection title="Contributrices et contributeurs">
     <MemberList :members="contributors" />
   </AppSection>
 </template>
