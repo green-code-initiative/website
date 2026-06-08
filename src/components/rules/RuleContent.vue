@@ -61,6 +61,21 @@ article.rule-content {
   a {
     word-break: break-all;
   }
+
+  table {
+    border-collapse: collapse;
+
+    th,
+    td {
+      border: 1px solid hsl(var(--surface));
+      padding: 0.5rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: hsl(var(--surface));
+    }
+  }
 }
 
 .rule-actions {
