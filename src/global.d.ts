@@ -21,6 +21,7 @@ declare type Member = {
   company?: string;
   profile: string;
   links: Partial<Record<MemberLinkType, string>>;
+  technologies?: string[];
 };
 
 declare type Rule = {

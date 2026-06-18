@@ -1,12 +1,23 @@
 [
   {
+    "name": "Ashvin Appigadoo",
+    "company": "Accenture",
+    "profile": "ashvin_appigadoo.webp",
+    "links": {
+      "linkedin": "ashvin-appigadoo-801256153",
+      "github": "ashvinappi24-cmd"
+    },
+    "technologies": ["EcoSonar"]
+  },
+  {
     "name": "Vianney de Bellabre",
     "company": "C2S Bouygues",
     "profile": "vianney_de_bellabre.webp",
     "links": {
       "linkedin": "vianney-de-bellabre",
       "github": "Djoums"
-    }
+    },
+    "technologies": ["Creedengo C#"]
   },
   {
     "name": "David De Carvalho",
@@ -15,16 +26,28 @@
     "links": {
       "linkedin": "david--de--carvalho",
       "github": "dedece35"
-    }
+    },
+    "technologies": ["Global", "Creedengo Java / PHP"]
   },
   {
-    "name": "Jules Delecour",
-    "company": "Davidson",
-    "profile": "jules_delecour.webp",
+    "name": "Benjamin Delahais",
+    "company": "Solocal",
+    "profile": "benjamin_delahais.webp",
     "links": {
-      "linkedin": "jules-delecour-498680118",
-      "github": "jules-delecour-dav"
-    }
+      "linkedin": "benjamin-delahai-381476b5",
+      "github": "B3ND3L"
+    },
+    "technologies": ["Creedengo Python"]
+  },
+  {
+    "name": "Thierno Diallo",
+    "company": "Axa",
+    "profile": "thierno_diallo.webp",
+    "links": {
+      "linkedin": "diallo-thierno-afa",
+      "github": "thiernodialloAFA"
+    },
+    "technologies": ["Creedengo Infra"]
   },
   {
     "name": "Johanna Duigou",
@@ -33,7 +56,8 @@
     "links": {
       "linkedin": "johannaduigou",
       "github": "jduigoudev"
-    }
+    },
+    "technologies": ["Creedengo Android"]
   },
   {
     "name": "Gilles Grousset",
@@ -42,24 +66,8 @@
     "links": {
       "linkedin": "gillesgrousset",
       "github": "zippy1978"
-    }
-  },
-  {
-    "name": "Julien Hertout",
-    "company": "Snapp'",
-    "profile": "julien_hertout.webp",
-    "links": {
-      "linkedin": "julien-hertout-b1175449",
-      "github": "jhertout"
-    }
-  },
-  {
-    "name": "Geoffrey Lalloué",
-    "profile": "geoffrey_lalloue.webp",
-    "links": {
-      "linkedin": "geoffreylalloue",
-      "github": "glalloue"
-    }
+    },
+    "technologies": ["Creedengo iOS"]
   },
   {
     "name": "Olivier Le Goaër",
@@ -68,7 +76,8 @@
     "links": {
       "linkedin": "olivierlegoaer",
       "github": "olegoaer"
-    }
+    },
+    "technologies": ["Green CodeQL"]
   },
   {
     "name": "Maxime Malgorn",
@@ -77,7 +86,8 @@
     "links": {
       "linkedin": "maximemalgorn",
       "github": "utarwyn"
-    }
+    },
+    "technologies": ["Creedengo JS", "Web"]
   },
   {
     "name": "Alexandre Morgaut",
@@ -86,14 +96,17 @@
     "links": {
       "linkedin": "alexandre-morgaut",
       "github": "AMorgaut"
-    }
+    },
+    "technologies": ["Creedengo Dashboard", "IA Green Skills"]
   },
   {
-    "name": "Mickaël PICARD",
-    "company": "Aubay",
-    "profile": "mickael_picard.webp",
+    "name": "Florian Stormacq",
+    "company": "Université de NAMUR",
+    "profile": "florian_stormacq.webp",
     "links": {
-      "github": "MP-Aubay"
-    }
+      "linkedin": "florian-stormacq-4184b13aa",
+      "github": "fstormacq"
+    },
+    "technologies": ["EnergyTracer"]
   }
 ]

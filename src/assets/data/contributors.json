@@ -18,22 +18,6 @@
     }
   },
   {
-    "name": "Johanna Duigou",
-    "company": "Orange Business",
-    "profile": "johanna_duigou.webp",
-    "links": {
-      "linkedin": "johannaduigou"
-    }
-  },
-  {
-    "name": "Vianney de Bellabre",
-    "company": "C2S Bouygues",
-    "profile": "vianney_de_bellabre.webp",
-    "links": {
-      "github": "Djoums"
-    }
-  },
-  {
     "name": "Jérôme Cardon",
     "company": "Accenture",
     "profile": "jerome_cardon.webp",
