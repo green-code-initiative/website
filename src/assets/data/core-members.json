@@ -7,7 +7,8 @@
       "linkedin": "vianney-de-bellabre",
       "github": "Djoums"
     }
-    },{
+  },
+  {
     "name": "David De Carvalho",
     "company": "Capgemini",
     "profile": "david_de_carvalho.webp",
@@ -71,7 +72,7 @@
   },
   {
     "name": "Maxime Malgorn",
-    "company": "Fulll (In Extenso)",
+    "company": "fulll",
     "profile": "maxime_malgorn.webp",
     "links": {
       "linkedin": "maximemalgorn",

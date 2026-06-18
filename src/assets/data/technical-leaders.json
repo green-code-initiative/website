@@ -7,8 +7,9 @@
       "linkedin": "ashvin-appigadoo-801256153",
       "github": "ashvinappi24-cmd"
     },
-    "technical-leading" : ["ecoSonar"]
-  },{
+    "technologies": ["EcoSonar"]
+  },
+  {
     "name": "Vianney de Bellabre",
     "company": "C2S Bouygues",
     "profile": "vianney_de_bellabre.webp",
@@ -16,7 +17,7 @@
       "linkedin": "vianney-de-bellabre",
       "github": "Djoums"
     },
-    "technical-leading" : ["creedengo-csharp"]
+    "technologies": ["Creedengo C#"]
   },
   {
     "name": "David De Carvalho",
@@ -26,7 +27,7 @@
       "linkedin": "david--de--carvalho",
       "github": "dedece35"
     },
-    "technical-leading" : ["global", "creedengo-java", "creedengo-php"]
+    "technologies": ["Global", "Creedengo Java / PHP"]
   },
   {
     "name": "Benjamin Delahais",
@@ -36,7 +37,7 @@
       "linkedin": "benjamin-delahai-381476b5",
       "github": "B3ND3L"
     },
-    "technical-leading" : ["creedengo-python"]
+    "technologies": ["Creedengo Python"]
   },
   {
     "name": "Thierno Diallo",
@@ -46,7 +47,7 @@
       "linkedin": "diallo-thierno-afa",
       "github": "thiernodialloAFA"
     },
-    "technical-leading" : ["creedengo-infra"]
+    "technologies": ["Creedengo Infra"]
   },
   {
     "name": "Johanna Duigou",
@@ -56,7 +57,7 @@
       "linkedin": "johannaduigou",
       "github": "jduigoudev"
     },
-    "technical-leading" : ["creedengo-android-java", "creedengo-android-kotlin"]
+    "technologies": ["Creedengo Android"]
   },
   {
     "name": "Gilles Grousset",
@@ -66,7 +67,7 @@
       "linkedin": "gillesgrousset",
       "github": "zippy1978"
     },
-    "technical-leading" : ["creedengo-ios"]
+    "technologies": ["Creedengo iOS"]
   },
   {
     "name": "Olivier Le Goaër",
@@ -76,17 +77,17 @@
       "linkedin": "olivierlegoaer",
       "github": "olegoaer"
     },
-    "technical-leading" : ["codeql"]
+    "technologies": ["Green CodeQL"]
   },
   {
     "name": "Maxime Malgorn",
-    "company": "Fulll (In Extenso)",
+    "company": "fulll",
     "profile": "maxime_malgorn.webp",
     "links": {
       "linkedin": "maximemalgorn",
       "github": "utarwyn"
     },
-    "technical-leading" : ["creedengo-javascript", "website", "website-rules"]
+    "technologies": ["Creedengo JS", "Web"]
   },
   {
     "name": "Alexandre Morgaut",
@@ -96,16 +97,16 @@
       "linkedin": "alexandre-morgaut",
       "github": "AMorgaut"
     },
-    "technical-leading" : ["creedengo-dashboard", "ia-green-skills"]
+    "technologies": ["Creedengo Dashboard", "IA Green Skills"]
   },
   {
     "name": "Florian Stormacq",
-    "company": "Univversité de NAMUR",
+    "company": "Université de NAMUR",
     "profile": "florian_stormacq.webp",
     "links": {
       "linkedin": "florian-stormacq-4184b13aa",
       "github": "fstormacq"
     },
-    "technical-leading" : ["energyTracer"]
+    "technologies": ["EnergyTracer"]
   }
 ]

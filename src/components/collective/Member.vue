@@ -42,6 +42,11 @@ const links = Object.entries(linkTypes)
       <p class="name">{{ member.name }}</p>
       <p v-if="member.company" class="company">{{ member.company }}</p>
     </div>
+    <div v-if="member.technologies" class="technologies">
+      <div v-for="tech in member.technologies" :key="tech" class="tech">
+        {{ tech }}
+      </div>
+    </div>
     <div class="links" v-if="links">
       <a
         v-for="link in links"
@@ -52,11 +57,6 @@ const links = Object.entries(linkTypes)
       >
         <Component :is="link.logo" width="24" height="24" />
       </a>
-    </div>
-    <div class="info" v-if="technical-leading">
-      <p class="technical-lead">
-        <span v-for="tec in technical-leading">{{ tec }}<br/></span>
-      </p>
     </div>
   </div>
 </template>
@@ -93,9 +93,21 @@ img {
   text-align: center;
 }
 
-.technical-lead {
-  font-size: 0.875rem;
-  text-align: center;
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+
+  .tech {
+    background-color: hsl(var(--secondary-200));
+    color: hsl(var(--neutral-900));
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    text-align: center;
+  }
 }
 
 .links {
