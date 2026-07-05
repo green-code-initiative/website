@@ -27,6 +27,7 @@ declare type Member = {
 declare type Rule = {
   id: string;
   name: string;
+  terms: string;
   severity: "CRITICAL" | "INFO" | "MAJOR" | "MINOR" | "BLOCKER";
   languages: Record<string, RuleLanguageEntry>;
 };

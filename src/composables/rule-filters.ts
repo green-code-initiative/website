@@ -47,7 +47,8 @@ type UseRuleFiltersOptions = {
 const searchRule = (keyword: string, item: Rule): boolean => {
   return (
     item.id.toLocaleLowerCase().includes(keyword) ||
-    item.name.toLocaleLowerCase().includes(keyword)
+    item.name.toLocaleLowerCase().includes(keyword) ||
+    item.terms.toLocaleLowerCase().includes(keyword)
   );
 };
 
