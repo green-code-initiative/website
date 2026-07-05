@@ -61,7 +61,7 @@ export const projects = {
       "https://github.com/green-code-initiative/creedengo-rules-specifications",
     logoComponent: GreenCodeRulesLogo,
     type: "Documentation",
-    status: "draft",
+    status: "published",
     hero: {
       variant: "secondary",
       secondButton: {

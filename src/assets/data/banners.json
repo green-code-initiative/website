@@ -4,7 +4,7 @@
     "content": "ecoCode change de nom et devient <strong>Creendengo</strong> ! L'outil ne change pas, seul le nom évolue."
   },
   "event": {
-    "enable": true,
+    "enable": false,
     "title": "Green Code Challenge 2026",
     "content": "Le challenge est terminé, mais l’aventure Green Code Initiative continue !\nRejoignez notre communauté Slack pour échanger, contribuer et innover toute l’année.",
     "action": {
