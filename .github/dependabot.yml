@@ -14,6 +14,9 @@ updates:
       - dependency-name: "@unhead/vue"
         # vite-ssg does not support unhead v3, see https://github.com/antfu-collective/vite-ssg/issues/469
         versions: [">=3"]
+      - dependency-name: "typescript"
+        # typescript v7 is not supported by typescript-eslint v8, see https://github.com/typescript-eslint/typescript-eslint/issues/10940
+        versions: [">=7"]
     groups:
       all-dependencies:
         patterns:
