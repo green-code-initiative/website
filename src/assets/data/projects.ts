@@ -2,6 +2,7 @@ import CreedengoLogo from "@/assets/img/projects/creedengo.svg?component";
 import EcoSonarLogo from "@/assets/img/projects/ecosonar.svg?component";
 import GreenCodeRulesLogo from "@/assets/img/projects/green-code-rules.svg?component";
 import GreenCodeQLLogo from "@/assets/img/projects/green-code-ql.svg?component";
+import EnergyTracerLogo from "@/assets/icons/circuit_board.svg?component";
 
 export const projects = {
   creedengo: {
@@ -82,6 +83,20 @@ export const projects = {
     status: "draft",
     hero: {
       variant: "primary",
+      secondButton: undefined,
+    },
+  },
+  energyTracer: {
+    title: "EnergyTracer",
+    subTitle: "Mesurer l'empreinte énergétique du code",
+    description:
+      "Mesure et compare la consommation énergétique de variantes de code pour objectiver l'impact des choix d'implémentation",
+    githubLink: "https://github.com/green-code-initiative/EnergyTracer",
+    logoComponent: EnergyTracerLogo,
+    type: "Outil de mesure",
+    status: "published",
+    hero: {
+      variant: "secondary",
       secondButton: undefined,
     },
   },

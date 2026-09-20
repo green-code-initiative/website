@@ -59,6 +59,12 @@ export const routes: RouterOptions["routes"] = [
         component: () => import("./views/projects/GreenCodeQLProject.vue"),
         meta: { project: projects.greenCodeQL },
       },
+      {
+        path: "energy-tracer",
+        name: "projet-energy-tracer",
+        component: () => import("./views/projects/EnergyTracerProject.vue"),
+        meta: { project: projects.energyTracer },
+      },
     ],
   },
   {
