@@ -68,7 +68,7 @@ const technologies = [
         <AppButton
           :text="`Je découvre →`"
           variant="secondary"
-          :href="`https://github.com/green-code-initiative/${tech.repositoryName}`"
+          :link="`https://github.com/green-code-initiative/${tech.repositoryName}`"
           type="external_link"
         />
       </AppCard>
