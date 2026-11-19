@@ -1,18 +1,20 @@
 <script setup lang="ts">
+import ChartLineIcon from "@/assets/icons/chart_line.svg?component";
+import CircleCheckBigIcon from "@/assets/icons/circle_check_big.svg?component";
+import CircuitBoardIcon from "@/assets/icons/circuit_board.svg?component";
+import ExternalLinkIcon from "@/assets/icons/external_link.svg?component";
+import TargetIcon from "@/assets/icons/target.svg?component";
+import WrenchIcon from "@/assets/icons/wrench.svg?component";
 import AppButton from "@/components/shared/AppButton.vue";
 import AppCard from "@/components/shared/AppCard.vue";
+import AppFeatureCard from "@/components/shared/AppFeatureCard.vue";
 import AppSection from "@/components/shared/AppSection.vue";
 import ContactForm from "@/components/shared/form/ContactForm.vue";
 </script>
 
 <template>
   <AppSection
-    sub-title="Creedengo Dashboard est né du projet Greensight de Capgemini, dans
-            le cadre de leurs initiatives de modernisation applicative et cloud
-            responsable. Ce tableau de bord permet de visualiser l'impact des
-            pratiques d'éco-conception, d'aider les équipes à prioriser leurs
-            actions et de prévenir l'introduction de nouvelles régressions
-            environnementales."
+    sub-title="Modernisez vos applications sans perdre de vue leur empreinte environnementale."
     container
   >
     <div class="reference-links">
@@ -32,67 +34,30 @@ import ContactForm from "@/components/shared/form/ContactForm.vue";
   </AppSection>
 
   <AppSection title="Fonctionnalités principales" container>
-    <div class="features-list">
-      <div class="feature-item">
-        <div class="feature-icon">📊</div>
-        <div class="feature-content">
-          <h3>Visualisation des métriques</h3>
-          <p>
-            Présentation claire et accessible des métriques d'éco-conception
-            issues des analyses Creedengo
-          </p>
-        </div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon">🎯</div>
-        <div class="feature-content">
-          <h3>Priorisation des actions</h3>
-          <p>
-            Aide à la décision pour prioriser les améliorations de code selon
-            leur impact environnemental
-          </p>
-        </div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon">🛡️</div>
-        <div class="feature-content">
-          <h3>Prévention des régressions</h3>
-          <p>
-            Détection précoce des problèmes pour éviter leur introduction en
-            production
-          </p>
-        </div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon">🧩</div>
-        <div class="feature-content">
-          <h3>Architecture modulaire</h3>
-          <p>
-            Widgets web components réutilisables dans différents contextes (IDE,
-            CI/CD, wikis)
-          </p>
-        </div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon">🔧</div>
-        <div class="feature-content">
-          <h3>Catalogue de widgets testables</h3>
-          <p>
-            Composants développés et testés individuellement avec Storybook pour
-            une qualité optimale
-          </p>
-        </div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon">🌐</div>
-        <div class="feature-content">
-          <h3>Architecture ouverte</h3>
-          <p>
-            Conçu pour s'intégrer dans de multiples environnements et sources de
-            données
-          </p>
-        </div>
-      </div>
+    <div class="features-grid">
+      <AppFeatureCard title="Visualisation des métriques" :icon="ChartLineIcon">
+        Visualisez les métriques d'éco-conception issues des analyses Creedengo.
+      </AppFeatureCard>
+      <AppFeatureCard title="Priorisation des actions" :icon="TargetIcon">
+        Priorisez les améliorations de code selon leur impact environnemental.
+      </AppFeatureCard>
+      <AppFeatureCard
+        title="Prévention des régressions"
+        :icon="CircleCheckBigIcon"
+      >
+        Repérez les régressions avant la mise en production.
+      </AppFeatureCard>
+      <AppFeatureCard title="Architecture modulaire" :icon="CircuitBoardIcon">
+        Réutilisez les mêmes widgets web dans votre IDE, votre CI/CD ou vos
+        wikis.
+      </AppFeatureCard>
+      <AppFeatureCard title="Catalogue de widgets testables" :icon="WrenchIcon">
+        Testez chaque widget séparément dans Storybook.
+      </AppFeatureCard>
+      <AppFeatureCard title="Architecture ouverte" :icon="ExternalLinkIcon">
+        Connectez le tableau de bord à différents environnements et sources de
+        données.
+      </AppFeatureCard>
     </div>
   </AppSection>
 
@@ -217,36 +182,10 @@ import ContactForm from "@/components/shared/form/ContactForm.vue";
   flex-wrap: wrap;
 }
 
-.features-list {
+.features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  width: 100%;
-}
-
-.feature-item {
-  display: flex;
-  gap: 1.5rem;
-
-  .feature-icon {
-    font-size: 2rem;
-    flex-shrink: 0;
-  }
-
-  .feature-content {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-
-    h3 {
-      font-size: 1.125rem;
-    }
-
-    p {
-      line-height: 1.6;
-      color: hsl(var(--text-accent));
-    }
-  }
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 1.25rem;
 }
 
 .integration-grid {

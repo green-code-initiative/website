@@ -1,96 +1,62 @@
 <script setup lang="ts">
+import BracesIcon from "@/assets/icons/braces.svg?component";
+import ChartLineIcon from "@/assets/icons/chart_line.svg?component";
+import MicroscopeIcon from "@/assets/icons/microscope.svg?component";
 import AppButton from "@/components/shared/AppButton.vue";
 import AppCard from "@/components/shared/AppCard.vue";
+import AppFeatureCard from "@/components/shared/AppFeatureCard.vue";
+import AppProcessSteps from "@/components/shared/AppProcessSteps.vue";
 import AppSection from "@/components/shared/AppSection.vue";
 import ContactForm from "@/components/shared/form/ContactForm.vue";
+
+const processSteps = [
+  {
+    title: "Fournissez deux variantes de code",
+    description: 'Une version avec un "code smell" et une version corrigée.',
+  },
+  {
+    title: "Lancez une mesure",
+    description:
+      "Choisissez un profiler, puis exécutez chaque variante plusieurs fois.",
+  },
+  {
+    title: "Comparez les résultats",
+    description:
+      "Consultez le rapport pour déterminer quelle variante consomme le moins.",
+  },
+];
 </script>
 
 <template>
   <AppSection
-    sub-title="Développé dans le cadre d'un mémoire de master en informatique à
-            l'Université de Namur, EnergyTracer mesure la consommation
-            énergétique de deux variantes de code afin d'objectiver l'impact
-            réel des choix d'implémentation, plutôt que de se fier à des
-            hypothèses."
+    title="Fonctionnalités principales"
+    sub-title="EnergyTracer est issu d'un mémoire de master en informatique à l'Université de Namur."
     container
   >
-    <div class="reference-links">
-      <AppButton
-        link="https://github.com/green-code-initiative/EnergyTracer#readme"
-        type="external_link"
-        text="📖 Documentation du projet"
-        variant="neutral"
-      />
+    <div class="features-grid">
+      <AppFeatureCard title="Plusieurs langages" :icon="BracesIcon">
+        Mesurez la consommation de votre code Python ou Java.
+      </AppFeatureCard>
+
+      <AppFeatureCard title="Analyse statistique" :icon="MicroscopeIcon">
+        Vérifiez si les écarts sont significatifs et mesurez leur ampleur.
+      </AppFeatureCard>
+
+      <AppFeatureCard title="Graphiques comparatifs" :icon="ChartLineIcon">
+        Comparez les mesures avec des diagrammes box et violin.
+      </AppFeatureCard>
+    </div>
+  </AppSection>
+
+  <AppSection title="Comment ça fonctionne ?" background-color="grey" container>
+    <AppProcessSteps :steps="processSteps" />
+    <div class="process-guide">
       <AppButton
         link="https://github.com/green-code-initiative/EnergyTracer/blob/main/EXPERIMENT_GUIDE.md"
         type="external_link"
-        text="📖 Guide d'expérimentation"
+        text="Guide d'expérimentation"
         variant="neutral"
       />
-    </div>
-  </AppSection>
-
-  <AppSection title="Comment ça fonctionne ?" container>
-    <div class="process-grid">
-      <AppCard class="process-card" align="center">
-        <div class="process-number">1</div>
-        <h3>Fournissez deux variantes de code</h3>
-        <p>Une version avec un "code smell" et une version corrigée.</p>
-      </AppCard>
-
-      <AppCard class="process-card" align="center">
-        <div class="process-number">2</div>
-        <h3>Lancez une mesure</h3>
-        <p>
-          Choisissez un profiler (Zeus ou CodeCarbon) et exécutez plusieurs
-          itérations de chaque variante.
-        </p>
-      </AppCard>
-
-      <AppCard class="process-card" align="center">
-        <div class="process-number">3</div>
-        <h3>Obtenez un comparatif</h3>
-        <p>
-          Un rapport avec analyse statistique, accompagné de graphiques et de
-          visualisations comparatives.
-        </p>
-      </AppCard>
-    </div>
-  </AppSection>
-
-  <AppSection title="Fonctionnalités principales" container>
-    <div class="features-grid">
-      <AppCard class="feature-card">
-        <h3>🌐 Multi-langages</h3>
-        <p>
-          Python et Java pris en charge, avec une architecture extensible pour
-          ajouter facilement de nouveaux langages.
-        </p>
-      </AppCard>
-
-      <AppCard class="feature-card">
-        <h3>⚡ Deux profilers</h3>
-        <p>
-          Zeus pour des mesures matérielles précises sur Apple Silicon,
-          CodeCarbon pour une estimation logicielle multiplateforme.
-        </p>
-      </AppCard>
-
-      <AppCard class="feature-card">
-        <h3>📊 Analyse statistique automatisée</h3>
-        <p>
-          Test de Welch, taille d'effet de Cohen et calcul de significativité
-          pour fiabiliser les comparaisons.
-        </p>
-      </AppCard>
-
-      <AppCard class="feature-card">
-        <h3>📈 Visualisations riches</h3>
-        <p>
-          Graphiques comparatifs, box plots et violin plots générés
-          automatiquement pour chaque métrique.
-        </p>
-      </AppCard>
     </div>
   </AppSection>
 
@@ -176,54 +142,16 @@ import ContactForm from "@/components/shared/form/ContactForm.vue";
 </template>
 
 <style scoped lang="scss">
-.reference-links {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  width: 100%;
-}
-
-.process-card {
-  .process-number {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    margin: 0 auto;
-    border-radius: 50%;
-    background: hsl(var(--primary-700));
-    color: hsl(var(--primary-50));
-    font-weight: 900;
-  }
-
-  p {
-    color: hsl(var(--text-accent));
-  }
-}
-
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 1.25rem;
+}
 
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-
-  p {
-    color: hsl(var(--text-accent));
-  }
+.process-guide {
+  display: flex;
+  justify-content: center;
+  margin-block-start: 1rem;
 }
 
 .profilers-list {

@@ -88,7 +88,7 @@ export const projects = {
   },
   energyTracer: {
     title: "EnergyTracer",
-    subTitle: "Mesurer l'empreinte énergétique du code",
+    subTitle: undefined,
     description:
       "Mesure et compare la consommation énergétique de variantes de code pour objectiver l'impact des choix d'implémentation",
     githubLink: "https://github.com/green-code-initiative/EnergyTracer",

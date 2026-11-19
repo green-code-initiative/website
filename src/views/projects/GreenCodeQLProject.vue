@@ -1,7 +1,30 @@
 <script setup lang="ts">
+import ChartLineIcon from "@/assets/icons/chart_line.svg?component";
+import GithubIcon from "@/assets/icons/github.svg?component";
+import SearchIcon from "@/assets/icons/search.svg?component";
 import AppCard from "@/components/shared/AppCard.vue";
+import AppFeatureCard from "@/components/shared/AppFeatureCard.vue";
+import AppProcessSteps from "@/components/shared/AppProcessSteps.vue";
 import AppSection from "@/components/shared/AppSection.vue";
 import ContactForm from "@/components/shared/form/ContactForm.vue";
+
+const processSteps = [
+  {
+    title: "Activez CodeQL",
+    description:
+      "Activez l'analyse de code dans la section Security de votre dépôt GitHub et configurez les workflows CodeQL.",
+  },
+  {
+    title: "Ajoutez les packs Green CodeQL",
+    description:
+      "Référencez les query packs Green CodeQL dans votre configuration CodeQL pour inclure les règles d'éco-conception.",
+  },
+  {
+    title: "Analysez et corrigez",
+    description:
+      "Consultez les alertes générées dans l'onglet Security et suivez les recommandations pour améliorer votre code.",
+  },
+];
 </script>
 
 <template>
@@ -11,64 +34,22 @@ import ContactForm from "@/components/shared/form/ContactForm.vue";
     container
   >
     <div class="features-grid">
-      <AppCard class="feature-card" align="center">
-        <div class="feature-icon">🔍</div>
-        <h3>Détection automatique</h3>
-        <p>
-          Identifiez les anti-patterns d'éco-conception au sein même de votre
-          workflow GitHub grâce aux code scanning alerts.
-        </p>
-      </AppCard>
+      <AppFeatureCard title="Détection automatique" :icon="SearchIcon">
+        Repérez les pratiques de code inefficaces grâce aux alertes GitHub.
+      </AppFeatureCard>
 
-      <AppCard class="feature-card" align="center">
-        <div class="feature-icon">🚀</div>
-        <h3>Intégration native</h3>
-        <p>
-          Profitez de l'infrastructure CodeQL de GitHub pour analyser votre code
-          sans configuration supplémentaire complexe.
-        </p>
-      </AppCard>
+      <AppFeatureCard title="Intégration native" :icon="GithubIcon">
+        Ajoutez les règles d'éco-conception à vos analyses CodeQL.
+      </AppFeatureCard>
 
-      <AppCard class="feature-card" align="center">
-        <div class="feature-icon">📊</div>
-        <h3>Suivi continu</h3>
-        <p>
-          Surveillez l'évolution de votre dette technique environnementale au
-          fil des commits et pull requests.
-        </p>
-      </AppCard>
+      <AppFeatureCard title="Suivi continu" :icon="ChartLineIcon">
+        Suivez votre dette d'éco-conception au fil des commits et pull requests.
+      </AppFeatureCard>
     </div>
   </AppSection>
 
-  <AppSection title="Comment ça fonctionne ?" container>
-    <div class="process-grid">
-      <AppCard class="process-card">
-        <div class="process-number">1</div>
-        <h3>Activez CodeQL</h3>
-        <p>
-          Activez l'analyse de code dans la section Security de votre dépôt
-          GitHub et configurez les workflows CodeQL.
-        </p>
-      </AppCard>
-
-      <AppCard class="process-card">
-        <div class="process-number">2</div>
-        <h3>Ajoutez les packs Green CodeQL</h3>
-        <p>
-          Référencez les query packs Green CodeQL dans votre configuration
-          CodeQL pour inclure les règles d'éco-conception.
-        </p>
-      </AppCard>
-
-      <AppCard class="process-card">
-        <div class="process-number">3</div>
-        <h3>Analysez et corrigez</h3>
-        <p>
-          Consultez les alertes générées dans l'onglet Security et suivez les
-          recommandations pour améliorer votre code.
-        </p>
-      </AppCard>
-    </div>
+  <AppSection title="Comment ça fonctionne ?" background-color="grey" container>
+    <AppProcessSteps :steps="processSteps" />
   </AppSection>
 
   <AppSection
@@ -179,59 +160,8 @@ import ContactForm from "@/components/shared/form/ContactForm.vue";
 <style scoped lang="scss">
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  width: 100%;
-}
-
-.feature-card {
-  .feature-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: hsl(var(--primary-700));
-  }
-
-  p {
-    color: hsl(var(--text-accent));
-  }
-}
-
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  width: 100%;
-}
-
-.process-card {
-  .process-number {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    background-color: hsl(var(--primary-700));
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 900;
-    margin-bottom: 1rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: hsl(var(--primary-700));
-  }
-
-  p {
-    color: hsl(var(--text-accent));
-  }
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 1.25rem;
 }
 
 .languages-grid {

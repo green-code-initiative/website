@@ -1,7 +1,12 @@
 <script setup lang="ts">
+import BracesIcon from "@/assets/icons/braces.svg?component";
+import HeartHandshakeIcon from "@/assets/icons/heart_handshake.svg?component";
+import LeafIcon from "@/assets/icons/leaf.svg?component";
+import SearchIcon from "@/assets/icons/search.svg?component";
 import RuleProcess from "@/components/home/RuleProcess.vue";
 import AppButton from "@/components/shared/AppButton.vue";
 import AppCard from "@/components/shared/AppCard.vue";
+import AppFeatureCard from "@/components/shared/AppFeatureCard.vue";
 import AppSection from "@/components/shared/AppSection.vue";
 import ContactForm from "@/components/shared/form/ContactForm.vue";
 
@@ -17,43 +22,27 @@ const technologies = [
 </script>
 
 <template>
-  <AppSection
-    title="Un outil basé sur notre référentiel de règles d'éco-conception logicielle"
-    container
-  >
+  <AppSection title="L'éco-conception au cœur de l'analyse de code" container>
     <div class="feature-grid">
-      <AppCard>
-        <h3>🔍 Identification des défauts</h3>
-        <p>
-          Une collection de plugins pour <strong>SonarQube</strong> qui analyse
-          votre base de code et identifie les structures problématiques.
-        </p>
-      </AppCard>
+      <AppFeatureCard title="Identification des défauts" :icon="SearchIcon">
+        Une collection de plugins pour <strong>SonarQube</strong> qui analyse
+        votre base de code et identifie les structures problématiques.
+      </AppFeatureCard>
 
-      <AppCard variant="primary">
-        <h3>🌿 Impact écologique</h3>
-        <p>
-          Aide à limiter l'<strong>impact environnemental</strong> de vos
-          programmes en détectant les surconsommations d'énergie et de
-          ressources.
-        </p>
-      </AppCard>
+      <AppFeatureCard title="Impact écologique" :icon="LeafIcon">
+        Aide à limiter l'<strong>impact environnemental</strong> de vos
+        programmes en détectant les surconsommations d'énergie et de ressources.
+      </AppFeatureCard>
 
-      <AppCard>
-        <h3>💝 Open Source et Gratuit</h3>
-        <p>
-          Complètement <strong>open-source</strong> et gratuit, accessible à
-          tous les développeurs.
-        </p>
-      </AppCard>
+      <AppFeatureCard title="Open Source et gratuit" :icon="BracesIcon">
+        Complètement <strong>open-source</strong> et gratuit, accessible à tous
+        les développeurs.
+      </AppFeatureCard>
 
-      <AppCard>
-        <h3>👥 Force du collectif</h3>
-        <p>
-          Propulsé par les contributions d'<strong>entreprises</strong>, de
-          <strong>laboratoires</strong> et d'<strong>individuels</strong>.
-        </p>
-      </AppCard>
+      <AppFeatureCard title="Force du collectif" :icon="HeartHandshakeIcon">
+        Propulsé par les contributions d'<strong>entreprises</strong>, de
+        <strong>laboratoires</strong> et d'<strong>individuels</strong>.
+      </AppFeatureCard>
     </div>
   </AppSection>
 
@@ -96,8 +85,8 @@ const technologies = [
 <style scoped lang="scss">
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
   width: 100%;
 }
 
@@ -106,5 +95,11 @@ const technologies = [
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
   width: 100%;
+}
+
+@media (max-width: 640px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
