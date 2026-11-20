@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": "^26.0.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "npm run type-check && npm run build-only",
@@ -23,8 +26,8 @@
   "devDependencies": {
     "@creedengo/eslint-plugin": "^3.1.0",
     "@eslint/js": "^10.0.1",
-    "@tsconfig/node24": "^24.0.5",
-    "@types/node": "^24.13.3",
+    "@tsconfig/node26": "^26.0.2",
+    "@types/node": "^26.6.6",
     "@vitejs/plugin-vue": "^6.0.10",
     "@vue/tsconfig": "^0.9.1",
     "eslint": "^10.14.0",

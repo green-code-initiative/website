@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: read
+
 env:
   VITE_API_URL: ${{ vars.API_URL }}
   VITE_RULES_URL: ${{ vars.RULES_URL }}
@@ -13,16 +16,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6
-
-      - name: Use Node.js 24.x
-        uses: actions/setup-node@v6
+      - uses: actions/checkout@v7
         with:
-          node-version: 24.x
+          persist-credentials: false
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 26.x
           cache: npm
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Lint
         run: npm run lint
@@ -40,10 +44,16 @@ jobs:
         with:
           name: website
           path: ./dist/
+          retention-days: 1
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
+    environment:
+      name: production
+    concurrency:
+      group: production-deploy
+      cancel-in-progress: false
 
     steps:
       - name: Download artifact

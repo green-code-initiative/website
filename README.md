@@ -10,6 +10,8 @@ with [Vue.js](https://vuejs.org).
 
 ## 🚀 Project Setup
 
+Requires Node.js 26.
+
 Copy `.env.example` to `.env`
 
 ```sh

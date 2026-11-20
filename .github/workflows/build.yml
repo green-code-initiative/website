@@ -4,22 +4,26 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
+permissions:
+  contents: read
+
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6
-
-      - name: Use Node.js 24.x
-        uses: actions/setup-node@v6
+      - uses: actions/checkout@v7
         with:
-          node-version: 24.x
+          persist-credentials: false
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 26.x
           cache: npm
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Check formatting
         run: npm run format:check
