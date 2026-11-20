@@ -3,7 +3,7 @@ import BracesIcon from "@/assets/icons/braces.svg?component";
 import HeartHandshakeIcon from "@/assets/icons/heart_handshake.svg?component";
 import LeafIcon from "@/assets/icons/leaf.svg?component";
 import SearchIcon from "@/assets/icons/search.svg?component";
-import RuleProcess from "@/components/home/RuleProcess.vue";
+import ProjectContribution from "@/components/projects/ProjectContribution.vue";
 import AppButton from "@/components/shared/AppButton.vue";
 import AppCard from "@/components/shared/AppCard.vue";
 import AppFeatureCard from "@/components/shared/AppFeatureCard.vue";
@@ -19,6 +19,24 @@ const technologies = [
   { name: "Android", repositoryName: "ecoCode-android" },
   { name: "iOS", repositoryName: "creedengo-ios" },
 ] as const;
+
+const contributionOpportunities = [
+  {
+    title: "Proposer une règle",
+    description:
+      "Repérez une structure de code gourmande en ressources et proposez une alternative.",
+  },
+  {
+    title: "Valider une règle",
+    description:
+      "Comparez le code initial et sa version corrigée pour vérifier les gains.",
+  },
+  {
+    title: "Développer un détecteur",
+    description:
+      "Implémentez une règle dans le plugin SonarQube de votre langage.",
+  },
+];
 </script>
 
 <template>
@@ -55,7 +73,7 @@ const technologies = [
       <AppCard v-for="tech in technologies" :key="tech.name" align="center">
         <h3>{{ tech.name }}</h3>
         <AppButton
-          :text="`Je découvre →`"
+          text="Je découvre"
           variant="secondary"
           :link="`https://github.com/green-code-initiative/${tech.repositoryName}`"
           type="external_link"
@@ -64,7 +82,11 @@ const technologies = [
     </div>
   </AppSection>
 
-  <RuleProcess />
+  <ProjectContribution
+    description="Aidez-nous à transformer de bonnes pratiques d'éco-conception en règles que les équipes peuvent appliquer à leur code."
+    :opportunities="contributionOpportunities"
+    :action="{ href: '#contact-creedengo' }"
+  />
 
   <ContactForm
     title="Une question sur Creedengo ?"

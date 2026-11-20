@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ExternalLinkIcon from "@/assets/icons/external_link.svg?component";
 import type { RouterLinkProps } from "vue-router";
 
 withDefaults(
@@ -13,19 +14,24 @@ withDefaults(
 </script>
 
 <template>
-  <router-link
-    v-if="link && type !== 'external_link'"
-    :class="variant"
-    :to="link"
-    >{{ text }}</router-link
-  >
   <a
-    v-else-if="type === 'external_link'"
+    v-if="type === 'external_link'"
     :class="variant"
     :href="link?.toString()"
     target="_blank"
-    >{{ text }}</a
   >
+    {{ text }}
+    <ExternalLinkIcon
+      v-if="type === 'external_link'"
+      class="external-icon"
+      aria-hidden="true"
+      width="16"
+      height="16"
+    />
+  </a>
+  <router-link v-else-if="link" :class="variant" :to="link">{{
+    text
+  }}</router-link>
   <button v-else :class="variant" :type="type">{{ text }}</button>
 </template>
 
@@ -46,7 +52,6 @@ a {
   &.primary {
     background-color: hsl(var(--primary-700));
     color: white;
-
     &:hover {
       background-color: hsl(var(--primary-800));
     }
@@ -77,6 +82,11 @@ a {
     &:hover {
       background-color: hsl(var(--neutral-800));
     }
+  }
+
+  .external-icon {
+    flex-shrink: 0;
+    margin-inline-start: 0.5rem;
   }
 }
 </style>

@@ -2,11 +2,35 @@
 import ChartLineIcon from "@/assets/icons/chart_line.svg?component";
 import GithubIcon from "@/assets/icons/github.svg?component";
 import SearchIcon from "@/assets/icons/search.svg?component";
+import ProjectContribution from "@/components/projects/ProjectContribution.vue";
 import AppCard from "@/components/shared/AppCard.vue";
 import AppFeatureCard from "@/components/shared/AppFeatureCard.vue";
 import AppProcessSteps from "@/components/shared/AppProcessSteps.vue";
 import AppSection from "@/components/shared/AppSection.vue";
 import ContactForm from "@/components/shared/form/ContactForm.vue";
+
+const contributionOpportunities = [
+  {
+    title: "Écrire des requêtes CodeQL",
+    description:
+      "Développez de nouvelles requêtes pour détecter les anti-patterns d'éco-conception dans différents langages.",
+  },
+  {
+    title: "Tester et valider",
+    description:
+      "Testez les requêtes existantes sur vos projets et partagez vos résultats.",
+  },
+  {
+    title: "Enrichir la documentation",
+    description:
+      "Améliorez les guides d'utilisation, les exemples et les bonnes pratiques de configuration.",
+  },
+  {
+    title: "Partager vos retours",
+    description:
+      "Signalez les problèmes, proposez des améliorations et partagez vos cas d'usage.",
+  },
+];
 
 const processSteps = [
   {
@@ -101,45 +125,11 @@ const processSteps = [
     </div>
   </AppSection>
 
-  <AppSection
-    title="Contribuer au projet"
-    sub-title="Green CodeQL est un projet open-source en développement actif. Votre contribution est la bienvenue !"
-    container
-  >
-    <div class="contribute-grid">
-      <AppCard>
-        <h3>🔬 Écrire des requêtes CodeQL</h3>
-        <p>
-          Développez de nouvelles requêtes pour détecter les anti-patterns
-          d'éco-conception dans différents langages.
-        </p>
-      </AppCard>
-
-      <AppCard>
-        <h3>✅ Tester et valider</h3>
-        <p>
-          Testez les requêtes existantes sur vos projets et partagez vos retours
-          d'expérience.
-        </p>
-      </AppCard>
-
-      <AppCard>
-        <h3>📚 Enrichir la documentation</h3>
-        <p>
-          Améliorez les guides d'utilisation, exemples et bonnes pratiques de
-          configuration.
-        </p>
-      </AppCard>
-
-      <AppCard>
-        <h3>🌍 Partager vos retours</h3>
-        <p>
-          Signalez les problèmes, proposez des améliorations et partagez vos cas
-          d'usage.
-        </p>
-      </AppCard>
-    </div>
-  </AppSection>
+  <ProjectContribution
+    description="Aidez-nous à faire évoluer Green CodeQL pour repérer les pratiques de code gourmandes en ressources."
+    :opportunities="contributionOpportunities"
+    :action="{ href: '#contact-green-codeql' }"
+  />
 
   <ContactForm
     title="Besoin d'aide avec Green CodeQL ?"
@@ -186,25 +176,6 @@ const processSteps = [
   p {
     color: hsl(var(--text-accent));
     font-size: 0.9rem;
-  }
-}
-
-.contribute-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  width: 100%;
-}
-
-.contribute-grid .app-card {
-  h3 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    color: hsl(var(--primary-700));
-  }
-
-  p {
-    color: hsl(var(--neutral-600));
   }
 }
 </style>

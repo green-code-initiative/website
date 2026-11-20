@@ -1,7 +1,31 @@
 <script setup lang="ts">
+import ProjectContribution from "@/components/projects/ProjectContribution.vue";
 import AppCard from "@/components/shared/AppCard.vue";
 import AppSection from "@/components/shared/AppSection.vue";
 import ContactForm from "@/components/shared/form/ContactForm.vue";
+
+const contributionOpportunities = [
+  {
+    title: "Proposer de nouvelles règles",
+    description:
+      "Identifiez des structures de code inefficaces et proposez des règles pour les améliorer.",
+  },
+  {
+    title: "Expérimenter et valider",
+    description:
+      "Participez à la validation scientifique des règles proposées.",
+  },
+  {
+    title: "Implémenter des règles",
+    description:
+      "Développez les détecteurs de règles pour les plugins Creedengo.",
+  },
+  {
+    title: "Améliorer la documentation",
+    description:
+      "Enrichissez les descriptions, les exemples et les justifications des règles existantes.",
+  },
+];
 </script>
 
 <template>
@@ -84,39 +108,12 @@ import ContactForm from "@/components/shared/form/ContactForm.vue";
     </div>
   </AppSection>
 
-  <AppSection
+  <ProjectContribution
     title="Contribuer au référentiel"
-    sub-title="Le référentiel Green Code Rules est un projet collaboratif. Vous pouvez contribuer :"
-    container
-  >
-    <div class="contribute-grid">
-      <AppCard>
-        <h3>💡 Proposer de nouvelles règles</h3>
-        <p>
-          Identifiez des patterns de code inefficaces et proposez des règles
-          pour les améliorer.
-        </p>
-      </AppCard>
-
-      <AppCard>
-        <h3>🔬 Expérimenter et valider</h3>
-        <p>Participez à la validation scientifique des règles proposées.</p>
-      </AppCard>
-
-      <AppCard>
-        <h3>💻 Implémenter des règles</h3>
-        <p>Développez les détecteurs de règles pour les plugins Creedengo.</p>
-      </AppCard>
-
-      <AppCard>
-        <h3>📝 Améliorer la documentation</h3>
-        <p>
-          Enrichissez les descriptions, exemples et justifications des règles
-          existantes.
-        </p>
-      </AppCard>
-    </div>
-  </AppSection>
+    description="Aidez-nous à enrichir le référentiel Green Code Rules avec des pratiques d'éco-conception testées et documentées."
+    :opportunities="contributionOpportunities"
+    :action="{ href: '#contact-green-code-rules' }"
+  />
 
   <ContactForm
     title="Une question sur le référentiel ?"
@@ -164,17 +161,6 @@ import ContactForm from "@/components/shared/form/ContactForm.vue";
   .category-icon {
     font-size: 3rem;
   }
-
-  p {
-    color: hsl(var(--text-accent));
-  }
-}
-
-.contribute-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: 2rem;
-  width: 100%;
 
   p {
     color: hsl(var(--text-accent));

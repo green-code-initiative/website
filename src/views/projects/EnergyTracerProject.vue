@@ -2,8 +2,8 @@
 import BracesIcon from "@/assets/icons/braces.svg?component";
 import ChartLineIcon from "@/assets/icons/chart_line.svg?component";
 import MicroscopeIcon from "@/assets/icons/microscope.svg?component";
+import ProjectContribution from "@/components/projects/ProjectContribution.vue";
 import AppButton from "@/components/shared/AppButton.vue";
-import AppCard from "@/components/shared/AppCard.vue";
 import AppFeatureCard from "@/components/shared/AppFeatureCard.vue";
 import AppProcessSteps from "@/components/shared/AppProcessSteps.vue";
 import AppSection from "@/components/shared/AppSection.vue";
@@ -23,6 +23,29 @@ const processSteps = [
     title: "Comparez les résultats",
     description:
       "Consultez le rapport pour déterminer quelle variante consomme le moins.",
+  },
+];
+
+const contributionOpportunities = [
+  {
+    title: "Ajouter un langage",
+    description:
+      "Implémentez l'interface CodeRunner pour prendre en charge un nouveau langage (Rust, Go…).",
+  },
+  {
+    title: "Valider les mesures",
+    description:
+      "Exécutez des expériences sur votre propre matériel pour élargir la base de résultats.",
+  },
+  {
+    title: "Améliorer l'analyseur",
+    description:
+      "Enrichissez ET-analyzer avec de nouvelles métriques ou de nouveaux formats de rapport.",
+  },
+  {
+    title: "Enrichir la documentation",
+    description:
+      "Complétez le guide d'expérimentation et les exemples de code mesuré.",
   },
 ];
 </script>
@@ -86,45 +109,11 @@ const processSteps = [
     </div>
   </AppSection>
 
-  <AppSection
-    title="Contribuer au projet"
-    sub-title="EnergyTracer vient de rejoindre le collectif et a besoin de
-            contributeurs pour accélérer son évolution."
-    container
-  >
-    <div class="contribute-grid">
-      <AppCard>
-        <h3>🧩 Ajouter un langage</h3>
-        <p>
-          Implémentez l'interface <code>CodeRunner</code> pour prendre en charge
-          un nouveau langage (Rust, Go...).
-        </p>
-      </AppCard>
-
-      <AppCard>
-        <h3>🔬 Valider les mesures</h3>
-        <p>
-          Exécutez des expériences sur votre propre matériel pour élargir la
-          base de résultats.
-        </p>
-      </AppCard>
-
-      <AppCard>
-        <h3>📊 Améliorer l'analyseur</h3>
-        <p>
-          Enrichissez ET-analyzer avec de nouvelles métriques ou de nouveaux
-          formats de rapport.
-        </p>
-      </AppCard>
-
-      <AppCard>
-        <h3>📝 Enrichir la documentation</h3>
-        <p>
-          Complétez le guide d'expérimentation et les exemples de code mesuré.
-        </p>
-      </AppCard>
-    </div>
-  </AppSection>
+  <ProjectContribution
+    description="Aidez-nous à faire évoluer EnergyTracer et à mieux comprendre ce que consomme notre code."
+    :opportunities="contributionOpportunities"
+    :action="{ href: '#contact-energy-tracer' }"
+  />
 
   <ContactForm
     title="Une question sur EnergyTracer ?"
@@ -173,29 +162,6 @@ const processSteps = [
 
   .profiler-content p {
     color: hsl(var(--text-accent));
-  }
-}
-
-.contribute-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-
-  p {
-    color: hsl(var(--text-accent));
-  }
-
-  code {
-    background: hsl(var(--accent));
-    padding: 0.1rem 0.4rem;
-    border-radius: var(--radius);
   }
 }
 </style>

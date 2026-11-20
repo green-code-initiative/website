@@ -5,11 +5,31 @@ import CircuitBoardIcon from "@/assets/icons/circuit_board.svg?component";
 import ExternalLinkIcon from "@/assets/icons/external_link.svg?component";
 import TargetIcon from "@/assets/icons/target.svg?component";
 import WrenchIcon from "@/assets/icons/wrench.svg?component";
+import ProjectContribution from "@/components/projects/ProjectContribution.vue";
 import AppButton from "@/components/shared/AppButton.vue";
 import AppCard from "@/components/shared/AppCard.vue";
 import AppFeatureCard from "@/components/shared/AppFeatureCard.vue";
 import AppSection from "@/components/shared/AppSection.vue";
 import ContactForm from "@/components/shared/form/ContactForm.vue";
+
+const contributionOpportunities = [
+  {
+    title: "Tester les intégrations",
+    description:
+      "Essayez l'extension VS Code en version préliminaire et partagez vos retours. Le plugin SonarQube est en cours de finalisation.",
+  },
+  {
+    title: "Développer le tableau de bord",
+    description:
+      "Apportez votre expérience en Vue.js ou en visualisation de données.",
+  },
+];
+
+const contributionGuide = {
+  href: "https://github.com/green-code-initiative/creedengo-dashboard/blob/main/CONTRIBUTING.md",
+  label: "Lire le guide de contribution",
+  external: true,
+};
 </script>
 
 <template>
@@ -21,13 +41,13 @@ import ContactForm from "@/components/shared/form/ContactForm.vue";
       <AppButton
         link="https://www.capgemini.com/fr-fr/perspectives/blog/cloud-et-green-it/"
         type="external_link"
-        text="📖 Article Capgemini : Cloud et Green IT"
+        text="Article Capgemini : Cloud et Green IT"
         variant="neutral"
       />
       <AppButton
         link="https://fr.linkedin.com/pulse/modernisation-applicative-cloud-et-num%C3%A9rique-un-trio-pascal"
         type="external_link"
-        text="📖 Modernisation applicative et numérique responsable"
+        text="Modernisation applicative et numérique responsable"
         variant="neutral"
       />
     </div>
@@ -74,7 +94,7 @@ import ContactForm from "@/components/shared/form/ContactForm.vue";
           IDE.
         </p>
         <AppButton
-          text="Télécharger →"
+          text="Télécharger"
           variant="primary"
           href="https://github.com/green-code-initiative/creedengo-dashboard/releases"
           type="external_link"
@@ -116,43 +136,11 @@ import ContactForm from "@/components/shared/form/ContactForm.vue";
     </div>
   </AppSection>
 
-  <AppSection
-    title="Contribuer au projet"
-    sub-title="Le projet est en développement actif et recherche des
-            contributeurs pour accélérer son évolution."
-    container
-  >
-    <div class="contribute-grid">
-      <AppCard>
-        <h3>🚀 État du projet</h3>
-        <p>
-          Le projet est fonctionnel mais encore en phase de développement.
-          L'extension VSCode est disponible en version préliminaire et le plugin
-          SonarQube est en cours de finalisation.
-        </p>
-      </AppCard>
-      <AppCard>
-        <h3>🤝 Rejoignez-nous</h3>
-        <p>
-          Que vous soyez développeur Vue.js, expert en visualisation de données
-          ou simplement intéressé par l'éco-conception, vos contributions sont
-          les bienvenues !
-        </p>
-      </AppCard>
-      <AppCard>
-        <h3>📚 Documentation</h3>
-        <p>
-          Consultez le
-          <a
-            href="https://github.com/green-code-initiative/creedengo-dashboard/blob/main/CONTRIBUTING.md"
-            target="_blank"
-            >guide de contribution</a
-          >
-          pour démarrer le projet en local et comprendre l'architecture.
-        </p>
-      </AppCard>
-    </div>
-  </AppSection>
+  <ProjectContribution
+    description="Aidez-nous à faire évoluer Creedengo Dashboard. Le guide explique comment lancer le projet en local et comprendre son architecture."
+    :opportunities="contributionOpportunities"
+    :action="contributionGuide"
+  />
 
   <ContactForm
     title="Besoin d'aide ou d'informations ?"
@@ -236,11 +224,5 @@ import ContactForm from "@/components/shared/form/ContactForm.vue";
   a {
     align-self: flex-end;
   }
-}
-
-.contribute-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
 }
 </style>
